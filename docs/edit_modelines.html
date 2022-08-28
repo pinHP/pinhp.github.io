@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>  
+    <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.6.0">  
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">  
+    <title>pinHP Image Edit Modelines
+    </title>
+  </head>
+  <body>  <h1># pinHP Arcade image</h1>  
+    <p>
+      <a href="http://pi2jamma.info/download#pinhp">
+        <img class="alignnone wp-image-762" src=   "../res/Arcade_Classics.png" alt="" width="100" height="53"></a>
+    </p>  <h3>Adjusting MAME games</h3>  
+    <p>For horizontal screen shifting on a SCART TV set, you can install ArcadeForge's 
+      <a href=   "http://arcadeforge.net/Pi2Jamma-Pi2SCART/CRT-RGB-Pic-Shifter::306.html">CRT RGB Picture   Shifter</a> device.
+    </p>  
+    <p>On Pi2SCART monitors, if there is no way to adjust the monitor itself, we can change the   screen position (horizontal/vertical) on an individual base by altering modeline settings.
+    </p>  
+    <p>Lets use Donkey Kong as example. Video mode according to Advance Mames game info:
+      <br>  256 x 224 (V) 60 Hz
+    </p>  
+    <p>In advmame.rc we look up the value for our game resolution.
+      <br>  We find the line
+    </p>  
+    <p>256x224x60/display_mode 320x224 (60.02 Hz)
+    </p>  
+    <p>which tells Mame, what to do with games running a 256x224 resolution at 60 Hz refresh rate. It   tells Mame to use display_mode 320x224 (60.02 Hz).
+    </p>  
+    <p>We find the line
+    </p>  
+    <p>device_video_modeline 320x224 (60.02 Hz) 6.4 320 321 352 407 224 229 236 262 -hsync -vsync #   15.72 kHz
+    </p>  
+    <p>which tells Mame how to set the video mode named 320x224 (60.02 Hz).
+    </p>  
+    <p>The group of the first four values 320 321 352 407 is for horizontal (long side) screen   resolution, the second group 224 229 236 262 for vertical (short side) screen resolution.
+    </p>  
+    <p>Within each group, we change the second and third numbers by the same value. To shift the long   side of the screen to the left (which is up on a vertical monitor), we increase the numbers. Lets   shift the whole screen image 20 pixels to the left on the long side of the monitor: We increase   the numbers by 20:
+    </p>  
+    <p>device_video_modeline 320x224 (60.02 Hz) 6.4 320 341 372 407 224 229 236 262 -hsync -vsync #   15.72 kHz
+    </p>  
+    <p>Now lets additionally shift the image down on the short side of the monitor by subtracting 5   pixels:
+    </p>  
+    <p>device_video_modeline 320x224 (60.02 Hz) 6.4 320 341 372 407 224 224 231 262 -hsync -vsync #   15.72 kHz
+    </p>  
+    <p>There are limitations: We cannot go below the first value or above the fourth value of each   group. So, in our example, we cannot move the image down the short side anymore. 224 is the limit   here.
+    </p>  
+    <p>Some games make use of super resolution settings, where Mame downscales the actual image. This   is a workaround due to Raspberry Pi (up to 3B+) hardware limitations, making it possible to get   almost exact resolutions and refresh rates. Usually we are more flexible in shifting the screen   image as well.
+    </p>  
+    <p>We see modelines like
+      <br>  device_video_modeline 1920x240 (60.00 Hz) 41.50 1920 2000 2288 2640 240 240 247 262 -hsync -vsync   # 15.72 kHz
+    </p>  
+    <p>Since Mame scales the value of 1920 down by factor 6 to 320 pixels screen width, a horizontal   shift by 1 pixel requires the value to be changed by 6.
+    </p>  
+    <p>Hint:
+      <br>  When a game is using a super resolution, if we TAB into the settings, unreadable small lines will   be shown on a vertical monitor. We need to temporarily change the games resolution before   entering the menu. While in the game, we press . (dot) or , (comma) to cycle through available   resolutions, until the menu becomes readable. Then we can TAB in.
+    </p>  <h3>Adjusting the menu screen</h3>  
+    <p>To adjust screen positon of the pinHP menu, we need to edit the file config.txt on the SD   cards DOS boot partition.
+    </p>  
+    <p>We find the line
+      <br>  hdmi_timings=320 1 32 47 17 240 1 2 6 8 0 0 0 60 0 6400000 1 #240p #H-Rate 15.38kHz #V-Rate   60.10Hz
+    </p>  
+    <p>Here we need to change values #3 and #5 (32 and 17 in our example) for horizontal screen   position, values #8 and #10 (2 and 8) for vertical position.
+      <br>  Be careful: If you ADD to one value, you have to SUBTRACT from the other and vice versa.
+    </p>
+  </body>
+</html>

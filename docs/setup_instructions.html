@@ -1,346 +1,394 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.6.0">
-  <title>pinHP Image Setup Instructions</title>
-</head>
-<body>
-  <p><a href="http://pi2jamma.info/download#pinhp"><img class="alignnone wp-image-762" src=
-  "../res/Arcade_Classics.png" alt="" width="100" height="53"></a></p>
-  <p><strong>&gt; <a href="user_manual.html">User Manual</a></strong></p>
-  <h4><strong>CONTENTS</strong></h4>
-  <ul>
-    <li style="list-style-type: none;">
-      <ul>
-        <li style="list-style-type: none;">
-          <ul>
-            <li>
-              <a href="#hardware">Hardware installation</a>
-            </li>
-            <li>
-              <a href="#software">Software setup</a>
-            </li>
-            <li>
-              <a href="#quickstart">Quick start</a>
-            </li>
-            <li>
-              <a href="#configuration">Configuration</a>
-            </li>
-            <li>
-              <a href="#subdirectories">Subdirectories</a>
-            </li>
-            <li>
-              <a href="#extended_gamemenu">Extended game menu</a>
-            </li>
-            <li>
-              <a href="#autostart">Autostart a game</a>
-            </li>
-            <li>
-              <a href="#screensaver">Screensaver</a>
-            </li>
-            <li>
-              <a href="#orientation">Screen orientation</a>
-            </li>
-            <li>
-              <a href="#game_selection">Game selection</a>
-            </li>
-            <li>
-              <a href="#mame_controls">Mame controls</a>
-            </li>
-            <li>
-              <a href="#mame_info">Mame info</a>
-            </li>
-            <li>
-              <a href="#mame_menu">Mame settings menu</a>
-            </li>
-            <li>
-              <a href="#keyboard">Keyboard</a>
-            </li>
-            <li>
-              <a href="#keyboard_mapping">Keyboard mapping</a>
-            </li>
-            <li>
-              <a href="#mame_mapping">Change buttons</a>
-            </li>
-            <li>
-              <a href="#wifi">Wi-Fi</a>
-            </li>
-            <li>
-              <a href="#ssh">SSH</a>
-            </li>
-            <li>
-              <a href="#servostik">Ultimarc&reg; ServoStik support</a>
-            </li>
-            <li>
-              <a href="#advanced_instructions">Advanced Instructions</a>
-            </li>
-            <li>
-              <a href="#user_manual">User Manual</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul><strong><a id="hardware"></a>*** HARDWARE ***</strong>
-  <p style="padding-left: 40px;">Make sure your Raspberry Pi does not make unwanted contact with
-  the Pi2Jamma board. Put some electrical tape or insulating paper between the Pi2Jamma and the USB
-  ports of the RPi to prevent damage or strange software behaviour.</p><strong><a id=
-  "software"></a>*** INITIAL SOFTWARE INSTALLATION ***</strong> <!--more-->
-  <p style="padding-left: 40px;">Use a disk imaging program like "Win32DiskImager" to write the
-  image file to a Micro-SD card (at least 16 GB size).</p>
-  <p style="padding-left: 40px;">A USB stick containing ROMs and configuration settings is
-  recommended, but optional. Boot with an empty, formatted USB stick. The system will detect it and
-  create the folder structure automatically.</p><strong>*** PI2JAMMA / PI2SCART SETUP ***</strong>
-  <p style="padding-left: 40px;">All files required are stored inside the "rpi2jamma" directory on
-  either the USB stick or the SD card's "RPI_DATA" partition. The most important subdirectory is
-  "roms_advmame" - place your game ROMs there and you are good to go.</p>
-  <p style="padding-left: 40px;">You can as well sort ROM files into subfolders, which will also
-  show up in the game menu. Individual display names can be set with the ".title" file inside each
-  directory. Write the name into the file and nothing else. Names preceded by a "." (dot) will hide
-  the directory completely, making it inaccessible from the menu. Names preceded by a "#" (hash
-  sign) will show a blank line in the menu, but leave it accessible.</p><strong><a id=
-  "quickstart"></a>*** QUICK START ***</strong>
-  <p style="padding-left: 40px;">MENU CONTROLS</p>
-  <ul>
-    <li style="list-style-type: none;">
-      <ul>
-        <li style="list-style-type: none;">
-          <ul>
-            <li>Select item: Player1-Button1 ("Left-CTRL")</li>
-            <li>Go back: Player1-Button2 ("Left-ALT")</li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-  <p style="padding-left: 40px;">MAME CONTROLS</p>
-  <ul>
-    <li style="list-style-type: none;">
-      <ul>
-        <li style="list-style-type: none;">
-          <ul>
-            <li>Insert coin: Player1-Start & Joystick up ("1" & "Up-Arrow")</li>
-            <li>Pause game: Player1-Start & Joystick down ("1" & "Down-Arrow")</li>
-            <li>Save current game state to disk: Player1-Start & Joystick left ("1" &
-            "Left-Arrow")</li>
-            <li>Load last saved game state from disk: Player1-Start & Joystick right ("1" &
-            "Right-Arrow")</li>
-            <li>Quit a game: Player1-Start & Player1-Button1 ("1" & "Left-CTRL")</li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul><strong><a id="configuration"></a>*** CONFIGURATION / HIDDEN FEATURES ***</strong>
-  <p style="padding-left: 40px;">Select the "Options" menu. Advanced configuration settings are
-  available.</p>
-  <p style="padding-left: 40px;">If advanced settings are not visible, click into any of the empty
-  lines between "Back" and "About" three times (slowly) within 10 seconds to activate the menu.
-  Hide the settings menu again to keep your system childproof.</p>
-  <p style="padding-left: 40px;">Settings are stored in "config.ini" on the USB
-  stick.</p><strong><a id="subdirectories"></a>*** SUBDIRECTORIES ***</strong>
-  <p style="padding-left: 40px;">"roms_advmame" - Game ROMs for games you want to see in the menu.
-  - Accepts subdirectories, to display a custom menu structure. Individual display names can be set
-  with the ".title" file inside each directory. Write the name into the file and nothing else.
-  Names preceded by a "." (dot) will hide the directory completely, making it inaccessible from the
-  menu. Names preceded by a "#" (hash sign) will show a blank line in the menu, but leave it
-  accessible. - Edit the game definition file "_games.template" to alter display names.</p>
-  <p style="padding-left: 40px;">"roms_unused" - Set Options &gt; Control Settings &gt; P2-Start
-  Button to "Delete Game". Now, with any game you do not want, press P2-Start in the game menu, and
-  it will be "deleted", i. e. moved to the "roms_unused" folder.</p>
-  <p style="padding-left: 40px;">"bios_advmame" - BIOS files (e. g. neogeo.zip) belong here.</p>
-  <p style="padding-left: 40px;">"snaps" - Preview snapshots (PNG) to be displayed in game
-  selection menu.</p>
-  <p style="padding-left: 40px;">"logos" - Logos (PNG) to be displayed in game selection menu.</p>
-  <p style="padding-left: 40px;">"marquees" - Marquees (PNG) to be displayed in game selection
-  menu.</p>
-  <p style="padding-left: 40px;">"videos" - Preview videos (MP4) to be displayed in game selection
-  menu.</p>
-  <p style="padding-left: 40px;">"backup" - Select "Backup Settings" from the "Options" menu to
-  backup settings and hiscores here.</p>
-  <p style="padding-left: 40px;">"backup.bak" - Before actually making a backup, an existing backup
-  folder is renamed to backup.bak, so this folder contains the second latest backup.</p>
-  <p style="padding-left: 40px;">"autobackup" - After each game and during system shutdown,
-  hiscores and MAME settings are saved here automatically.</p>
-  <p style="padding-left: 40px;">"samples_advmame" - MAME audio files not included in the
-  image.</p>
-  <p style="padding-left: 40px;">"artwork_advmame" - MAME artwork files not included in the
-  image.</p>
-  <p style="padding-left: 40px;">"snaps_advmame" - Snapshots taken during gameplay.</p>
-  <p style="padding-left: 40px;">"image_advmame" - MAME chd/disk/cartridge/... image files.</p>
-  <p style="padding-left: 40px;">"diff_advmame" - MAME disk image differential files.</p>
-  <p style="padding-left: 40px;">"memcard_advmame" - MAME 'memcard' files.</p><strong><a id=
-  "extended_gamemenu"></a>*** EXTENDED GAME MENU ***</strong>
-  <p style="padding-left: 40px;">There are options to display up to three filtered game menus:
-  "Fav. Games", "More Games" and "All Games". Select the desired option from the advanced
-  configuration menu. Display names of those menus can be edited in "config.ini" or from the
-  menu.</p>
-  <p style="padding-left: 40px;">To add games e.g. to the "Fav. Games" list, click on "Select Fav.
-  Games" (Options &gt; Game Menu Settings). The screen turns green. Go back to the games list as if
-  you would want to start a game. Any game selected now will be added to the "Fav. Games" list.</p>
-  <p style="padding-left: 40px;">"Deselect Fav. Games", "Select Autostart Game" and "Delete Game
-  from USB" work in the same way.</p>
-  <p style="padding-left: 40px;">Changes are applied when leaving edit mode.</p>
-  <p style="padding-left: 40px;">Alternatively, pushing Player2-Start from the games menu adds the
-  game to the Fav. Games list (needs to be configured from the System Settings Menu). By default,
-  Player2-Start activates the screensaver.</p><strong><a id="autostart"></a>*** AUTOSTART A GAME
-  ***</strong>
-  <p style="padding-left: 40px;">The system can boot right into a game: Options &gt; Game Menu
-  Settings &gt; Select Autostart Game.</p><strong><a id="screensaver"></a>*** SCREENSAVER
-  ***</strong>
-  <p style="padding-left: 40px;">You can boot directly into a screensaver: Options &gt; System
-  Settings &gt; Boot into Screensaver.</p>
-  <p style="padding-left: 40px;">The screensaver activates itself after an idle time of 10 minutes
-  (default, can be edited in "config.ini") only when the menu is shown, NOT during a game. Activate
-  "Idle Exit" in the MAME section of the configuration menu to automatically exit a MAME
-  game.</p><strong><a id="orientation"></a>*** SCREEN ORIENTATION ***</strong>
-  <p style="padding-left: 40px;">Screen orientation can be set to horizontal, vertical or
-  automatic. Automatic is useful for rotatable monitors.</p>
-  <p style="padding-left: 40px;">Quick switch of screen orientation is possible by pressing
-  Player2-Start if the option is set in the System Settings Menu.</p><strong><a id=
-  "game_selection"></a>*** GAME SELECTION ***</strong>
-  <p style="padding-left: 40px;">Use Joystick to select your games.</p>
-  <p style="padding-left: 40px;">Scroll through games list pagewise: Joystick left/right Scroll
-  through pages alphabetically: Player1-Start + Joystick left/right</p>
-  <p style="padding-left: 40px;">Select game or menu item: Press Player1-Button1. Go back: Press
-  Player1-Button2.</p><strong><a id="mame_controls"></a> *** MAME CONTROLS</strong>
-  <strong>***</strong>
-  <p style="padding-left: 40px;">See <a href="#mame_mapping">instructions</a>, how to change
-  controls.</p>
-  <p style="padding-left: 40px;">*** Insert coin: Player1-Start & Joystick up ***</p>
-  <p style="padding-left: 40px;">*** Pause game: Player1-Start & Joystick down ***</p>
-  <p style="padding-left: 40px;">*** Quit a game / Back to menu: Player1-Start & Player1-Button1
-  ***</p><strong><a id="mame_info"></a>*** MAME INFO ***</strong>
-  <p style="padding-left: 40px;"></p>
-  <ul style="list-style-type: none;">
-    <li>Advance Mame 3.9</li>
-    <li>Romset version 0.106</li>
-    <li>Put ROMs inside "roms_advmame" folder on USB stick.</li>
-    <li>Put snapshots (preview images) inside "snaps" folder on USB stick.</li>
-    <li>Put preview videos inside "videos" folder on USB stick.</li>
-  </ul><strong><a id="mame_menu"></a>*** MAME SETTINGS MENU ***</strong>
-  <p style="padding-left: 40px;">Press TAB while inside a game to enter the MAME settings menu.</p>
-  <p style="padding-left: 40px;">When a game is internally using a "super resolution" (making it
-  possible to run at exact refresh rates, yet Mame can still output pixel perfect resolutions), if
-  you TAB into the settings, unreadable small lines will be shown on a vertical monitor. You need
-  to temporarily change the game's resolution before entering the menu. While in the game, press
-  "." (dot) or "," (comma) to cycle through available resolutions, until the menu becomes readable.
-  Then you can TAB in.</p>
-  <p style="padding-left: 40px;">You can as well backup MAME settings from the "Options" menu, edit
-  the advmame.rc config file and restore it via the menu.</p><strong><a id="keyboard"></a>***
-  KEYBOARD ***</strong>
-  <p style="padding-left: 40px;">A USB keyboard may be attached to configure Advance Mame general
-  and/or individual game settings</p>
-  <p style="padding-left: 40px;">Start any game. No need to play, the title screen is sufficient.
-  Press the TAB key to access Advance Mame options.</p><strong><a id="keyboard_mapping"></a>***
-  KEYBOARD MAPPING ***</strong>
-  <table style="text-align: left; margin-left: 40px; margin-top: 1em; margin-bottom: 1em;">
-    <tbody style="padding-left: 40px;">
-      <tr style="padding-left: 40px;">
-        <th style="font-weight: normal; width: 176px; padding-left: 40px;">Coin1:</th>
-        <th style="font-weight: normal; width: 79px; padding-left: 40px;">5</th>
-      </tr>
-      <tr style="padding-left: 40px;">
-        <th style="font-weight: normal; width: 176px; padding-left: 40px;">Player1 Start:</th>
-        <th style="font-weight: normal; width: 79px; padding-left: 40px;">1</th>
-      </tr>
-      <tr style="padding-left: 40px;">
-        <th style="font-weight: normal; width: 176px; padding-left: 40px;">Player2 Start:</th>
-        <th style="font-weight: normal; width: 79px; padding-left: 40px;">2</th>
-      </tr>
-      <tr style="padding-left: 40px;">
-        <th style="font-weight: normal; width: 176px; padding-left: 40px;">Player1 Button1
-        (Fire):</th>
-        <th style="font-weight: normal; width: 79px; padding-left: 40px;">Left-CTRL</th>
-      </tr>
-      <tr style="padding-left: 40px;">
-        <th style="font-weight: normal; width: 176px; padding-left: 40px;">Player1 Button2:</th>
-        <th style="font-weight: normal; width: 79px; padding-left: 40px;">Left-ALT</th>
-      </tr>
-      <tr style="padding-left: 40px;">
-        <th style="font-weight: normal; width: 176px; padding-left: 40px;">Player1 Button3:</th>
-        <th style="font-weight: normal; width: 79px; padding-left: 40px;">q</th>
-      </tr>
-    </tbody>
-  </table><strong><a id="mame_mapping"></a>*** CHANGE BUTTONS OR KEYBOARD SETTINGS ***</strong>
-  <p style="padding-left: 40px;">E.g. change the action to quit a game. This a MAME setting, so we
-  need to access the MAME settings menu.</p>
-  <ul>
-    <li style="list-style-type: none;">
-      <ul>
-        <li style="list-style-type: none;">
-          <ul>
-            <li>Attach a USB keyboard.</li>
-            <li>Start any game. No need to play, the title screen is sufficient.</li>
-            <li>Press the TAB key.</li>
-            <li>Navigate to "Input (general)" - press ENTER.</li>
-            <li>Select "User Interface" - press ENTER.</li>
-            <li>Navigate down to "UI cancel".</li>
-            <li>Press ENTER - the definitions are cleared.</li>
-            <li>Press whichever buttons are desired.</li>
-            <li>Do NOT press ENTER again!</li>
-            <li>Wait until the key is registered. As soon as it is registered, if you do press
-            ENTER before navigating away, you can select an optional additional control.</li>
-            <li>Navigate away and all the way down to go back to the game through the various
-            settings screens.</li>
-            <li><span style="text-decoration: underline;">N.B.</span> : When a game is internally
-            using a "super resolution" (making it possible to run at exact refresh rates, yet Mame
-            can still output pixel perfect resolutions), if you TAB into the settings, <span style=
-            "text-decoration: underline;">unreadable small lines</span> will be shown on a vertical
-            monitor. You need to temporarily change the game's resolution before entering the menu.
-            While in the game, press "." (dot) or "," (comma) to cycle through available
-            resolutions, until the menu becomes readable. Then you can TAB in.</li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul><strong><a id="servostik"></a>*** ULTIMARC&reg; SERVOSTIK ***</strong>
-  <p style="padding-left: 40px;">An Ultimarc&reg; ServoStik can be triggered to switch between 4- and
-  8-way joystick restriction. Check 'System Settings Menu &gt; System Settings &gt; Enable
-  ServoStik'. An additional menu item 'Toggle ServoStik' will be available from the 'Options' menu,
-  to manually switch the ServoStik. You can as well define Player2-Start button to toggle the
-  ServoStik position: 'System Settings Menu &gt; System Settings &gt; P2-Start Button'.</p>
-  <p style="padding-left: 40px;"><span style="text-decoration: underline;">N.B.</span> : 'Toggle
-  ServoStik' will override any automatic switching for the very next game started.</p>
-  <p style="padding-left: 40px;">To automatically switch the ServoStik at game start, select
-  Options &gt; Set Games 4-8-Way to define the setting for each game. You can as well manually add
-  an appropriate joystick parameter to the game definition entry in '_games.template' inside the
-  'roms_advmame' directory.</p>
-  <p style="padding-left: 40px;"><span style="text-decoration: underline;">Example:</span> game {
-  rom ="1942" title ="1942 (set 1)" params ="-0ONE-0TWO-0TRE-1ALL-0FAV" orientation ="v" joy ="8" }
-  game { rom ="pacman" title ="Pac-Man (Midway)" params ="-0ONE-0TWO-0TRE-1ALL-0FAV" orientation
-  ="v" joy ="4" }</p>
-  <hr>
-  <strong><a id="wifi"></a>*** HOW TO CONNECT TO A WI-FI NETWORK ***</strong>
-  <p style="padding-left: 40px;"></p>
-  <ul style="list-style-type: none;">
-    <li>1) System Settings Menu &gt; Online Tools &gt; Wi-Fi Setup</li>
-    <li>2) Select your network.</li>
-    <li>3) Assign an internal name for the network, eg. "pinhp".</li>
-    <li>4) Enter the network key.</li>
-    <li>5) Done! The system should be connected within a couple of seconds. The network profile is
-    automatically saved, you don't need to enter credentials again next time. If you cannot connect
-    because network settings have changed, go to "Remove Wi-Fi Profiles" and start over again.</li>
-    <li>6) Check your IP: System Settings Menu &gt; Online Tools &gt; Check IP</li>
-    <li>7) To automatically connect after each reboot, select "Auto Connect"</li>
-  </ul><strong><a id="ssh"></a>*** HOW TO SSH INTO THE SYSTEM ***</strong>
-  <p style="padding-left: 40px;">Username: pinhp Password: root</p>
-  <p style="padding-left: 40px;">(If you have trouble transferring data with e. g. SCP software,
-  connect as user: root / password: root)</p>
-  <p style="padding-left: 40px;">Example Windows 10:</p>
-  <ul style="list-style-type: none;">
-    <li>1) From the Windows menu, type "cmd" to open the command shell.</li>
-    <li>2) Type "ssh pinhp@192.168.1.243" (with the IP number found in step 6 above).</li>
-    <li>3) Password is "root".</li>
-    <li>4) If you see the command prompt [pinhp@pinhp ~]$ you are connected!</li>
-    <li>5) Do whatever you want in the Linux system, e.g. run Midnight Commander: Type "mc".</li>
-  </ul>
-  <p style="padding-left: 40px;">The DOS (FAT32) partition containing games and system settings, in
-  use only if no USB stick is present, is mounted at /mnt/data.</p><strong><a id=
-  "advanced_instructions"></a>*** ADVANCED INSTRUCTIONS ***</strong>
-  <p style="padding-left: 40px;">The screen is not centred? How to <a href=
-  "http://pi2jamma.info/pinhp-edit-modelines">Adjust modelines</a> in advmame.rc.</p><strong><a id=
-  "user_manual"></a>*** USER MANUAL ***</strong>
-  <p style="padding-left: 40px;">Detailed description of all <a href="user_manual.html">pinHP
-  menu</a> items</p>
-</body>
+  <head>  
+    <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.6.0">  
+    <title>pinHP Image Setup Instructions
+    </title>
+  </head>
+  <body>  <h1># pinHP Arcade image</h1>  
+    <p>
+      <a href="http://pi2jamma.info/download#pinhp">
+        <img class="alignnone wp-image-762" src=   "../res/Arcade_Classics.png" alt="" width="100" height="53"></a>
+    </p>  
+    <p><strong>&gt; 
+        <a href="user_manual.html">User Manual</a></strong>
+    </p>  <h4><strong>CONTENTS</strong></h4>  
+    <ul>    
+      <li style="list-style-type: none;">      
+        <ul>        
+          <li style="list-style-type: none;">          
+            <ul>            
+              <li>              
+              <a href="#hardware">Hardware installation</a>            
+          </li>            
+          <li>              
+          <a href="#software">Software setup</a>            
+      </li>            
+      <li>              
+      <a href="#quickstart">Quick start</a>            
+      </li>            
+      <li>              
+      <a href="#configuration">Configuration</a>            
+      </li>            
+      <li>              
+      <a href="#subdirectories">Subdirectories</a>            
+      </li>            
+      <li>              
+      <a href="#extended_gamemenu">Extended game menu</a>            
+      </li>            
+      <li>              
+      <a href="#autostart">Autostart a game</a>            
+      </li>            
+      <li>              
+      <a href="#screensaver">Screensaver</a>            
+      </li>            
+      <li>              
+      <a href="#orientation">Screen orientation</a>            
+      </li>            
+      <li>              
+      <a href="#game_selection">Game selection</a>            
+      </li>            
+      <li>              
+      <a href="#mame_controls">Mame controls</a>            
+      </li>            
+      <li>              
+      <a href="#mame_info">Mame info</a>            
+      </li>            
+      <li>              
+      <a href="#mame_menu">Mame settings menu</a>            
+      </li>            
+      <li>              
+      <a href="#keyboard">Keyboard</a>            
+      </li>            
+      <li>              
+      <a href="#keyboard_mapping">Keyboard mapping</a>            
+      </li>            
+      <li>              
+      <a href="#mame_mapping">Change buttons</a>            
+      </li>            
+      <li>              
+      <a href="#wifi">Wi-Fi</a>            
+      </li>            
+      <li>              
+      <a href="#ssh">SSH</a>            
+      </li>            
+      <li>              
+      <a href="#servostik">Ultimarc® ServoStik support</a>            
+      </li>            
+      <li>              
+      <a href="#advanced_instructions">Advanced Instructions</a>            
+      </li>            
+      <li>              
+      <a href="#user_manual">User Manual</a>            
+      </li>          
+    </ul>        
+    </li>      
+    </ul>    
+    </li>  
+    </ul><strong>
+      <a id="hardware"></a>*** HARDWARE ***</strong>  
+    <p style="padding-left: 40px;">Make sure your Raspberry Pi does not make unwanted contact with   the Pi2Jamma board. Put some electrical tape or insulating paper between the Pi2Jamma and the USB   ports of the RPi to prevent damage or strange software behaviour.
+    </p><strong>
+      <a id=   "software"></a>*** INITIAL SOFTWARE INSTALLATION ***</strong> 
+    <!--more-->  
+    <p style="padding-left: 40px;">Use a disk imaging program like "Win32DiskImager" to write the   image file to a Micro-SD card (at least 16 GB size).
+    </p>  
+    <p style="padding-left: 40px;">A USB stick containing ROMs and configuration settings is   recommended, but optional. Boot with an empty, formatted USB stick. The system will detect it and   create the folder structure automatically.
+    </p><strong>*** PI2JAMMA / PI2SCART SETUP ***</strong>  
+    <p style="padding-left: 40px;">All files required are stored inside the "rpi2jamma" directory on   either the USB stick or the SD card's "RPI_DATA" partition. The most important subdirectory is   "roms_advmame" - place your game ROMs there and you are good to go.
+    </p>  
+    <p style="padding-left: 40px;">You can as well sort ROM files into subfolders, which will also   show up in the game menu. Individual display names can be set with the ".title" file inside each   directory. Write the name into the file and nothing else. Names preceded by a "." (dot) will hide   the directory completely, making it inaccessible from the menu. Names preceded by a "#" (hash   sign) will show a blank line in the menu, but leave it accessible.
+    </p><strong>
+      <a id=   "quickstart"></a>*** QUICK START ***</strong>  
+    <p style="padding-left: 40px;">MENU CONTROLS
+    </p>  
+    <ul>    
+      <li style="list-style-type: none;">      
+        <ul>        
+          <li style="list-style-type: none;">          
+            <ul>            
+              <li>Select item: Player1-Button1 ("Left-CTRL")
+          </li>            
+          <li>Go back: Player1-Button2 ("Left-ALT")
+      </li>          
+    </ul>        
+    </li>      
+    </ul>    
+    </li>  
+    </ul>  
+    <p style="padding-left: 40px;">MAME CONTROLS
+    </p>  
+    <ul>    
+      <li style="list-style-type: none;">      
+        <ul>        
+          <li style="list-style-type: none;">          
+            <ul>            
+              <li>Insert coin: Player1-Start & Joystick up ("1" & "Up-Arrow")
+          </li>            
+          <li>Pause game: Player1-Start & Joystick down ("1" & "Down-Arrow")
+      </li>            
+      <li>Save current game state to disk: Player1-Start & Joystick left ("1" &             "Left-Arrow")
+      </li>            
+      <li>Load last saved game state from disk: Player1-Start & Joystick right ("1" &             "Right-Arrow")
+      </li>            
+      <li>Quit a game: Player1-Start & Player1-Button1 ("1" & "Left-CTRL")
+      </li>          
+    </ul>        
+    </li>      
+    </ul>    
+    </li>  
+    </ul><strong>
+      <a id="configuration"></a>*** CONFIGURATION / HIDDEN FEATURES ***</strong>  
+    <p style="padding-left: 40px;">Select the "Options" menu. Advanced configuration settings are   available.
+    </p>  
+    <p style="padding-left: 40px;">If advanced settings are not visible, click into any of the empty   lines between "Back" and "About" three times (slowly) within 10 seconds to activate the menu.   Hide the settings menu again to keep your system childproof.
+    </p>  
+    <p style="padding-left: 40px;">Settings are stored in "config.ini" on the USB   stick.
+    </p><strong>
+      <a id="subdirectories"></a>*** SUBDIRECTORIES ***</strong>  
+    <p style="padding-left: 40px;">"roms_advmame" - Game ROMs for games you want to see in the menu.   - Accepts subdirectories, to display a custom menu structure. Individual display names can be set   with the ".title" file inside each directory. Write the name into the file and nothing else.   Names preceded by a "." (dot) will hide the directory completely, making it inaccessible from the   menu. Names preceded by a "#" (hash sign) will show a blank line in the menu, but leave it   accessible. - Edit the game definition file "_games.template" to alter display names.
+    </p>  
+    <p style="padding-left: 40px;">"roms_unused" - Set Options &gt; Control Settings &gt; P2-Start   Button to "Delete Game". Now, with any game you do not want, press P2-Start in the game menu, and   it will be "deleted", i. e. moved to the "roms_unused" folder.
+    </p>  
+    <p style="padding-left: 40px;">"bios_advmame" - BIOS files (e. g. neogeo.zip) belong here.
+    </p>  
+    <p style="padding-left: 40px;">"snaps" - Preview snapshots (PNG) to be displayed in game   selection menu.
+    </p>  
+    <p style="padding-left: 40px;">"logos" - Logos (PNG) to be displayed in game selection menu.
+    </p>  
+    <p style="padding-left: 40px;">"marquees" - Marquees (PNG) to be displayed in game selection   menu.
+    </p>  
+    <p style="padding-left: 40px;">"videos" - Preview videos (MP4) to be displayed in game selection   menu.
+    </p>  
+    <p style="padding-left: 40px;">"backup" - Select "Backup Settings" from the "Options" menu to   backup settings and hiscores here.
+    </p>  
+    <p style="padding-left: 40px;">"backup.bak" - Before actually making a backup, an existing backup   folder is renamed to backup.bak, so this folder contains the second latest backup.
+    </p>  
+    <p style="padding-left: 40px;">"autobackup" - After each game and during system shutdown,   hiscores and MAME settings are saved here automatically.
+    </p>  
+    <p style="padding-left: 40px;">"samples_advmame" - MAME audio files not included in the   image.
+    </p>  
+    <p style="padding-left: 40px;">"artwork_advmame" - MAME artwork files not included in the   image.
+    </p>  
+    <p style="padding-left: 40px;">"snaps_advmame" - Snapshots taken during gameplay.
+    </p>  
+    <p style="padding-left: 40px;">"image_advmame" - MAME chd/disk/cartridge/... image files.
+    </p>  
+    <p style="padding-left: 40px;">"diff_advmame" - MAME disk image differential files.
+    </p>  
+    <p style="padding-left: 40px;">"memcard_advmame" - MAME 'memcard' files.
+    </p><strong>
+      <a id=   "extended_gamemenu"></a>*** EXTENDED GAME MENU ***</strong>  
+    <p style="padding-left: 40px;">There are options to display up to three filtered game menus:   "Fav. Games", "More Games" and "All Games". Select the desired option from the advanced   configuration menu. Display names of those menus can be edited in "config.ini" or from the   menu.
+    </p>  
+    <p style="padding-left: 40px;">To add games e.g. to the "Fav. Games" list, click on "Select Fav.   Games" (Options &gt; Game Menu Settings). The screen turns green. Go back to the games list as if   you would want to start a game. Any game selected now will be added to the "Fav. Games" list.
+    </p>  
+    <p style="padding-left: 40px;">"Deselect Fav. Games", "Select Autostart Game" and "Delete Game   from USB" work in the same way.
+    </p>  
+    <p style="padding-left: 40px;">Changes are applied when leaving edit mode.
+    </p>  
+    <p style="padding-left: 40px;">Alternatively, pushing Player2-Start from the games menu adds the   game to the Fav. Games list (needs to be configured from the System Settings Menu). By default,   Player2-Start activates the screensaver.
+    </p><strong>
+      <a id="autostart"></a>*** AUTOSTART A GAME   ***</strong>  
+    <p style="padding-left: 40px;">The system can boot right into a game: Options &gt; Game Menu   Settings &gt; Select Autostart Game.
+    </p><strong>
+      <a id="screensaver"></a>*** SCREENSAVER   ***</strong>  
+    <p style="padding-left: 40px;">You can boot directly into a screensaver: Options &gt; System   Settings &gt; Boot into Screensaver.
+    </p>  
+    <p style="padding-left: 40px;">The screensaver activates itself after an idle time of 10 minutes   (default, can be edited in "config.ini") only when the menu is shown, NOT during a game. Activate   "Idle Exit" in the MAME section of the configuration menu to automatically exit a MAME   game.
+    </p><strong>
+      <a id="orientation"></a>*** SCREEN ORIENTATION ***</strong>  
+    <p style="padding-left: 40px;">Screen orientation can be set to horizontal, vertical or   automatic. Automatic is useful for rotatable monitors.
+    </p>  
+    <p style="padding-left: 40px;">Quick switch of screen orientation is possible by pressing   Player2-Start if the option is set in the System Settings Menu.
+    </p><strong>
+      <a id=   "game_selection"></a>*** GAME SELECTION ***</strong>  
+    <p style="padding-left: 40px;">Use Joystick to select your games.
+    </p>  
+    <p style="padding-left: 40px;">Scroll through games list pagewise: Joystick left/right Scroll   through pages alphabetically: Player1-Start + Joystick left/right
+    </p>  
+    <p style="padding-left: 40px;">Select game or menu item: Press Player1-Button1. Go back: Press   Player1-Button2.
+    </p><strong>
+      <a id="mame_controls"></a> *** MAME CONTROLS</strong>  <strong>***</strong>  
+    <p style="padding-left: 40px;">See 
+      <a href="#mame_mapping">instructions</a>, how to change   controls.
+    </p>  
+    <p style="padding-left: 40px;">*** Insert coin: Player1-Start & Joystick up ***
+    </p>  
+    <p style="padding-left: 40px;">*** Pause game: Player1-Start & Joystick down ***
+    </p>  
+    <p style="padding-left: 40px;">*** Quit a game / Back to menu: Player1-Start & Player1-Button1   ***
+    </p><strong>
+      <a id="mame_info"></a>*** MAME INFO ***</strong>  
+    <p style="padding-left: 40px;">
+    </p>  
+    <ul style="list-style-type: none;">    
+      <li>Advance Mame 3.9
+      </li>    
+      <li>Romset version 0.106
+      </li>    
+      <li>Put ROMs inside "roms_advmame" folder on USB stick.
+      </li>    
+      <li>Put snapshots (preview images) inside "snaps" folder on USB stick.
+      </li>    
+      <li>Put preview videos inside "videos" folder on USB stick.
+      </li>  
+    </ul><strong>
+      <a id="mame_menu"></a>*** MAME SETTINGS MENU ***</strong>  
+    <p style="padding-left: 40px;">Press TAB while inside a game to enter the MAME settings menu.
+    </p>  
+    <p style="padding-left: 40px;">When a game is internally using a "super resolution" (making it   possible to run at exact refresh rates, yet Mame can still output pixel perfect resolutions), if   you TAB into the settings, unreadable small lines will be shown on a vertical monitor. You need   to temporarily change the game's resolution before entering the menu. While in the game, press   "." (dot) or "," (comma) to cycle through available resolutions, until the menu becomes readable.   Then you can TAB in.
+    </p>  
+    <p style="padding-left: 40px;">You can as well backup MAME settings from the "Options" menu, edit   the advmame.rc config file and restore it via the menu.
+    </p><strong>
+      <a id="keyboard"></a>***   KEYBOARD ***</strong>  
+    <p style="padding-left: 40px;">A USB keyboard may be attached to configure Advance Mame general   and/or individual game settings
+    </p>  
+    <p style="padding-left: 40px;">Start any game. No need to play, the title screen is sufficient.   Press the TAB key to access Advance Mame options.
+    </p><strong>
+      <a id="keyboard_mapping"></a>***   KEYBOARD MAPPING ***</strong>  
+    <table style="text-align: left; margin-left: 40px; margin-top: 1em; margin-bottom: 1em;">    
+      <tbody style="padding-left: 40px;">      
+        <tr style="padding-left: 40px;">        
+          <th style="font-weight: normal; width: 176px; padding-left: 40px;">Coin1:
+          </th>        
+          <th style="font-weight: normal; width: 79px; padding-left: 40px;">5
+          </th>      
+        </tr>      
+        <tr style="padding-left: 40px;">        
+          <th style="font-weight: normal; width: 176px; padding-left: 40px;">Player1 Start:
+          </th>        
+          <th style="font-weight: normal; width: 79px; padding-left: 40px;">1
+          </th>      
+        </tr>      
+        <tr style="padding-left: 40px;">        
+          <th style="font-weight: normal; width: 176px; padding-left: 40px;">Player2 Start:
+          </th>        
+          <th style="font-weight: normal; width: 79px; padding-left: 40px;">2
+          </th>      
+        </tr>      
+        <tr style="padding-left: 40px;">        
+          <th style="font-weight: normal; width: 176px; padding-left: 40px;">Player1 Button1         (Fire):
+          </th>        
+          <th style="font-weight: normal; width: 79px; padding-left: 40px;">Left-CTRL
+          </th>      
+        </tr>      
+        <tr style="padding-left: 40px;">        
+          <th style="font-weight: normal; width: 176px; padding-left: 40px;">Player1 Button2:
+          </th>        
+          <th style="font-weight: normal; width: 79px; padding-left: 40px;">Left-ALT
+          </th>      
+        </tr>      
+        <tr style="padding-left: 40px;">        
+          <th style="font-weight: normal; width: 176px; padding-left: 40px;">Player1 Button3:
+          </th>        
+          <th style="font-weight: normal; width: 79px; padding-left: 40px;">q
+          </th>      
+        </tr>    
+      </tbody>  
+    </table><strong>
+      <a id="mame_mapping"></a>*** CHANGE BUTTONS OR KEYBOARD SETTINGS ***</strong>  
+    <p style="padding-left: 40px;">E.g. change the action to quit a game. This a MAME setting, so we   need to access the MAME settings menu.
+    </p>  
+    <ul>    
+      <li style="list-style-type: none;">      
+        <ul>        
+          <li style="list-style-type: none;">          
+            <ul>            
+              <li>Attach a USB keyboard.
+          </li>            
+          <li>Start any game. No need to play, the title screen is sufficient.
+      </li>            
+      <li>Press the TAB key.
+      </li>            
+      <li>Navigate to "Input (general)" - press ENTER.
+      </li>            
+      <li>Select "User Interface" - press ENTER.
+      </li>            
+      <li>Navigate down to "UI cancel".
+      </li>            
+      <li>Press ENTER - the definitions are cleared.
+      </li>            
+      <li>Press whichever buttons are desired.
+      </li>            
+      <li>Do NOT press ENTER again!
+      </li>            
+      <li>Wait until the key is registered. As soon as it is registered, if you do press             ENTER before navigating away, you can select an optional additional control.
+      </li>            
+      <li>Navigate away and all the way down to go back to the game through the various             settings screens.
+      </li>            
+      <li>
+      <span style="text-decoration: underline;">N.B.
+      </span> : When a game is internally             using a "super resolution" (making it possible to run at exact refresh rates, yet Mame             can still output pixel perfect resolutions), if you TAB into the settings, 
+      <span style=             "text-decoration: underline;">unreadable small lines
+      </span> will be shown on a vertical             monitor. You need to temporarily change the game's resolution before entering the menu.             While in the game, press "." (dot) or "," (comma) to cycle through available             resolutions, until the menu becomes readable. Then you can TAB in.
+      </li>          
+    </ul>        
+    </li>      
+    </ul>    
+    </li>  
+    </ul><strong>
+      <a id="servostik"></a>*** ULTIMARC® SERVOSTIK ***</strong>  
+    <p style="padding-left: 40px;">An Ultimarc® ServoStik can be triggered to switch between 4- and   8-way joystick restriction. Check 'System Settings Menu &gt; System Settings &gt; Enable   ServoStik'. An additional menu item 'Toggle ServoStik' will be available from the 'Options' menu,   to manually switch the ServoStik. You can as well define Player2-Start button to toggle the   ServoStik position: 'System Settings Menu &gt; System Settings &gt; P2-Start Button'.
+    </p>  
+    <p style="padding-left: 40px;">
+      <span style="text-decoration: underline;">N.B.
+      </span> : 'Toggle   ServoStik' will override any automatic switching for the very next game started.
+    </p>  
+    <p style="padding-left: 40px;">To automatically switch the ServoStik at game start, select   Options &gt; Set Games 4-8-Way to define the setting for each game. You can as well manually add   an appropriate joystick parameter to the game definition entry in '_games.template' inside the   'roms_advmame' directory.
+    </p>  
+    <p style="padding-left: 40px;">
+      <span style="text-decoration: underline;">Example:
+      </span> game {   rom ="1942" title ="1942 (set 1)" params ="-0ONE-0TWO-0TRE-1ALL-0FAV" orientation ="v" joy ="8" }   game { rom ="pacman" title ="Pac-Man (Midway)" params ="-0ONE-0TWO-0TRE-1ALL-0FAV" orientation   ="v" joy ="4" }
+    </p>  
+    <hr>  <strong>
+      <a id="wifi"></a>*** HOW TO CONNECT TO A WI-FI NETWORK ***</strong>  
+    <p style="padding-left: 40px;">
+    </p>  
+    <ul style="list-style-type: none;">    
+      <li>1) System Settings Menu &gt; Online Tools &gt; Wi-Fi Setup
+      </li>    
+      <li>2) Select your network.
+      </li>    
+      <li>3) Assign an internal name for the network, eg. "pinhp".
+      </li>    
+      <li>4) Enter the network key.
+      </li>    
+      <li>5) Done! The system should be connected within a couple of seconds. The network profile is     automatically saved, you don't need to enter credentials again next time. If you cannot connect     because network settings have changed, go to "Remove Wi-Fi Profiles" and start over again.
+      </li>    
+      <li>6) Check your IP: System Settings Menu &gt; Online Tools &gt; Check IP
+      </li>    
+      <li>7) To automatically connect after each reboot, select "Auto Connect"
+      </li>  
+    </ul><strong>
+      <a id="ssh"></a>*** HOW TO SSH INTO THE SYSTEM ***</strong>  
+    <p style="padding-left: 40px;">Username: pinhp Password: root
+    </p>  
+    <p style="padding-left: 40px;">(If you have trouble transferring data with e. g. SCP software,   connect as user: root / password: root)
+    </p>  
+    <p style="padding-left: 40px;">Example Windows 10:
+    </p>  
+    <ul style="list-style-type: none;">    
+      <li>1) From the Windows menu, type "cmd" to open the command shell.
+      </li>    
+      <li>2) Type "ssh pinhp@192.168.1.243" (with the IP number found in step 6 above).
+      </li>    
+      <li>3) Password is "root".
+      </li>    
+      <li>4) If you see the command prompt [pinhp@pinhp ~]$ you are connected!
+      </li>    
+      <li>5) Do whatever you want in the Linux system, e.g. run Midnight Commander: Type "mc".
+      </li>  
+    </ul>  
+    <p style="padding-left: 40px;">The DOS (FAT32) partition containing games and system settings, in   use only if no USB stick is present, is mounted at /mnt/data.
+    </p><strong>
+      <a id=   "advanced_instructions"></a>*** ADVANCED INSTRUCTIONS ***</strong>  
+    <p style="padding-left: 40px;">The screen is not centred? How to 
+      <a href=   "http://pi2jamma.info/pinhp-edit-modelines">Adjust modelines</a> in advmame.rc.
+    </p><strong>
+      <a id=   "user_manual"></a>*** USER MANUAL ***</strong>  
+    <p style="padding-left: 40px;">Detailed description of all 
+      <a href="user_manual.html">pinHP   menu</a> items
+    </p>
+  </body>
 </html>
