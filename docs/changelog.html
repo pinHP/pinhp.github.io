@@ -1,296 +1,508 @@
-<!DOCTYPE html>
-<html>     
-  <head>            
-    <meta name="generator" content="HTML Tidy for HTML5 for Windows version 5.6.0">            
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">            
-    <title>pinHP Image Setup Instructions          
-    </title>    
-    <style>
-    li {padding: 1em 0.1em;}     
-    </style>    
-  </head>     
-  <body>  <h4># pinHP Arcade image</h4>            
-    <h1># Changelog</h1>
-    <p>             
-      <a href="http://pi2jamma.info/download#pinhp">                 
-        <img class="alignnone wp-image-762" src=   "../res/Arcade_Classics.png" alt="" width="100" height="53"></a>         
-    </p>            
-    <p><strong>&gt;                   
-        <a href="setup_instructionsl.html">Setup Instructions</a></strong>      
-      <ul>        
-        <li>18MAY22 
-        <br>+ Minor, minor, minor bug fix. Well ... not even a bug, really. Honestly, I simply wanted to release a 4th birthday version :-)          
-        </li>        
-        <li>07MAY22 
-        <br>+ Added "Delete Game" option to "P2-Start Button" behaviour 
-        <br>+ Added "Show Deleted Games" to Game Menu Settings          
-        </li>        
-        <li>22APR22 
-        <br>+ Support for Quadro cabinets with rotatable monitors. Requires hardware modifications. See this thread (German language forum): https://www.arcadezentrum.com/forum/board/index.php?thread/28556-pi-am-jumbo-quadro 
-        <br>+ MAME errors (e. g. messages about missing files), flashing on the screen briefly, are now logged to "rpi2jamma/_MAME_ERROR" on the USB stick for easier debugging.          
-        </li>        
-        <li>26MAR22 
-        <br>+ Added group and filter options: Horizontal/Vertical games.          
-        </li>        
-        <li>11MAR22 
-        <br>- Bugfix: System would crash if orientation was changed, after very first boot with a fresh SD card setup only.          
-        </li>        
-        <li>27JAN22 
-        <br>+ Added option to run AdvanceMENU and AdvanceMESS. If you want to use it instead of the classic pinHP interface, you should know why and how to configure it.          
-        </li>        
-        <li>26DEC21 
-        <br>- Bugfix: Manually setting Coin-Up to "5" inside MAME would delete and reset all MAME settings. 
-        <br>- Bugfix: Changing autostart settings would cause game menu to display oversized logos, under certain circumstances, until next reboot.          
-        </li>        
-        <li>06DEC21 
-        <br>+ Added option to directly boot into last game that was played: Options > System Settings > Autostart Last Game 
-        <br>+ Alarm Mail: Added option to send a start mail not only with each boot, but in regular intervals (e. g. all 7 days).          
-        </li>        
-        <li>26OCT21 
-        <br>+ Some game filter fine tuning.          
-        </li>        
-        <li>20OCT21 
-        <br>+ Lots of options to filter and group games by genre, manufacturer, system and more. Options &gt; Filter Games and Options &gt; Group Games for actual filtering. Options &gt; Filter Settings to select even more filter values: Select your favourites out of a list of 390 manufacturers, 29 genres and 10 game systems. 
-        <br>+ Game menu overhauled. It has grown and grown over the years and got a more logic structure now.          
-        </li>        
-        <li>04OCT21 
-        <br>+ New online update: System Settings Menu &gt; Online Tools &gt; Check for Update &gt; Game settings. Over time, some files like the games definition file or MAME configuration file were updated (e. g. to add new game resolutions, mouse/spinner support, ...). Whenever you restored your settings from a backup after a system update, all those new features were gone. Now you can always check for a "Game settings" update, to include the latest recommended settings.          
-        <em>&nbsp;&nbsp;&nbsp;IMPORTANT         
-        </em>: Before any change, the update system will ask for confirmation. There is no risk of losing customized settings. 
-        <br>+ Faster than ever menu generation. The message "Generating game menu" has been disabled.          
-        </li>        
-        <li>27SEP21 
-        <br>+ Support for MAME save states. "Player1-Start &amp; Joystick left" saves the current game state to the USB stick, "Player1-Start &amp; Joystick right" loads it. - Minor bug fixes          
-        </li>        
-        <li>24SEP21 
-        <br>+ System boot: No more Linux login message flashing before the boot screen. 
-        <br>+ Clean autostart game boot: Boot right into a game, without any sign of emulation (no pinHP boot screen). 
-        <br>+ Added screensaver: Run a random game from favourites list. 
-        <br>+ Added option to backup favourites settings (System Settings Menu &gt; Game Settings &gt; Backup Fav. Menu). This makes it possible to update the game list template and restore favourites from the backup (System Settings Menu &gt; Game Settings &gt; Restore Fav. Menu). An updated template file, fixing some game names and including joystick 4-8-way information, is available as separate          
-        <a href="https://drive.google.com/file/d/1KRgN0hGJq4nB2xvs8JpryLIbPOSkdREh/view?usp=sharing">download</a> (included in the full image). 
-        <br>+ Updated, optimized and almost complete sets of game preview logos, marquees and videos are available as separate downloads (logos and marquees are included in the full image). 
-        <br>+ Theme settings are now bound to the screen orientation.          
-        </li>        
-        <li>01SEP21 
-        <br>+ Customize pinHP menu text size, color and alignment: System Settings Menu &gt; Screen Settings 
-        <br>+ Select to display either logos or marquees in game selection menu (logo files are placed in "rpi2jamma/logos", marquees in "rpi2jamma/marquees"): System Settings Menu &gt; Game Menu 
-        <br>+ Additional video screensaver: Play favourite videos only. 
-        <br>+ Monitor Test Card: Flip through eight different test images.          
-        </li>        
-        <li>21JUL21 
-        <br>+ For ServoStik users: Joystick parameter can now be set from the menu: Options &gt; Set Games 4-8-Way 
-        <br>+ Select individual game menu text color: System Settings Menu &gt; Screen Settings &gt; Text Color          
-        </li>        
-        <li>08JUL21 
-        <br>+ Added support for Ultimarc&reg; ServoStik (switchable 4-8-way Arcade joystick)          
-        </li>        
-        <li>26JUN21 
-        <br>+ Run an external file, placed in the 'rpi2jamma' base directory, from the menu (System Settings Menu &gt; System Settings &gt; Run External File).<br><strong>Attn. developers</strong>: Since a child process does not have access to its parent's variables, the current pinHP variables are dumped into /tmp/pinhp_variables right before running the external file, making it possible to grep the values. The other way round, if you need to change pinHP variables, you can declare them in /tmp/external_vars. The main script sources this file right after executing the custom script/program.          
-        </li>        
-        <li>12JUN21 
-        <br>+ Maintenance update: Automatically disable custom folders option in System Settings Menu if no ROM subfolders are found, bringing back traditional 1/2/3 line menu selection options.          
-        </li>        
-        <li>07JUN21 
-        <br>+ Maintenance update, enabling to read custom parameters from _games.template. 
-        <br>+ Added a fully working example script to /root/scripts/custom, demonstrating to read a custom parameter and switch relays via GPIO pins accordingly.          
-        </li>        
-        <li>02JUN21 
-        <br>+ Support for optional custom scripts, to be run before/after a MAME game starts, or during system shutdown. See the example scripts inside /root/scripts/custom. 
-        <br>+ BIOS files (e.g. neogeo.zip) for most games are now included und located in a dedicated bios_advmame folder 
-        <br>+ Fav. Games are now also available when custom folders are activated. 
-        <br>+ Fav. Games handling improved.          
-        </li>        
-        <li>19MAY21 
-        <br>+ Fine tuning and bug fixes of the new 15MAY21 subfolders feature. Switch it on or off: System Settings Menu &gt; Game Menu Settings &gt; Custom Folders).          
-        </li>        
-        <li>15MAY21 
-        <br>+ Subfolders inside the ROM directory are now accepted and will show up in the menu. Individual display names can be set with the ".title" file inside each directory. Write the name into the file and nothing else. Names preceded by a "." (dot) will hide the directory completely, making it inaccessible from the menu. Names preceded by a "#" (hash sign) will show a blank line in the menu, but leave it accessible.          
-        </li>        
-        <li>04MAY21 
-        <br>+ Get new game resolutions by online update (System Settings Menu &gt; Online Tools &gt; Check for Update. 
-        <br>+ System automatically creates complete folder structure on empty USB stick if required. No more need to copy anything from the zipped distribution.          
-        </li>        
-        <li>22APR21 
-        <br>+ Change time zone (System Settings Menu &gt; System Settings &gt; Set Time Zone).          
-        </li>        
-        <li>18APR21 
-        <br>+ Installed alternate update server with automatic fallback. 
-        <br>+ Wi-Fi credentials are now included in backups. - A bug, not remembering the current number of multiple MAME configurations after restoring from a very old backup, was fixed.          
-        </li>        
-        <li>16APR21 
-        <br>- Bugfix: config.ini file could become corrupt if it was manually edited with a DOS/Windows editor, caused by different format of line endings than files created on Linux (CR/LF vs. LF).          
-        </li>        
-        <li>12APR21 
-        <br>+ Added option to show button layout before game start (System Settings Menu &gt; Mame Settings &gt; Display Button Layout. 
-        <br>- Bugfix: Menu screen was shifted to the right by 8 pixels (Jamma only), caused by the latest Linux system update. - Minor bug fixes.          
-        </li>        
-        <li>        
-        <a id="release_25MAR21"></a>25MAR21 
-        <br>+ Fresh Linux install from scratch. The previous system was still based on an old image from the very beginning of Pi2Jamma, with lots of leftover clutter. 
-        <br>+ Rewrite of the game menu generation routine. 90 % speed up. Game menu list containing 6.000 games typically generates within a second now. 
-        <br>+ Improved favourites editing: Add a game to the Fav. Games menu, cursor stays in place at the next game in the list. 
-        <br>+ Obsolete "restore" folder on the USB stick. It caused confusion. The "Restore Settings" function now restores directly from the "backup" folder. 
-        <br>+ Selectable keyboard layout (de/us/fr). 
-        <br>+ Added support for NTFS formatted USB sticks. 
-        <br>+ Automatic Wi-Fi connect at boot. 
-        <br>+ Automatic email alarm: Did you ever leave your game room for "just a minute" and forgot to come back before the next weekend? Receive an email that the system is still up and running after a specified amount of time. To be configured inside rpi2jamma/.mail on the USB stick.          
-        </li>        
-        <li>27JAN21 
-        <br>- Bugfix: When "Fav." button (Player2-Start) is defined to change screen orientation (System Settings Menu &gt; System Settings &gt; P2-Start), the pinHP menu now stays at the same line from where orientation change was activated          
-        </li>        
-        <li>12JAN21 
-        <br>- Bugfix: System would crash when changing game menu lines (System Settings Menu &gt; Game Menu Settings)          
-        </li>        
-        <li>22DEC20 
-        <br>+ Customizable menu text (System Settings Menu &gt; Language Settings) 
-        <br>+ More text customization possible with new language.ini file (inside rpi2jamma directory on USB stick or DATA partition) 
-        <br>+ Customizable idle screensaver time (System Settings Menu &gt; System Settings) and MAME idle exit time (System Settings Menu &gt; Mame Settings)          
-        </li>        
-        <li>12DEC20 
-        <br>+ Maintenance update          
-        </li>        
-        <li><strong>Included in 12DEC20 full image only, not via online update:</strong>
-        <br>+ Refined Advance Mame modelines (game resolution definitions) 
-        <br>+ Changed default game controls (Insert coin: Player1-Start &amp; Joystick up, Exit game:Player1-Start &amp; Player1-Button1)          
-        </li>        
-        <li>08NOV20 
-        <br>+ Select from up to three different saved MAME configurations          
-        </li>        
-        <li>01SEP20 
-        <br>- Bugfix: Gamepad controls did not work with backup/restore dialog          
-        </li>        
-        <li>29AUG20 
-        <br>- Bugfix: SSH login for user "pinhp" was denied          
-        </li>        
-        <li>26AUG20 
-        <br>+ Improved gamepad support: No more keyboard required except for entering a Wi-Fi key for the first time. Dialog boxes (OK / Cancel, item selection) work with the gamepad now. 
-        <br>+ On popular demand: Although the use of a USB stick is still recommended, the data partition on the SD card can now be expanded to its maximum size from the menu. 
-        <br>+ Just a gimmick: Select the date to be set when the system boots. There is no hardware clock in a Raspberry Pi, so the system date will always be wrong unless there is an Internet connection. Select between image date, last shutdown date or a custom date.          
-        </li>        
-        <li>10AUG20 
-        <br>+ Support for Xbox one wireless dongle 
-        <br>+ Additional screensavers: Random game / random videos 
-        <br>+ At long last! A pinHP boot logo :-)          
-        </li>        
-        <li>17JUL20 
-        <br>+ Remember last Wi-Fi profile / Quick connect          
-        </li>        
-        <li>15JUL20 
-        <br>+ USB gamepad handling 
-        <br>+ Improved Pi2SCART auto detection          
-        </li>        
-        <li>05JUL20 
-        <br>+ Additional color themes (Rainbow / Vivid) 
-        <br>+ Mame idle exit time now independent from screensaver 
-        <br>+ Option to copy games from internal SD to USB          
-        </li>        
-        <li>29JUN20 - Minor bugfix / hardware mode selection          
-        </li>        
-        <li>27JUN20 
-        <br>- Bugfix: Screensaver types were not saved reliably 
-        <br>- Bugfix: Online update system 
-        <br>+ Updated screensaver selection menu 
-        <br>+ Check &amp; set hardware mode (Jamma/SCART) from the menu 
-        <br>+ "Snappier" menu navigation          
-        </li>        
-        <li>20JUN20 
-        <br>+ New "Online Tools" menu 
-        <br>+ Online update patches          
-        </li>        
-        <li>14JUN20 
-        <br>+ Select from 7 different screensavers 
-        <br>+ Change general game volume from system settings menu (Alsa mixer interface)          
-        </li>        
-        <li>05JUN20 
-        <br>+ Option to activate screensaver with P2-Start button 
-        <br>+ Select P2-Start button behaviour from system settings menu 
-        <br>- Bugfix: Mame idle exit time is now synchronized with screensaver time          
-        </li>        
-        <li>10MAR20 
-        <br>+ Added "Silver" menu style          
-        </li>        
-        <li>11FEB20 
-        <br>- Bugfix: A new line was added to config.ini on every system start 
-        <br>- Bugfix: If MAME brighness/gamma settings were changed manually inside advmame.rc, the entry was listed twice in the system settings menu. 
-        <br>- Bugfix: Preview video volume was not remembered after exit into shell          
-        </li>        
-        <li>27JAN20 
-        <br>+ Increased DATA partition size to 12 GB, 16 GB SD card required 
-        <br>+ Added config.ini option to quickly switch screen orientation via "Add to Fav." (Player2-Start) button 
-        <br>+ Added more default directory path entries, like "image" (for CHD files) or "memcard" to advmame.rc configuration file 
-        <br>- Bugfix: Pi2SCART mode was not initialized properly, causing possible system slowdown by constantly sending (unvisible) keystrokes in the background          
-        </li>        
-        <li>15NOV19 
-        <br>+ Raspberry Pi 4 support 
-        <br>+ Adapted design to display game marquees 
-        <br>+ Marquee files are included in the package 
-        <br>+ Automatic backup of highscores and MAME settings to USB stick - Minor bug fixes          
-        </li>        
-        <li>16AUG19 
-        <br>+ Added Pi2SCART support 
-        <br>+ Improved favourites selection, no more jumping out of menu 
-        <br>+ Menu selector stays where it was when changing settings 
-        <br>+ Menu navigation speed up 
-        <br>+ Added "Are you sure?" dialogs for certain operations 
-        <br>+ Installed RAM disk for /tmp folder, extending SD card life 
-        <br>+ SSH login enabled. Username pinhp / password root          
-        </li>        
-        <li>12JUL19 
-        <br>+ Added and adjusted lots of resolution settings 99 percent of the games should automatically run with close to perfect&nbsp;resolution and refresh rate settings now 
-        <br>+ Added USB mouse/trackball/spinner support 
-        <br>+ Added MAME free play option, works for games which support it via DIP switches 
-        <br>+ Added uptime display in system menu 
-        <br>+ Added system menu item: Exit into Linux shell 
-        <br>+ Added a 2 seconds delay for preview videos (editable in config.ini) 
-        <br>+ Reboot/Shutdown/Backup/Restore menu options can all be hidden individually 
-        <br>+ *Hide Seettings Menu* does not require a reboot anymore 
-        <br>- Bugfix: Quickedit mode settings were not always remembered 
-        <br>- Bugfix: Preview videos settings were not always remembered          
-        </li>        
-        <li>21MAY19 
-        <br>+ Added a monitor test card for hardware screen calibration 
-        <br>- Bugfix: Arcade start with USB keyboard connected is enabled again          
-        </li>        
-        <li>17APR19 
-        <br>+ Runs with just the SD card, USB stick is optional 
-        <br>+ Includes 100 popular horizontal and vertical games          
-        </li>        
-        <li>07APR19 
-        <br>+ Added preview video support          
-        </li>        
-        <li>24FEB19 
-        <br>+ Dedicated system settings menu with lots of new items to select 
-        <br>+ Additional menu theme making better use of limited available screen space          
-        </li>        
-        <li>27JAN19 
-        <br>+ Auto activate screensaver 
-        <br>+ Qick Edit Mode: Select games for favourites lists, changes are applied when leaving edit mode 
-        <br>+ Hide status messages (e. g. game rom name) when starting games 
-        <br>- Bugfix: In vertical mode, when scrolling game list per page, one line was skipped          
-        </li>        
-        <li>24NOV18 
-        <br>+ Advance Mame 3.9 update 
-        <br>+ Lots of new game resolution settings - most vertical games should use almost perfect settings now 
-        <br>+ Fixed annoyances: Press any key to exit screen saver or dialog boxes - Minor bug fixes          
-        </li>        
-        <li>18SEP18 
-        <br>+ Improved menu navigation speed 
-        <br>- Bugfix: An "sRGB profile error" message was flashing in the terminal window under certain circumstances          
-        </li>        
-        <li>03SEP18 
-        <br>+ Enable/Disable MAME cheat option 
-        <br>+ Enable/Disable artwork backdrop and overlay options 
-        <br>+ Added screen mode "upside down" - Minor bug fixes          
-        </li>        
-        <li>27JUL18 
-        <br>+ Edit favourites lists from the menu          
-        </li>        
-        <li>23MAY18 
-        <br>+ "Hidden feature": Access system configuration menu by clicking into empty lines three times          
-        </li>        
-        <li>18MAY18 
-        <br>+ First public release version          
-        </li>      
-      </ul>  
-  </body>
-</html>
+<meta charset="UTF-8">
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title"># Changelog</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;
+                </span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <ul class="list-group">
+                <li class="list-group-item">18MAY22
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Minor, minor, minor bug fix. Well … not even a bug, really. Honestly, I simply wanted to release a 4th birthday version&nbsp;
+                        <i class="fa fa-smile-o"></i>
+                    </p>
+                </li>
+                <li class="list-group-item">07MAY22
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added “Delete Game” option to "P2-Start Button" behaviour
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added “Show Deleted Games” to Game Menu Settings.
+                    </p>
+                </li>
+                <li class="list-group-item">22APR22
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Support for Quadro cabinets with rotatable monitors. Requires hardware modifications. See this thread (German language forum): <a href="https://www.arcadezentrum.com/forum/board/index.php?thread/28556-pi-am-jumbo-quadro">https://www.arcadezentrum.com/forum/board/index.php?thread/28556-pi-am-jumbo-quadro</a>
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;MAME errors (e. g. messages about missing files), flashing on the screen briefly, are now logged to “rpi2jamma/_MAME_ERROR” on the USB stick for easier debugging.
+                    </p>
+                </li>
+                <li class="list-group-item">26MAR22
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added group and filter options: Horizontal/Vertical games.
+                    </p>
+                </li>
+                <li class="list-group-item">27JAN22
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added option to run AdvanceMENU and AdvanceMESS (Options > System Settings > AdvanceMENU frontend). If you want to use it instead of the classic pinHP interface, you should know why and how to configure it.
+                    </p>
+                </li>
+                <li class="list-group-item">26DEC21
+                    <p>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Bugfix: Manually setting Coin-Up to „5“ inside MAME would delete and reset all MAME settings.
+                        <br>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Bugfix: Changing autostart settings would cause game menu to display oversized logos, under certain circumstances, until next reboot.
+                    </p>
+                </li>
+                <li class="list-group-item">06DEC21
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added option to directly boot into last game that was played: Options > System Settings > Autostart Last Game
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Alarm Mail: Added option to send a start mail not only with each boot, but in regular intervals (e. g. all 7 days).
+                    </p>
+                </li>
+                <li class="list-group-item">26OCT21
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Some game filter fine tuning
+                    </p>
+                </li>
+                <li class="list-group-item">20OCT21
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Lots of options to filter and group games by genre, manufacturer, system and more. Options > Filter Games and Options > Group Games for actual filtering. Options > Filter Settings to select even more filter values: Select your favourites out of a list of 390 manufacturers, 29 genres and 10 game systems.
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Game menu overhauled. It has grown and grown over the years and got a more logic structure now.
+                    </p>
+                </li>
+                <li class="list-group-item">04OCT21
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;New online update: System Settings Menu > Online Tools > Check for Update > Game settings. Over time, some files like the games definition file or MAME configuration file were updated (e. g. to add new game resolutions, mouse/spinner support, …). Whenever you restored your settings from a backup after a system update, all those new features were gone. Now you can always check for a “Game settings” update, to include the latest recommended settings.    IMPORTANT: Before any change, the update system will ask for confirmation. There is no risk of losing customized settings.
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Faster than ever menu generation. The message “Generating game menu” has been disabled.
+                    </p>
+                </li>
+                <li class="list-group-item">27SEP21
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Support for MAME save states. “Player1-Start & Joystick left” saves the current game state to the USB stick, “Player1-Start & Joystick right” loads it.
+                        <br>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Minor bug fixes
+                    </p>
+                </li>
+                <li class="list-group-item">24SEP21
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;System boot: No more Linux login message flashing before the boot screen.
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Clean autostart game boot: Boot right into a game, without any sign of emulation (no pinHP boot screen).
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added screensaver: Run a random game from favourites list.
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added option to backup favourites settings (System Settings Menu > Game Settings > Backup Fav. Menu). This makes it possible to update the game list template and restore favourites from the backup (System Settings Menu > Game Settings > Restore Fav. Menu). An updated template file, fixing some game names and including joystick 4-8-way information, is available as separate download (included in the full image).
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Updated, optimized and almost complete sets of game preview logos, marquees and videos are available as separate downloads (logos and marquees are included in the full image).
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Theme settings are now bound to the screen orientation.
+                    </p>
+                </li>
+                <li class="list-group-item">01SEP21
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Customize pinHP menu text size, color and alignment: System Settings Menu > Screen Settings
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Select to display either logos or marquees in game selection menu (logo files are placed in “rpi2jamma/logos”, marquees in „rpi2jamma/marquees“): System Settings Menu > Game Menu
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Additional video screensaver: Play favourite videos only.
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Monitor Test Card: Flip through eight different test images.
+                    </p>
+                </li>
+                <li class="list-group-item">21JUL21
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;For ServoStik users: Joystick parameter can now be set from the menu: Options > Set Games 4-8-Way
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Select individual game menu text color: System Settings Menu > Screen Settings > Text Color
+                    </p>
+                </li>
+                <li class="list-group-item">08JUL21
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added support for Ultimarc® ServoStik (switchable 4-8-way Arcade joystick)
+                    </p>
+                </li>
+                <li class="list-group-item">26JUN21
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Run an external file, placed in the ‘rpi2jamma’ base directory, from the menu (System Settings Menu > System Settings > Run External File). Attn. developers: Since a child process does not have access to its parent’s variables, the current pinHP variables are dumped into /tmp/pinhp_variables right before running the external file, making it possible to grep the values. The other way round, if you need to change pinHP variables, you can declare them in /tmp/external_vars. The main script sources this file right after executing the custom script/program.
+                    </p>
+                </li>
+                <li class="list-group-item">12JUN21
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Maintenance update: Automatically disable custom folders option in System Settings Menu if no ROM subfolders are found, bringing back traditional 1/2/3 line menu selection options.
+                    </p>
+                </li>
+                <li class="list-group-item">07JUN21
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Maintenance update, enabling to read custom parameters from _games.template.
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added a fully working example script to /root/scripts/custom, demonstrating to read a custom parameter and switch relays via GPIO pins accordingly.
+                    </p>
+                </li>
+                <li class="list-group-item">02JUN21
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Support for optional custom scripts, to be run before/after a MAME game starts, or during system shutdown. See the example scripts inside /root/scripts/custom.
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;BIOS files (e.g. neogeo.zip) for most games are now included und located in a dedicated bios_advmame folder
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Fav. Games are now also available when custom folders are activated.
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Fav. Games handling improved.
+                    </p>
+                </li>
+                <li class="list-group-item">19MAY21
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Fine tuning and bug fixes of the new 15MAY21 subfolders feature. Switch it on or off: System Settings Menu > Game Menu Settings > Custom Folders).
+                    </p>
+                </li>
+                <li class="list-group-item">15MAY21
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Subfolders inside the ROM directory are now accepted and will show up in the menu. Individual display names can be set with the “.title” file inside each directory. Write the name into the file and nothing else. Names preceded by a “.” (dot) will hide the directory completely, making it inaccessible from the menu. Names preceded by a “#” (hash sign) will show a blank line in the menu, but leave it accessible.
+                    </p>
+                </li>
+                <li class="list-group-item">04MAY21
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Get new game resolutions by online update (System Settings Menu > Online Tools > Check for Update.
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;System automatically creates complete folder structure on empty USB stick if required. No more need to copy anything from the zipped distribution.
+                    </p>
+                </li>
+                <li class="list-group-item">22APR21
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Change time zone (System Settings Menu > System Settings > Set Time Zone).
+                    </p>
+                </li>
+                <li class="list-group-item">18APR21
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Installed alternate update server with automatic fallback.
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Wi-Fi credentials are now included in backups.
+                        <br>
+                        <i class="fa fa-minus-circle"></i>&nbsp;A bug, not remembering the current number of multiple MAME configurations after restoring from a very old backup, was fixed.
+                    </p>
+                </li>
+                <li class="list-group-item">16APR21
+                    <p>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Bugfix: config.ini file could become corrupt if it was manually edited with a DOS/Windows editor, caused by different format of line endings than files created on Linux (CR/LF vs. LF).
+                    </p>
+                </li>
+                <li class="list-group-item">12APR21
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added option to show button layout before game start (System Settings Menu > Mame Settings > Display Button Layout.
+                        <br>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Bugfix: Menu screen was shifted to the right by 8 pixels (Jamma only), caused by the latest Linux system update.
+                        <br>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Minor bug fixes.
+                    </p>
+                </li>
+                <li class="list-group-item">25MAR21
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Fresh Linux install from scratch. The previous system was still based on an old image from the very beginning of Pi2Jamma, with lots of leftover clutter.
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Rewrite of the game menu generation routine. 90 % speed up. Game menu list containing 6.000 games typically generates within a second now.
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Improved favourites editing: Add a game to the Fav. Games menu, cursor stays in place at the next game in the list.
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Obsolete “restore” folder on the USB stick. It caused confusion. The “Restore Settings” function now restores directly from the “backup” folder.
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Selectable keyboard layout (de/us/fr).
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added support for NTFS formatted USB sticks.
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Automatic Wi-Fi connect at boot.
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Automatic email alarm: Did you ever leave your game room for „just a minute“ and forgot to come back before the next weekend? Receive an email that the system is still up and running after a specified amount of time. To be configured inside rpi2jamma/.mail on the USB stick.
+                    </p>
+                </li>
+                <li class="list-group-item">27JAN21
+                    <p>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Bugfix: When “Fav.” button (Player2-Start) is defined to change screen orientation (System Settings Menu > System Settings > P2-Start), the pinHP menu now stays at the same line from where orientation change was activated
+                    </p>
+                </li>
+                <li class="list-group-item">12JAN21
+                    <p>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Bugfix: System would crash when changing game menu lines (System Settings Menu > Game Menu Settings)
+                    </p>
+                </li>
+                <li class="list-group-item">22DEC20
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Customizable menu text (System Settings Menu > Language Settings)
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;More text customization possible with new language.ini file (inside rpi2jamma directory on USB stick or DATA partition)
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Customizable idle screensaver time (System Settings Menu > System Settings) and MAME idle exit time (System Settings Menu > Mame Settings)
+                    </p>
+                </li>
+                <li class="list-group-item">12DEC20
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Maintenance update
+                    </p>
+                </li>
+                <li class="list-group-item">Included in 12DEC20 full image only, not via online update:
+                    <br>
+                    <i class="fa fa-plus-circle"></i>&nbsp;Refined Advance Mame modelines (game resolution definitions)
+                    <br>
+                    <i class="fa fa-plus-circle"></i>&nbsp;Changed default game controls (Insert coin: Player1-Start & Joystick up, Exit game:Player1-Start & Player1-Button1)
+                    </p>
+                </li>
+                <li class="list-group-item">08NOV20
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Select from up to three different saved MAME configurations
+                    </p>
+                </li>
+                <li class="list-group-item">01SEP20
+                    <p>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Bugfix: Gamepad controls did not work with backup/restore dialog
+                    </p>
+                </li>
+                <li class="list-group-item">29AUG20
+                    <p>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Bugfix: SSH login for user “pinhp” was denied
+                    </p>
+                </li>
+                <li class="list-group-item">26AUG20
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Improved gamepad support: No more keyboard required except for entering a Wi-Fi key for the first time. Dialog boxes (OK / Cancel, item selection) work with the gamepad now.
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;On popular demand: Although the use of a USB stick is still recommended, the data partition on the SD card can now be expanded to its maximum size from the menu.
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Just a gimmick: Select the date to be set when the system boots. There is no hardware clock in a Raspberry Pi, so the system date will always be wrong unless there is an Internet connection. Select between image date, last shutdown date or a custom date.
+                    </p>
+                </li>
+                <li class="list-group-item">10AUG20
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Support for Xbox one wireless dongle
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Additional screensavers: Random game / random videos
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;At long last! A pinHP boot logo 🙂
+                    </p>
+                </li>
+                <li class="list-group-item">17JUL20
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Remember last Wi-Fi profile / Quick connect
+                    </p>
+                </li>
+                <li class="list-group-item">15JUL20
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;USB gamepad handling
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Improved Pi2SCART auto detection
+                    </p>
+                </li>
+                <li class="list-group-item">05JUL20
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Additional color themes (Rainbow / Vivid)
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Mame idle exit time now independent from screensaver
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Option to copy games from internal SD to USB
+                    </p>
+                </li>
+                <li class="list-group-item">29JUN20
+                    <p>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Minor bugfix / hardware mode selection
+                    </p>
+                </li>
+                <li class="list-group-item">27JUN20
+                    <p>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Bugfix: Screensaver types were not saved reliably
+                        <br>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Bugfix: Online update system
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Updated screensaver selection menu
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Check & set hardware mode (Jamma/SCART) from the menu
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;“Snappier” menu navigation
+                    </p>
+                </li>
+                <li class="list-group-item">20JUN20
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;New “Online Tools” menu
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Online update patches
+                    </p>
+                </li>
+                <li class="list-group-item">14JUN20
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Select from 7 different screensavers
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Change general game volume from system settings menu (Alsa mixer interface)
+                    </p>
+                </li>
+                <li class="list-group-item">05JUN20
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Option to activate screensaver with P2-Start button
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Select P2-Start button behaviour from system settings menu
+                        <br>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Bugfix: Mame idle exit time is now synchronized with screensaver time
+                    </p>
+                </li>
+                <li class="list-group-item">10MAR20
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added “Silver” menu style
+                    </p>
+                </li>
+                <li class="list-group-item">11FEB20
+                    <p>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Bugfix: A new line was added to config.ini on every system start
+                        <br>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Bugfix: If MAME brighness/gamma settings were changed manually inside advmame.rc, the entry was listed twice in the system settings menu.
+                        <br>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Bugfix: Preview video volume was not remembered after exit into shell
+                    </p>
+                </li>
+                <li class="list-group-item">27JAN20
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Increased DATA partition size to 12 GB, 16 GB SD card required
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added config.ini option to quickly switch screen orientation via “Add to Fav.” (Player2-Start) button
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added more default directory path entries, like “image” (for CHD files) or “memcard” to advmame.rc configuration file
+                        <br>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Bugfix: Pi2SCART mode was not initialized properly, causing possible system slowdown by constantly sending (unvisible) keystrokes in the background
+                    </p>
+                </li>
+                <li class="list-group-item">15NOV19
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Raspberry Pi 4 support
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Adapted design to display game marquees
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Marquee files are included in the package
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Automatic backup of highscores and MAME settings to USB stick
+                        <br>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Minor bug fixes
+                    </p>
+                </li>
+                <li class="list-group-item">16AUG19
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added Pi2SCART support
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Improved favourites selection, no more jumping out of menu
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Menu selector stays where it was when changing settings
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Menu navigation speed up
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added “Are you sure?” dialogs for certain operations
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Installed RAM disk for /tmp folder, extending SD card life
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;SSH login enabled. Username pinhp / password root
+                    </p>
+                </li>
+                <li class="list-group-item">12JUL19
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added and adjusted lots of resolution settings 99 percent of the games should automatically run with close to perfect resolution and refresh rate settings now
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added USB mouse/trackball/spinner support
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added MAME free play option, works for games which support it via DIP switches
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added uptime display in system menu
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added system menu item: Exit into Linux shell
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added a 2 seconds delay for preview videos (editable in config.ini)
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Reboot/Shutdown/Backup/Restore menu options can all be hidden individually
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;*Hide Seettings Menu* does not require a reboot anymore
+                        <br>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Bugfix: Quickedit mode settings were not always remembered
+                        <br>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Bugfix: Preview videos settings were not always remembered
+                    </p>
+                </li>
+                <li class="list-group-item">21MAY19
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added a monitor test card for hardware screen calibration
+                        <br>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Bugfix: Arcade start with USB keyboard connected is enabled again
+                    </p>
+                </li>
+                <li class="list-group-item">17APR19
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Runs with just the SD card, USB stick is optional
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Includes 100 popular horizontal and vertical games
+                    </p>
+                </li>
+                <li class="list-group-item">07APR19
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added preview video support
+                    </p>
+                </li>
+                <li class="list-group-item">24FEB19
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Dedicated system settings menu with lots of new items to select
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Additional menu theme making better use of limited available screen space
+                    </p>
+                </li>
+                <li class="list-group-item">27JAN19
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Auto activate screensaver
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Qick Edit Mode: Select games for favourites lists, changes are applied when leaving edit mode
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Hide status messages (e. g. game rom name) when starting games
+                        <br>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Bugfix: In vertical mode, when scrolling game list per page, one line was skipped
+                    </p>
+                </li>
+                <li class="list-group-item">24NOV18
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Advance Mame 3.9 update
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Lots of new game resolution settings
+                        <br>
+                        <i class="fa fa-minus-circle"></i>&nbsp;most vertical games should use almost perfect settings now
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Fixed annoyances: Press any key to exit screen saver or dialog boxes
+                        <br>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Minor bug fixes
+                    </p>
+                </li>
+                <li class="list-group-item">18SEP18
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Improved menu navigation speed
+                        <br>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Bugfix: An “sRGB profile error” message was flashing in the terminal window under certain circumstances
+                    </p>
+                </li>
+                <li class="list-group-item">03SEP18
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Enable/Disable MAME cheat option
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Enable/Disable artwork backdrop and overlay options
+                        <br>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Added screen mode “upside down”
+                        <br>
+                        <i class="fa fa-minus-circle"></i>&nbsp;Minor bug fixes
+                    </p>
+                </li>
+                <li class="list-group-item">27JUL18
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;Edit favourites lists from the menu
+                    </p>
+                </li>
+                <li class="list-group-item">23MAY18
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;„Hidden feature“: Access system configuration menu by clicking into empty lines three times
+                    </p>
+                </li>
+                <li class="list-group-item">18MAY18
+                    <p>
+                        <i class="fa fa-plus-circle"></i>&nbsp;First public release version
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                <i class="fa fa-window-close"></i>&nbsp;&nbsp;Close
+            </button>
+        </div>
+    </div>
+</div>

@@ -12,7 +12,7 @@
         <script src="../js/popper.js"></script>
         <script src="../js/bootstrap.js"></script>
 
-        <title>pinHP Edit Modelines
+        <title>pinHP About
         </title>
     </head>
     <body>
@@ -79,77 +79,68 @@
                         <a class="nav-link" href="download.html">Download</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link active" href="about.html">About</a>
                     </li>
                 </ul>
             </div>
         </nav>
         <br>
-        <div class="container rounded-sm bg-light py-2 my-2">    <h3>Adjusting MAME games</h3>
-            <br>
-            <p>For horizontal screen shifting on a SCART TV set, you can install ArcadeForge's
-                <a href=   "http://arcadeforge.net/Pi2Jamma-Pi2SCART/CRT-RGB-Pic-Shifter::306.html">CRT RGB Picture   Shifter</a> device.
+        <div class="container">
+            <p class="jumbotron">
+                <i class="fa fa-quote-left fa-2x fa-pull-left fa-border"></i>pinHP image aims to be an as simple as possible replacement for those dreadful multi-game (e. g. 60-in-1) Arcade PCBs in classic Jamma Arcade cabinets (or SCART TV sets) with 15 kHz tube monitors. There is just one emulator (Advance Mame) for some 4,000 Arcade games (6,000 including clones and bootlegs) available with the 0.106 ROM set. No other emulations, no SNES, no Amiga, no choice. Start it up and a kindergarten child will find its way to run a game, without being able to change settings by mistake. Just explain the button combinations to "insert" a coin and to exit, and they're good to go.
             </p>
-            <p>On Pi2SCART monitors, if there is no way to adjust the monitor itself, we can change the   screen position (horizontal/vertical) on an individual base by altering modeline settings.
-            </p>
-            <p>Lets use Donkey Kong as example. Video mode according to Advance Mames game info:
-                <br><strong>256 x 224 (V) 60 Hz</strong>
-            </p>
-            <p>In advmame.rc we look up the value for our game resolution.
-            </p>
-            <p>We find the line
-                <br>
-                <code>256x224x60/display_mode 320x224 (60.02 Hz)
-                </code>
-                <br>which tells Mame, what to do with games running a 256x224 resolution at 60 Hz refresh rate. It tells Mame to use <strong>display_mode 320x224 (60.02 Hz)</strong>.
-            </p>
-            <p>We find the line
-                <br>
-                <code>device_video_modeline 320x224 (60.02 Hz) 6.4 320 321 352 407 224 229 236 262 -hsync -vsync #   15.72 kHz
-                </code>
-                <br>which tells Mame how to set the video mode named <strong>320x224 (60.02 Hz)</strong>.
-            </p>
-            <p>The group of the first four values <strong>320 321 352 407</strong> is for horizontal (long side) screen resolution, the second group <strong>224 229 236 262</strong> for vertical (short side) screen resolution.
-            </p>
-            <p>Within each group, we change the second and third numbers by the same value. To shift the long side of the screen to the left (which is up on a vertical monitor), we increase the numbers.
-            </p>
-            <p>Let's shift the whole screen image 20 pixels to the left on the long side of the monitor - we increase the numbers by 20:
-                <br>
-                <code>device_video_modeline 320x224 (60.02 Hz) 6.4 320 341 372 407 224 229 236 262 -hsync -vsync #   15.72 kHz
-                </code>
-            </p>
-            <p>Now lets additionally shift the image down on the short side of the monitor by subtracting 5   pixels:
-                <br>
-                <code>device_video_modeline 320x224 (60.02 Hz) 6.4 320 341 372 407 224 224 231 262 -hsync -vsync #   15.72 kHz
-                </code>
-            </p>
-            <p>There are limitations: We cannot go below the first value or above the fourth value of each   group. So, in our example, we cannot move the image down the short side anymore. 224 is the limit   here.
-            </p>
-            <p>Some games make use of super resolution settings, where Mame downscales the actual image. This   is a workaround due to Raspberry Pi (up to 3B+) hardware limitations, making it possible to get   almost exact resolutions and refresh rates. Usually we are more flexible in shifting the screen   image as well.
-            </p>
-            <p>We see modelines like
-                <br>
-                <code>device_video_modeline 1920x240 (60.00 Hz) 41.50 1920 2000 2288 2640 240 240 247 262 -hsync -vsync   # 15.72 kHz
-                </code>
-            </p>
-            <p>Since Mame scales the value of 1920 down by factor 6 to 320 pixels screen width, a horizontal   shift by 1 pixel requires the value to be changed by 6.
-            </p>
-            <p>Hint:
-                <br>  When a game is using a super resolution, if we TAB into the settings, unreadable small lines will   be shown on a vertical monitor. We need to temporarily change the games resolution before   entering the menu. While in the game, we press . (dot) or , (comma) to cycle through available   resolutions, until the menu becomes readable. Then we can TAB in.
         </div>
         <div class="container rounded-sm bg-light py-2 my-2">
-            </p>  <h3>Adjusting the menu screen</h3>
-            <br>
-            <p>To adjust screen positon of the pinHP menu, we need to edit the file config.txt on the SD   cards DOS boot partition.
+            <p>pinHP image is an independent software project, designed to work with ArcadeForge's
+                <a href="https://arcadeforge.net/Pi2Jamma-Pi2SCART:::51.html">
+                    <i class="fa fa-external-link"></i>&nbsp;Pi2Jamma</a> and
+                <a href="https://arcadeforge.net/Pi2Jamma-Pi2SCART:::51.html">
+                    <i class="fa fa-external-link"></i>&nbsp;Pi2SCART</a> devices.
             </p>
-            <p>We find the line
-                <br>
-                <code>hdmi_timings=320 1 32 47 17 240 1 2 6 8 0 0 0 60 0 6400000 1 #240p #H-Rate 15.38kHz #V-Rate   60.10Hz
-                </code>
+            <p>pinHP image is a simple, though highly customizable frontend that wraps around the MAME emulator, with game preview snapshots, videos and marquees. It comes with several different themes to fit your preferences and can be updated online. All critical settings ask for confirmation before they get changed via the menu. No data are transferred over the Internet other than the current version running if an online update is requested by the user.
             </p>
-            <p>Here we need to change values #3 and #5 (32 and 17 in our example) for horizontal screen   position, values #8 and #10 (2 and 8) for vertical position.
-                <br>  Be careful: If you ADD to one value, you have to SUBTRACT from the other and vice versa.
-            </p>
+        </div>
+        <div class="container rounded-sm bg-light py-2 my-2">
+            <div class="row">
+                <div class="col">
+                    <ul class="list-group" style="padding-left:1em;">
+                        <li class="list-group_item">                Raspberry Pi 3 / 3 B / 3 B+
+                        </li>
+                        <li class="list-group_item">                Raspberry Pi 4 B (all RAM versions)
+                        </li>
+                        <li class="list-group_item">                Front end: Lemonlauncher
+                        </li>
+                        <li class="list-group_item">                Emulator:
+                            <a href="https://www.advancemame.it">
+                                <i class="fa fa-external-link"></i>&nbsp;Advance Mame</a> 3.9
+                        </li>
+                        <li class="list-group_item">ROM set 0.106 (
+                            <a href="https://github.com/pinHP/arcade/blob/main/games/_games.template">
+                                <i class="fa fa-external-link"></i>&nbsp;Game list</a>)
+                        </li>
+                        <li class="list-group_item">Includes 100 popular
+                            <a href="#pinhp_games" data-toggle="modal">Arcade Games</a>
+                        </li>
+                        <li class="list-group_item">
+                            <a href="https://www.youtube.com/watch?v=eNxDKTbteXI">
+                                <i class="fa fa-external-link"></i>&nbsp;Demo video</a>
+                        </li>
+                        <li class="list-group_item">
+                            <a href="#changelog" data-toggle="modal">Changelog</a>
+                        </li>
+                        <li class="list-group_item">                        Get support in the
+                            <a href="https://www.facebook.com/groups/1649021265123737">
+                                <i class="fa fa-facebook-square"></i>&nbsp;Facebook group</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <img class="float-right" src="../res/pinHP_Screen_Theme_H.png" height="220em" alt="vertical">
+                </div>
+                <div class="col">
+                    <img class="float-right" src="../res/pinHP_Screen_Theme_V.png" height="220em" alt="vertical">
+                </div>
+            </div>
         </div>
         <footer id="pinhpFooter">
             <div class="logo-button footer-copyright p-3 text-center">
@@ -158,5 +149,15 @@
                 <br>Copyright &copy; pinHP 2018 - 2022
             </div>
         </footer>
+        <div id="changelog" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+        </div>
+<script>
+    $('#changelog').load("changelog.html");
+</script>
+        <div id="pinhp_games" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+        </div>
+<script>
+    $('#pinhp_games').load("pinhp_games.html");
+</script>
     </body>
 </html>
