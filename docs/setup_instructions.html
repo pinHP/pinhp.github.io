@@ -1,441 +1,440 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta property="og:url" content="http://pinhp-image.com/index.html">
-        <meta property="og:title" content="pinHP Arcade Image">
-        <meta property="og:description" content="Setup instructions">
-        <meta property="og:image" content="https://pinhp.github.io/res/pinhp_ogimage.png">
-        <meta property="og:locale" content="en_EN">
-        <meta property="og:type" content="website">
-        <link rel="stylesheet" href="../css/bootstrap.css">
-        <link rel="stylesheet" href="../css/animate.css">
-        <link rel="stylesheet" href="../css/style.css">
-
-        <script src="../js/jquery.js"></script>
-        <script src="../js/popper.js"></script>
-        <script src="../js/bootstrap.js"></script>
-
-        <title>pinHP Setup
-        </title>
-    </head>
-    <body>
-        <div class="container text-right">
-            <h2 class="text-secondary"># pinHP Arcade Image</h2>
-        </div>
-        <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">
-            <a class="navbar-brand" href="http://pinhp-image.com" >
-                <img src="../res/Arcade_Classics.png" alt="Arcade Classics"     style="width:4em;"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon">
-                </span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="setup_instructions.html" data-toggle="dropdown">Setup Instructions</a>
-                        <div class="dropdown-menu">
-                            <a href="setup_instructions.html" class="dropdown-item"><i>Setup Instructions</i></a>
-                            <a href="#hardware" class="dropdown-item">Hardware installation</a>
-                            <a href="#software" class="dropdown-item">Software setup</a>
-                            <a href="#pi2jamma" class="dropdown-item">Pi2Jamma / Pi2SCART</a>
-                            <a href="#quickstart" class="dropdown-item">Quick start</a>
-                            <a href="#configuration" class="dropdown-item">Configuration</a>
-                            <a href="#subdirectories" class="dropdown-item">Subdirectories</a>
-                            <a href="#extended_gamemenu" class="dropdown-item">Extended game menu</a>
-                            <a href="#autostart" class="dropdown-item">Autostart a game</a>
-                            <a href="#screensaver" class="dropdown-item">Screensaver</a>
-                            <a href="#orientation" class="dropdown-item">Screen orientation</a>
-                            <a href="#game_selection" class="dropdown-item">Game selection</a>
-                            <a href="#mame_controls" class="dropdown-item">Mame controls</a>
-                            <a href="#mame_info" class="dropdown-item">Mame info</a>
-                            <a href="#mame_menu" class="dropdown-item">Mame settings menu</a>
-                            <a href="#keyboard" class="dropdown-item">Keyboard</a>
-                            <a href="#keyboard_mapping" class="dropdown-item">Keyboard mapping</a>
-                            <a href="#mame_mapping" class="dropdown-item">Change buttons</a>
-                            <a href="#wifi" class="dropdown-item">Wi-Fi</a>
-                            <a href="#ssh" class="dropdown-item">SSH</a>
-                            <a href="#servostik" class="dropdown-item">Ultimarc&reg; ServoStik support</a>
-                            <a href="#advanced_instructions" class="dropdown-item">Advanced Instructions</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="user_manual.html" data-toggle="dropdown">User Manual</a>
-                        <div class="dropdown-menu">
-                            <a href="user_manual.html" class="dropdown-item"><i>User Manual</i></a>
-                            <a href="user_manual.html#arcadegames" class="dropdown-item">Arcade Games</a>
-                            <a href="user_manual.html#optionsmenu" class="dropdown-item">Options Menu</a>
-                            <a href="user_manual.html#game_menu_settings" class="dropdown-item">Game Menu Settings</a>
-                            <a href="user_manual.html#options_menu_settings" class="dropdown-item">Options Menu Settings</a>
-                            <a href="user_manual.html#mame_settings" class="dropdown-item">Mame Settings</a>
-                            <a href="user_manual.html#control_settings" class="dropdown-item">Control Settings</a>
-                            <a href="user_manual.html#filter_settings" class="dropdown-item">Filter Settings</a>
-                            <a href="user_manual.html#screen_settings" class="dropdown-item">Screen Settings</a>
-                            <a href="user_manual.html#system_settings" class="dropdown-item">System Settings</a>
-                            <a href="user_manual.html#language_settings" class="dropdown-item">Language Settings</a>
-                            <a href="user_manual.html#backup_restore" class="dropdown-item">Backup/Restore</a>
-                            <a href="user_manual.html#online_tools" class="dropdown-item">Online Tools</a>
-                            <a href="user_manual.html#exit_into_shell" class="dropdown-item">Exit into Shell</a>
-                            <a href="user_manual.html#hide_settings_menu" class="dropdown-item">* Hide Settings Menu *</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="download.html">Download</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                </ul>
-            </div>
-        </nav>
-        <br>
-        <div class="container px-5">
-            <h3 class="container rounded-sm bg-info text-center text-white">Setup instructions</h3>
-            <br>
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2"><h4>
-                <a class="anchor" id="hardware"></a>Hardware</h4>
-            <p class="pl-4">Make sure your Raspberry Pi does not make unwanted contact with   the Pi2Jamma board. Put some electrical tape or insulating paper between the Pi2Jamma and the USB   ports of the RPi to prevent damage or strange software behaviour.
-            </p>
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2"><h4>
-                <a class="anchor" id=   "software"></a>Initial software setup</h4>
-            <p class="pl-4">Use a disk imaging program like "Win32DiskImager" to write the   image file to a Micro-SD card (at least 16 GB size).
-            </p>
-            <p class="pl-4">A USB stick containing ROMs and configuration settings is   recommended, but optional. Boot with an empty, formatted USB stick. The system will detect it and   create the folder structure automatically.
-            </p>
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2"><h4>
-                <a class="anchor" id=   "pi2jamma"></a>Pi2Jamma / Pi2SCART setup</h4>
-            <p class="pl-4">All files required are stored inside the "rpi2jamma" directory on   either the USB stick or the SD card's "RPI_DATA" partition. The most important subdirectory is   "roms_advmame" - place your game ROMs there and you are good to go.
-            </p>
-            <p class="pl-4">You can as well sort ROM files into subfolders, which will also   show up in the game menu. Individual display names can be set with the ".title" file inside each   directory. Write the name into the file and nothing else. Names preceded by a "." (dot) will hide   the directory completely, making it inaccessible from the menu. Names preceded by a "#" (hash   sign) will show a blank line in the menu, but leave it accessible.
-            </p>
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2"><h4>
-                <a class="anchor" id="quickstart"></a>Quick start</h4>
-            <p class="pl-4">MENU CONTROLS
-                <ul class="ml-3">
-                    <li>Select item:
-                    <kbd>P1-Button1
-                    </kbd>&nbsp;("Left-CTRL")
-                    </li>
-                    <li>Go back:
-                    <kbd>P1-Button2
-                    </kbd>&nbsp;("Left-ALT")
-                    </li>
-                </ul>
-            </p>
-            <p class="pl-4">MAME CONTROLS
-                <ul class="ml-3">
-                    <li>Insert coin:
-                    <kbd>P1-Start & Joystick up
-                    </kbd>&nbsp;("1" & "Up-Arrow")
-                    </li>
-                    <li>Pause game:
-                    <kbd>P1-Start & Joystick down
-                    </kbd>&nbsp;("1" & "Down-Arrow")
-                    </li>
-                    <li>Save current game state to disk:
-                    <kbd>P1-Start & Joystick left
-                    </kbd>&nbsp;("1" &             "Left-Arrow")
-                    </li>
-                    <li>Load last saved game state from disk:
-                    <kbd>P1-Start & Joystick right
-                    </kbd>&nbsp;("1" &             "Right-Arrow")
-                    </li>
-                    <li>Quit a game:
-                    <kbd>P1-Start & P1-Button1
-                    </kbd>&nbsp;("1" & "Left-CTRL")
-                    </li>
-                </ul>
-            </p>
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2"><h4>
-                <a class="anchor" id="configuration"></a>Configuration / hidden features</h4>
-            <p class="pl-4">Select the "Options" menu. Advanced configuration settings are   available.
-            </p>
-            <p class="pl-4">If advanced settings are not visible, click into any of the empty   lines between "Back" and "About" three times (slowly) within 10 seconds to activate the menu.   Hide the settings menu again to keep your system childproof.
-            </p>
-            <p class="pl-4">Settings are stored in "config.ini" on the USB   stick.
-            </p>
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2"><h4>
-                <a class="anchor" id="subdirectories"></a>Subdirectories</h4>
-            <ul>
-                <li class="py-1">"roms_advmame" - Game ROMs for games you want to see in the menu.   - Accepts subdirectories, to display a custom menu structure. Individual display names can be set   with the ".title" file inside each directory. Write the name into the file and nothing else.   Names preceded by a "." (dot) will hide the directory completely, making it inaccessible from the   menu. Names preceded by a "#" (hash sign) will show a blank line in the menu, but leave it   accessible. - Edit the game definition file "_games.template" to alter display names.
-                </li>
-                <li class="py-1">"roms_unused" - Set Options &gt; Control Settings &gt; P2-Start   Button to "Delete Game". Now, with any game you do not want, press P2-Start in the game menu, and   it will be "deleted", i. e. moved to the "roms_unused" folder.
-                </li>
-                <li class="py-1">"bios_advmame" - BIOS files (e. g. neogeo.zip) belong here.
-                </li>
-                <li class="py-1">"snaps" - Preview snapshots (PNG) to be displayed in game   selection menu.
-                </li>
-                <li class="py-1">"logos" - Logos (PNG) to be displayed in game selection menu.
-                </li>
-                <li class="py-1">"marquees" - Marquees (PNG) to be displayed in game selection   menu.
-                </li>
-                <li class="py-1">"videos" - Preview videos (MP4) to be displayed in game selection   menu.
-                </li>
-                <li class="py-1">"backup" - Select "Backup Settings" from the "Options" menu to   backup settings and hiscores here.
-                </li>
-                <li class="py-1">"backup.bak" - Before actually making a backup, an existing backup   folder is renamed to backup.bak, so this folder contains the second latest backup.
-                </li>
-                <li class="py-1">"autobackup" - After each game and during system shutdown,   hiscores and MAME settings are saved here automatically.
-                </li>
-                <li class="py-1">"samples_advmame" - MAME audio files not included in the   image.
-                </li>
-                <li class="py-1">"artwork_advmame" - MAME artwork files not included in the   image.
-                </li>
-                <li class="py-1">"snaps_advmame" - Snapshots taken during gameplay.
-                </li>
-                <li class="py-1">"image_advmame" - MAME chd/disk/cartridge/... image files.
-                </li>
-                <li class="py-1">"diff_advmame" - MAME disk image differential files.
-                </li>
-                <li class="py-1">"memcard_advmame" - MAME 'memcard' files.
-                </li>
-            </ul>
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2"><h4>
-                <a class="anchor" id=   "extended_gamemenu"></a>Extended game menu</h4>
-            <p class="pl-4">There are options to display up to three filtered game menus:   "Fav. Games", "More Games" and "All Games". Select the desired option from the advanced   configuration menu. Display names of those menus can be edited in "config.ini" or from the   menu.
-            </p>
-            <p class="pl-4">To add games e.g. to the "Fav. Games" list, click on "Select Fav.   Games" (Options &gt; Game Menu Settings). The screen turns green. Go back to the games list as if   you would want to start a game. Any game selected now will be added to the "Fav. Games" list.
-            </p>
-            <p class="pl-4">"Deselect Fav. Games", "Select Autostart Game" and "Delete Game   from USB" work in the same way.
-            </p>
-            <p class="pl-4">Changes are applied when leaving edit mode.
-            </p>
-            <p class="pl-4">Alternatively, pushing Player2-Start from the games menu adds the   game to the Fav. Games list (needs to be configured from the System Settings Menu). By default,   Player2-Start activates the screensaver.
-            </p>
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2"><h4>
-                <a class="anchor" id="autostart"></a>Autostart a game</h4>
-            <p class="pl-4">The system can boot right into a game: Options &gt; Game Menu   Settings &gt; Select Autostart Game.
-            </p>
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2"><h4>
-                <a class="anchor" id="screensaver"></a>Screensaver</h4>
-            <p class="pl-4">You can boot directly into a screensaver: Options &gt; System   Settings &gt; Boot into Screensaver.
-            </p>
-            <p class="pl-4">The screensaver activates itself after an idle time of 10 minutes   (default, can be edited in "config.ini") only when the menu is shown, NOT during a game. Activate   "Idle Exit" in the MAME section of the configuration menu to automatically exit a MAME   game.
-            </p>
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2"><h4>
-                <a class="anchor" id="orientation"></a>Screen orientation</h4>
-            <p class="pl-4">Screen orientation can be set to horizontal, vertical or   automatic. Automatic is useful for rotatable monitors.
-            </p>
-            <p class="pl-4">Quick switch of screen orientation is possible by pressing   Player2-Start if the option is set in the System Settings Menu.
-            </p>
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2"><h4>
-                <a class="anchor" id=   "game_selection"></a>Game selection</h4>
-            <p class="pl-4">Use Joystick to select your games.
-            </p>
-            <p class="pl-4">Scroll through games list pagewise: Joystick left/right Scroll   through pages alphabetically: P1-Start + Joystick left/right
-            </p>
-            <p class="pl-4">Select game or menu item: Press Player1-Button1. Go back: Press   Player1-Button2.
-            </p>
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2"><h4>
-                <a class="anchor" id="mame_controls"></a> MAME controls</h4>
-            <p class="pl-4">See
-                <a href="#mame_mapping">instructions</a>, how to change   controls.
-            </p>
-            <ul>
-                <li class="py-1">Insert coin:
-                    <kbd>P1-Start & Joystick up
-                    </kbd>&nbsp;("1" & "Up-Arrow")
-                </li>
-                <li class="py-1">Pause game:
-                    <kbd>P1-Start & Joystick down
-                    </kbd>&nbsp;("1" & "Down-Arrow")
-                </li>
-                <li class="py-1">Save current game state to disk:
-                    <kbd>P1-Start & Joystick left
-                    </kbd>&nbsp;("1" &             "Left-Arrow")
-                </li>
-                <li class="py-1">Load last saved game state from disk:
-                    <kbd>P1-Start & Joystick right
-                    </kbd>&nbsp;("1" &             "Right-Arrow")
-                </li>
-                <li class="py-1">Quit a game:
-                    <kbd>P1-Start & P1-Button1
-                    </kbd>&nbsp;("1" & "Left-CTRL")
-                </li>
-            </ul>
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2"><h4>
-                <a class="anchor" id="mame_info"></a>MAME info</h4>
-            <p class="pl-4">
-            </p>
-            <ul>
-                <li class="py-1">Advance Mame 3.9
-                </li>
-                <li class="py-1">Romset version 0.106
-                </li>
-                <li class="py-1">Put ROMs inside "roms_advmame" folder on USB stick.
-                </li>
-                <li class="py-1">Put snapshots (preview images) inside "snaps" folder on USB stick.
-                </li>
-                <li class="py-1">Put preview videos inside "videos" folder on USB stick.
-                </li>
-            </ul>
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2"><h4>
-                <a class="anchor" id="mame_menu"></a>MAME settings menu</h4>
-            <p class="pl-4">Press TAB while inside a game to enter the MAME settings menu.
-            </p>
-            <p class="pl-4">When a game is internally using a "super resolution" (making it   possible to run at exact refresh rates, yet Mame can still output pixel perfect resolutions), if   you TAB into the settings, unreadable small lines will be shown on a vertical monitor. You need   to temporarily change the game's resolution before entering the menu. While in the game, press   "." (dot) or "," (comma) to cycle through available resolutions, until the menu becomes readable.   Then you can TAB in.
-            </p>
-            <p class="pl-4">You can as well backup MAME settings from the "Options" menu, edit   the advmame.rc config file and restore it via the menu.
-            </p>
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2"><h4>
-                <a class="anchor" id="keyboard"></a>Keyboard</h4>
-            <p class="pl-4">A USB keyboard may be attached to configure Advance Mame general   and/or individual game settings
-            </p>
-            <p class="pl-4">Start any game. No need to play, the title screen is sufficient.   Press the TAB key to access Advance Mame options.
-            </p>
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2"><h4>
-                <a class="anchor" id="keyboard_mapping"></a>Keyboard mapping</h4>
-            <table class="table table-bordered table-sm w-75">
-                <tbody>
-                    <tr>
-                        <td class="w-50 pl-4">Coin1:                         </td>
-                        <td class="w-50 pl-4">5                         </td>
-                    </tr>
-                    <tr>
-                        <td class="w-50 pl-4">Player1 Start:                         </td>
-                        <td class="w-50 pl-4">1                         </td>
-                    </tr>
-                    <tr>
-                        <td class="w-50 pl-4">Player2 Start:                         </td>
-                        <td class="w-50 pl-4">2                         </td>
-                    </tr>
-                    <tr>
-                        <td class="w-50 pl-4">Player1 Button1         (Fire):                         </td>
-                        <td class="w-50 pl-4">Left-CTRL                         </td>
-                    </tr>
-                    <tr>
-                        <td class="w-50 pl-4">Player1 Button2:                         </td>
-                        <td class="w-50 pl-4">Left-ALT                         </td>
-                    </tr>
-                    <tr>
-                        <td class="w-50 pl-4">Player1 Button3:                         </td>
-                        <td class="w-50 pl-4">q                         </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2"><h4>
-                <a class="anchor" id="mame_mapping"></a>Change buttons or keyboard settings</h4>
-            <p class="pl-4">E.g. change the action to quit a game. This a MAME setting, so we   need to access the MAME settings menu.
-            </p>
-            <ul class="list-unstyled pl-4">
-                <li class="py-1">1) Attach a USB keyboard.
-                </li>
-                <li class="py-1">2) Start any game. No need to play, the title screen is sufficient.
-                </li>
-                <li class="py-1">3) Press the TAB key.
-                </li>
-                <li class="py-1">4) Navigate to "Input (general)" - press ENTER.
-                </li>
-                <li class="py-1">5) Select "User Interface" - press ENTER.
-                </li>
-                <li class="py-1">6) Navigate down to "UI cancel".
-                </li>
-                <li class="py-1">7) Press ENTER - the definitions are cleared.
-                </li>
-                <li class="py-1">8) Press whichever buttons are desired.
-                </li>
-                <li class="py-1">9) Do NOT press ENTER again!
-                </li>
-                <li class="py-1">10) Wait until the key is registered. As soon as it is registered, if you do press             ENTER before navigating away, you can select an optional additional control.
-                </li>
-                <li class="py-1">11) Navigate away and all the way down to go back to the game through the various             settings screens.
-                </li>
-                <li class="py-1">
-                    <span style="text-decoration: underline;">N.B.
-                    </span> : When a game is internally             using a "super resolution" (making it possible to run at exact refresh rates, yet Mame             can still output pixel perfect resolutions), if you TAB into the settings,
-                    <span style=             "text-decoration: underline;">unreadable small lines
-                    </span> will be shown on a vertical             monitor. You need to temporarily change the game's resolution before entering the menu.             While in the game, press "." (dot) or "," (comma) to cycle through available             resolutions, until the menu becomes readable. Then you can TAB in.
-                </li>
-            </ul>
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2"><h4>
-                <a class="anchor" id="servostik"></a>Ultimarc&reg; ServoStik</h4>
-            <p class="pl-4">An Ultimarc&reg; ServoStik can be triggered to switch between 4- and   8-way joystick restriction. Check 'System Settings Menu &gt; System Settings &gt; Enable   ServoStik'. An additional menu item 'Toggle ServoStik' will be available from the 'Options' menu,   to manually switch the ServoStik. You can as well define Player2-Start button to toggle the   ServoStik position: 'System Settings Menu &gt; System Settings &gt; P2-Start Button'.
-            </p>
-            <p class="pl-4">
-                <span style="text-decoration: underline;">N.B.
-                </span> : 'Toggle   ServoStik' will override any automatic switching for the very next game started.
-            </p>
-            <p class="pl-4">To automatically switch the ServoStik at game start, select   Options &gt; Set Games 4-8-Way to define the setting for each game. You can as well manually add   an appropriate joystick parameter to the game definition entry in '_games.template' inside the   'roms_advmame' directory.
-            </p>
-            <p class="pl-4">
-                <span style="text-decoration: underline;">Example:
-                </span> game {   rom ="1942" title ="1942 (set 1)" params ="-0ONE-0TWO-0TRE-1ALL-0FAV" orientation ="v" joy ="8" }   game { rom ="pacman" title ="Pac-Man (Midway)" params ="-0ONE-0TWO-0TRE-1ALL-0FAV" orientation   ="v" joy ="4" }
-            </p>
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2"><h4>
-                <a class="anchor" id="wifi"></a>How to connect to a Wi-Fi network</h4>
-            <p class="pl-4">
-            </p>
-            <ul class="list-unstyled pl-4">
-                <li class="py-1">1) System Settings Menu &gt; Online Tools &gt; Wi-Fi Setup
-                </li>
-                <li class="py-1">2) Select your network.
-                </li>
-                <li class="py-1">3) Assign an internal name for the network, eg. "pinhp".
-                </li>
-                <li class="py-1">4) Enter the network key.
-                </li>
-                <li class="py-1">5) Done! The system should be connected within a couple of seconds. The network profile is     automatically saved, you don't need to enter credentials again next time. If you cannot connect     because network settings have changed, go to "Remove Wi-Fi Profiles" and start over again.
-                </li>
-                <li class="py-1">6) Check your IP: System Settings Menu &gt; Online Tools &gt; Check IP
-                </li>
-                <li class="py-1">7) To automatically connect after each reboot, select "Auto Connect"
-                </li>
-            </ul>
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2"><h4>
-                <a class="anchor" id="ssh"></a>How to SSH into the system</h4>
-            <p class="pl-4">Username: pinhp Password: root
-            </p>
-            <p class="pl-4">(If you have trouble transferring data with e. g. SCP software,   connect as user: root / password: root)
-            </p>
-            <p class="pl-4">Example Windows 10:
-            </p>
-            <ul class="list-unstyled pl-4">
-                <li class="py-1">1) From the Windows menu, type "cmd" to open the command shell.
-                </li>
-                <li class="py-1">2) Type "ssh pinhp@192.168.1.243" (with the IP number found in step 6 above).
-                </li>
-                <li class="py-1">3) Password is "root".
-                </li>
-                <li class="py-1">4) If you see the command prompt [pinhp@pinhp ~]$ you are connected!
-                </li>
-                <li class="py-1">5) Do whatever you want in the Linux system, e.g. run Midnight Commander: Type "mc".
-                </li>
-            </ul>
-            <p class="pl-4">The DOS (FAT32) partition containing games and system settings, in   use only if no USB stick is present, is mounted at /mnt/data.
-            </p>
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2"><h4>
-                <a class="anchor" id=   "advanced_instructions"></a>Advanced instructions</h4>
-            <p class="pl-4">The screen is not centred? How to
-                <a href=   "edit_modelines.html">adjust modelines</a> in advmame.rc.
-            </p>
-        </div>
-        <footer id="pinhpFooter">
-            <div class="logo-button footer-copyright p-3 text-center">
-                <a href="https://www.facebook.com/groups/1649021265123737">
-                    <img src="../res/logo_F.png" alt="Fcbk"></a>
-                <br>Copyright &copy; pinHP 2018 - 2022
-            </div>
-        </footer>
-    </body>
+<html lang="en">    
+  <head>        
+    <meta charset="utf-8">        
+    <meta name="viewport" content="width=device-width, initial-scale=1">        
+    <meta property="og:url" content="http://pinhp-image.com/index.html">        
+    <meta property="og:title" content="pinHP Arcade Image">        
+    <meta property="og:description" content="Setup instructions">        
+    <meta property="og:image" content="https://pinhp.github.io/res/pinhp_ogimage.png">        
+    <meta property="og:locale" content="en_EN">        
+    <meta property="og:type" content="website">        
+    <link rel="stylesheet" href="../css/bootstrap.css">        
+    <link rel="stylesheet" href="../css/animate.css">        
+    <link rel="stylesheet" href="../css/style.css">        
+<script src="../js/jquery.js"></script>        
+<script src="../js/popper.js"></script>        
+<script src="../js/bootstrap.js"></script>        
+    <title>pinHP Setup         
+    </title>    
+  </head>    
+  <body>        
+    <div class="container text-right">            
+      <h2 class="text-secondary"># pinHP Arcade Image</h2>        
+    </div>        
+    <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">            
+      <a class="navbar-brand" href="http://pinhp-image.com" >                
+        <img src="../res/Arcade_Classics.png" alt="Arcade Classics"     style="width:4em;"></a>            
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">                
+        <span class="navbar-toggler-icon">                
+        </span>            
+      </button>            
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">                
+        <ul class="navbar-nav">                    
+          <li class="nav-item dropdown">                        
+            <a class="nav-link dropdown-toggle active" href="setup_instructions.html" data-toggle="dropdown">Setup Instructions</a>                        
+            <div class="dropdown-menu">                            
+              <a href="setup_instructions.html" class="dropdown-item"><i>Setup Instructions</i></a>                            
+              <a href="#hardware" class="dropdown-item">Hardware installation</a>                            
+              <a href="#software" class="dropdown-item">Software setup</a>                            
+              <a href="#pi2jamma" class="dropdown-item">Pi2Jamma / Pi2SCART</a>                            
+              <a href="#quickstart" class="dropdown-item">Quick start</a>                            
+              <a href="#configuration" class="dropdown-item">Configuration</a>                            
+              <a href="#subdirectories" class="dropdown-item">Subdirectories</a>                            
+              <a href="#extended_gamemenu" class="dropdown-item">Extended game menu</a>                            
+              <a href="#autostart" class="dropdown-item">Autostart a game</a>                            
+              <a href="#screensaver" class="dropdown-item">Screensaver</a>                            
+              <a href="#orientation" class="dropdown-item">Screen orientation</a>                            
+              <a href="#game_selection" class="dropdown-item">Game selection</a>                            
+              <a href="#mame_controls" class="dropdown-item">Mame controls</a>                            
+              <a href="#mame_info" class="dropdown-item">Mame info</a>                            
+              <a href="#mame_menu" class="dropdown-item">Mame settings menu</a>                            
+              <a href="#keyboard" class="dropdown-item">Keyboard</a>                            
+              <a href="#keyboard_mapping" class="dropdown-item">Keyboard mapping</a>                            
+              <a href="#mame_mapping" class="dropdown-item">Change buttons</a>                            
+              <a href="#wifi" class="dropdown-item">Wi-Fi</a>                            
+              <a href="#ssh" class="dropdown-item">SSH</a>                            
+              <a href="#servostik" class="dropdown-item">Ultimarc&reg; ServoStik support</a>                            
+              <a href="#advanced_instructions" class="dropdown-item">Advanced Instructions</a>                        
+            </div>                    
+          </li>                    
+          <li class="nav-item dropdown">                        
+            <a class="nav-link dropdown-toggle" href="user_manual.html" data-toggle="dropdown">User Manual</a>                        
+            <div class="dropdown-menu">                            
+              <a href="user_manual.html" class="dropdown-item"><i>User Manual</i></a>                            
+              <a href="user_manual.html#arcadegames" class="dropdown-item">Arcade Games</a>                            
+              <a href="user_manual.html#optionsmenu" class="dropdown-item">Options Menu</a>                            
+              <a href="user_manual.html#game_menu_settings" class="dropdown-item">Game Menu Settings</a>                            
+              <a href="user_manual.html#options_menu_settings" class="dropdown-item">Options Menu Settings</a>                            
+              <a href="user_manual.html#mame_settings" class="dropdown-item">Mame Settings</a>                            
+              <a href="user_manual.html#control_settings" class="dropdown-item">Control Settings</a>                            
+              <a href="user_manual.html#filter_settings" class="dropdown-item">Filter Settings</a>                            
+              <a href="user_manual.html#screen_settings" class="dropdown-item">Screen Settings</a>                            
+              <a href="user_manual.html#system_settings" class="dropdown-item">System Settings</a>                            
+              <a href="user_manual.html#language_settings" class="dropdown-item">Language Settings</a>                            
+              <a href="user_manual.html#backup_restore" class="dropdown-item">Backup/Restore</a>                            
+              <a href="user_manual.html#online_tools" class="dropdown-item">Online Tools</a>                            
+              <a href="user_manual.html#exit_into_shell" class="dropdown-item">Exit into Shell</a>                            
+              <a href="user_manual.html#hide_settings_menu" class="dropdown-item">* Hide Settings Menu *</a>                        
+            </div>                    
+          </li>                    
+          <li class="nav-item">                        
+            <a class="nav-link" href="download.html">Download</a>                    
+          </li>                    
+          <li class="nav-item">                        
+            <a class="nav-link" href="about.html">About</a>                
+        </ul>            
+      </div>        
+    </nav>        
+    <br>        
+    <div class="container px-5">            
+      <h3 class="container rounded-sm bg-info text-center text-white">Setup instructions</h3>            
+      <br>        
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                
+        <a class="anchor" id="hardware"></a>Hardware</h4>            
+      <p class="pl-4">Make sure your Raspberry Pi does not make unwanted contact with   the Pi2Jamma board. Put some electrical tape or insulating paper between the Pi2Jamma and the USB   ports of the RPi to prevent damage or strange software behaviour.             
+      </p>        
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                
+        <a class="anchor" id=   "software"></a>Initial software setup</h4>            
+      <p class="pl-4">Use a disk imaging program like "Win32DiskImager" to write the   image file to a Micro-SD card (at least 16 GB size).             
+      </p>            
+      <p class="pl-4">A USB stick containing ROMs and configuration settings is   recommended, but optional. Boot with an empty, formatted USB stick. The system will detect it and   create the folder structure automatically.             
+      </p>        
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                
+        <a class="anchor" id=   "pi2jamma"></a>Pi2Jamma / Pi2SCART setup</h4>            
+      <p class="pl-4">All files required are stored inside the "rpi2jamma" directory on   either the USB stick or the SD card's "RPI_DATA" partition. The most important subdirectory is   "roms_advmame" - place your game ROMs there and you are good to go.             
+      </p>            
+      <p class="pl-4">You can as well sort ROM files into subfolders, which will also   show up in the game menu. Individual display names can be set with the ".title" file inside each   directory. Write the name into the file and nothing else. Names preceded by a "." (dot) will hide   the directory completely, making it inaccessible from the menu. Names preceded by a "#" (hash   sign) will show a blank line in the menu, but leave it accessible.             
+      </p>        
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                
+        <a class="anchor" id="quickstart"></a>Quick start</h4>            
+      <p class="pl-4">MENU CONTROLS                 
+        <ul class="ml-3">                    
+          <li>Select item:                     
+          <kbd>P1-Button1                     
+          </kbd>&nbsp;("Left-CTRL")                     
+          </li>                    
+          <li>Go back:                     
+          <kbd>P1-Button2                     
+          </kbd>&nbsp;("Left-ALT")                     
+          </li>                
+        </ul>            
+      </p>            
+      <p class="pl-4">MAME CONTROLS                 
+        <ul class="ml-3">                    
+          <li>Insert coin:                     
+          <kbd>P1-Start & Joystick up                     
+          </kbd>&nbsp;("1" & "Up-Arrow")                     
+          </li>                    
+          <li>Pause game:                     
+          <kbd>P1-Start & Joystick down                     
+          </kbd>&nbsp;("1" & "Down-Arrow")                     
+          </li>                    
+          <li>Save current game state to disk:                     
+          <kbd>P1-Start & Joystick left                     
+          </kbd>&nbsp;("1" &             "Left-Arrow")                     
+          </li>                    
+          <li>Load last saved game state from disk:                     
+          <kbd>P1-Start & Joystick right                     
+          </kbd>&nbsp;("1" &             "Right-Arrow")                     
+          </li>                    
+          <li>Quit a game:                     
+          <kbd>P1-Start & P1-Button1                     
+          </kbd>&nbsp;("1" & "Left-CTRL")                     
+          </li>                
+        </ul>            
+      </p>        
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                
+        <a class="anchor" id="configuration"></a>Configuration / hidden features</h4>            
+      <p class="pl-4">Select the "Options" menu. Advanced configuration settings are   available.             
+      </p>            
+      <p class="pl-4">If advanced settings are not visible, click into any of the empty   lines between "Back" and "About" three times (slowly) within 10 seconds to activate the menu.   Hide the settings menu again to keep your system childproof.             
+      </p>            
+      <p class="pl-4">Settings are stored in "config.ini" on the USB   stick.             
+      </p>        
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                
+        <a class="anchor" id="subdirectories"></a>Subdirectories</h4>            
+      <ul>                
+        <li class="py-1">"roms_advmame" - Game ROMs for games you want to see in the menu.   - Accepts subdirectories, to display a custom menu structure. Individual display names can be set   with the ".title" file inside each directory. Write the name into the file and nothing else.   Names preceded by a "." (dot) will hide the directory completely, making it inaccessible from the   menu. Names preceded by a "#" (hash sign) will show a blank line in the menu, but leave it   accessible. - Edit the game definition file "_games.template" to alter display names.                 
+        </li>                
+        <li class="py-1">"roms_unused" - Set Options &gt; Control Settings &gt; P2-Start   Button to "Delete Game". Now, with any game you do not want, press P2-Start in the game menu, and   it will be "deleted", i. e. moved to the "roms_unused" folder.                 
+        </li>                
+        <li class="py-1">"bios_advmame" - BIOS files (e. g. neogeo.zip) belong here.                 
+        </li>                
+        <li class="py-1">"snaps" - Preview snapshots (PNG) to be displayed in game   selection menu.                 
+        </li>                
+        <li class="py-1">"logos" - Logos (PNG) to be displayed in game selection menu.                 
+        </li>                
+        <li class="py-1">"marquees" - Marquees (PNG) to be displayed in game selection   menu.                 
+        </li>                
+        <li class="py-1">"videos" - Preview videos (MP4) to be displayed in game selection   menu.                 
+        </li>                
+        <li class="py-1">"backup" - Select "Backup Settings" from the "Options" menu to   backup settings and hiscores here.                 
+        </li>                
+        <li class="py-1">"backup.bak" - Before actually making a backup, an existing backup   folder is renamed to backup.bak, so this folder contains the second latest backup.                 
+        </li>                
+        <li class="py-1">"autobackup" - After each game and during system shutdown,   hiscores and MAME settings are saved here automatically.                 
+        </li>                
+        <li class="py-1">"samples_advmame" - MAME audio files not included in the   image.                 
+        </li>                
+        <li class="py-1">"artwork_advmame" - MAME artwork files not included in the   image.                 
+        </li>                
+        <li class="py-1">"snaps_advmame" - Snapshots taken during gameplay.                 
+        </li>                
+        <li class="py-1">"image_advmame" - MAME chd/disk/cartridge/... image files.                 
+        </li>                
+        <li class="py-1">"diff_advmame" - MAME disk image differential files.                 
+        </li>                
+        <li class="py-1">"memcard_advmame" - MAME 'memcard' files.                 
+        </li>            
+      </ul>        
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                
+        <a class="anchor" id=   "extended_gamemenu"></a>Extended game menu</h4>            
+      <p class="pl-4">There are options to display up to three filtered game menus:   "Fav. Games", "More Games" and "All Games". Select the desired option from the advanced   configuration menu. Display names of those menus can be edited in "config.ini" or from the   menu.             
+      </p>            
+      <p class="pl-4">To add games e.g. to the "Fav. Games" list, click on "Select Fav.   Games" (Options &gt; Game Menu Settings). The screen turns green. Go back to the games list as if   you would want to start a game. Any game selected now will be added to the "Fav. Games" list.             
+      </p>            
+      <p class="pl-4">"Deselect Fav. Games", "Select Autostart Game" and "Delete Game   from USB" work in the same way.             
+      </p>            
+      <p class="pl-4">Changes are applied when leaving edit mode.             
+      </p>            
+      <p class="pl-4">Alternatively, pushing Player2-Start from the games menu adds the   game to the Fav. Games list (needs to be configured from the System Settings Menu). By default,   Player2-Start activates the screensaver.             
+      </p>        
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                
+        <a class="anchor" id="autostart"></a>Autostart a game</h4>            
+      <p class="pl-4">The system can boot right into a game: Options &gt; Game Menu   Settings &gt; Select Autostart Game.             
+      </p>        
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                
+        <a class="anchor" id="screensaver"></a>Screensaver</h4>            
+      <p class="pl-4">You can boot directly into a screensaver: Options &gt; System   Settings &gt; Boot into Screensaver.             
+      </p>            
+      <p class="pl-4">The screensaver activates itself after an idle time of 10 minutes   (default, can be edited in "config.ini") only when the menu is shown, NOT during a game. Activate   "Idle Exit" in the MAME section of the configuration menu to automatically exit a MAME   game.             
+      </p>        
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                
+        <a class="anchor" id="orientation"></a>Screen orientation</h4>            
+      <p class="pl-4">Screen orientation can be set to horizontal, vertical or   automatic. Automatic is useful for rotatable monitors.             
+      </p>            
+      <p class="pl-4">Quick switch of screen orientation is possible by pressing   Player2-Start if the option is set in the System Settings Menu.             
+      </p>        
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                
+        <a class="anchor" id=   "game_selection"></a>Game selection</h4>            
+      <p class="pl-4">Use Joystick to select your games.             
+      </p>            
+      <p class="pl-4">Scroll through games list pagewise: Joystick left/right Scroll   through pages alphabetically: P1-Start + Joystick left/right             
+      </p>            
+      <p class="pl-4">Select game or menu item: Press Player1-Button1. Go back: Press   Player1-Button2.             
+      </p>        
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                
+        <a class="anchor" id="mame_controls"></a> MAME controls</h4>            
+      <p class="pl-4">See                 
+        <a href="#mame_mapping">instructions</a>, how to change   controls.             
+      </p>            
+      <ul>                
+        <li class="py-1">Insert coin:                     
+          <kbd>P1-Start & Joystick up                     
+          </kbd>&nbsp;("1" & "Up-Arrow")                 
+        </li>                
+        <li class="py-1">Pause game:                     
+          <kbd>P1-Start & Joystick down                     
+          </kbd>&nbsp;("1" & "Down-Arrow")                 
+        </li>                
+        <li class="py-1">Save current game state to disk:                     
+          <kbd>P1-Start & Joystick left                     
+          </kbd>&nbsp;("1" &             "Left-Arrow")                 
+        </li>                
+        <li class="py-1">Load last saved game state from disk:                     
+          <kbd>P1-Start & Joystick right                     
+          </kbd>&nbsp;("1" &             "Right-Arrow")                 
+        </li>                
+        <li class="py-1">Quit a game:                     
+          <kbd>P1-Start & P1-Button1                     
+          </kbd>&nbsp;("1" & "Left-CTRL")                 
+        </li>            
+      </ul>        
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                
+        <a class="anchor" id="mame_info"></a>MAME info</h4>            
+      <p class="pl-4">            
+      </p>            
+      <ul>                
+        <li class="py-1">Advance Mame 3.9                 
+        </li>                
+        <li class="py-1">Romset version 0.106                 
+        </li>                
+        <li class="py-1">Put ROMs inside "roms_advmame" folder on USB stick.                 
+        </li>                
+        <li class="py-1">Put snapshots (preview images) inside "snaps" folder on USB stick.                 
+        </li>                
+        <li class="py-1">Put preview videos inside "videos" folder on USB stick.                 
+        </li>            
+      </ul>        
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                
+        <a class="anchor" id="mame_menu"></a>MAME settings menu</h4>            
+      <p class="pl-4">Press TAB while inside a game to enter the MAME settings menu.             
+      </p>            
+      <p class="pl-4">When a game is internally using a "super resolution" (making it   possible to run at exact refresh rates, yet Mame can still output pixel perfect resolutions), if   you TAB into the settings, unreadable small lines will be shown on a vertical monitor. You need   to temporarily change the game's resolution before entering the menu. While in the game, press   "." (dot) or "," (comma) to cycle through available resolutions, until the menu becomes readable.   Then you can TAB in.             
+      </p>            
+      <p class="pl-4">You can as well backup MAME settings from the "Options" menu, edit   the advmame.rc config file and restore it via the menu.             
+      </p>        
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                
+        <a class="anchor" id="keyboard"></a>Keyboard</h4>            
+      <p class="pl-4">A USB keyboard may be attached to configure Advance Mame general   and/or individual game settings             
+      </p>            
+      <p class="pl-4">Start any game. No need to play, the title screen is sufficient.   Press the TAB key to access Advance Mame options.             
+      </p>        
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                
+        <a class="anchor" id="keyboard_mapping"></a>Keyboard mapping</h4>            
+      <table class="table table-bordered table-sm w-75">                
+        <tbody>                    
+          <tr>                        
+            <td class="w-50 pl-4">Coin1:                         </td>                        
+            <td class="w-50 pl-4">5                         </td>                    
+          </tr>                    
+          <tr>                        
+            <td class="w-50 pl-4">Player1 Start:                         </td>                        
+            <td class="w-50 pl-4">1                         </td>                    
+          </tr>                    
+          <tr>                        
+            <td class="w-50 pl-4">Player2 Start:                         </td>                        
+            <td class="w-50 pl-4">2                         </td>                    
+          </tr>                    
+          <tr>                        
+            <td class="w-50 pl-4">Player1 Button1         (Fire):                         </td>                        
+            <td class="w-50 pl-4">Left-CTRL                         </td>                    
+          </tr>                    
+          <tr>                        
+            <td class="w-50 pl-4">Player1 Button2:                         </td>                        
+            <td class="w-50 pl-4">Left-ALT                         </td>                    
+          </tr>                    
+          <tr>                        
+            <td class="w-50 pl-4">Player1 Button3:                         </td>                        
+            <td class="w-50 pl-4">q                         </td>                    
+          </tr>                
+        </tbody>            
+      </table>        
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                
+        <a class="anchor" id="mame_mapping"></a>Change buttons or keyboard settings</h4>            
+      <p class="pl-4">E.g. change the action to quit a game. This a MAME setting, so we   need to access the MAME settings menu.             
+      </p>            
+      <ul class="list-unstyled pl-4">                
+        <li class="py-1">1) Attach a USB keyboard.                 
+        </li>                
+        <li class="py-1">2) Start any game. No need to play, the title screen is sufficient.                 
+        </li>                
+        <li class="py-1">3) Press the TAB key.                 
+        </li>                
+        <li class="py-1">4) Navigate to "Input (general)" - press ENTER.                 
+        </li>                
+        <li class="py-1">5) Select "User Interface" - press ENTER.                 
+        </li>                
+        <li class="py-1">6) Navigate down to "UI cancel".                 
+        </li>                
+        <li class="py-1">7) Press ENTER - the definitions are cleared.                 
+        </li>                
+        <li class="py-1">8) Press whichever buttons are desired.                 
+        </li>                
+        <li class="py-1">9) Do NOT press ENTER again!                 
+        </li>                
+        <li class="py-1">10) Wait until the key is registered. As soon as it is registered, if you do press             ENTER before navigating away, you can select an optional additional control.                 
+        </li>                
+        <li class="py-1">11) Navigate away and all the way down to go back to the game through the various             settings screens.                 
+        </li>                
+        <li class="py-1">                    
+          <span style="text-decoration: underline;">N.B.                     
+          </span> : When a game is internally             using a "super resolution" (making it possible to run at exact refresh rates, yet Mame             can still output pixel perfect resolutions), if you TAB into the settings,                     
+          <span style=             "text-decoration: underline;">unreadable small lines                     
+          </span> will be shown on a vertical             monitor. You need to temporarily change the game's resolution before entering the menu.             While in the game, press "." (dot) or "," (comma) to cycle through available             resolutions, until the menu becomes readable. Then you can TAB in.                 
+        </li>            
+      </ul>        
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                
+        <a class="anchor" id="servostik"></a>Ultimarc&reg; ServoStik</h4>            
+      <p class="pl-4">An Ultimarc&reg; ServoStik can be triggered to switch between 4- and   8-way joystick restriction. Check 'System Settings Menu &gt; System Settings &gt; Enable   ServoStik'. An additional menu item 'Toggle ServoStik' will be available from the 'Options' menu,   to manually switch the ServoStik. You can as well define Player2-Start button to toggle the   ServoStik position: 'System Settings Menu &gt; System Settings &gt; P2-Start Button'.             
+      </p>            
+      <p class="pl-4">                
+        <span style="text-decoration: underline;">N.B.                 
+        </span> : 'Toggle   ServoStik' will override any automatic switching for the very next game started.             
+      </p>            
+      <p class="pl-4">To automatically switch the ServoStik at game start, select   Options &gt; Set Games 4-8-Way to define the setting for each game. You can as well manually add   an appropriate joystick parameter to the game definition entry in '_games.template' inside the   'roms_advmame' directory.             
+      </p>            
+      <p class="pl-4">                
+        <span style="text-decoration: underline;">Example:                 
+        </span> game {   rom ="1942" title ="1942 (set 1)" params ="-0ONE-0TWO-0TRE-1ALL-0FAV" orientation ="v" joy ="8" }   game { rom ="pacman" title ="Pac-Man (Midway)" params ="-0ONE-0TWO-0TRE-1ALL-0FAV" orientation   ="v" joy ="4" }             
+      </p>        
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                
+        <a class="anchor" id="wifi"></a>How to connect to a Wi-Fi network</h4>            
+      <p class="pl-4">            
+      </p>            
+      <ul class="list-unstyled pl-4">                
+        <li class="py-1">1) System Settings Menu &gt; Online Tools &gt; Wi-Fi Setup                 
+        </li>                
+        <li class="py-1">2) Select your network.                 
+        </li>                
+        <li class="py-1">3) Assign an internal name for the network, eg. "pinhp".                 
+        </li>                
+        <li class="py-1">4) Enter the network key.                 
+        </li>                
+        <li class="py-1">5) Done! The system should be connected within a couple of seconds. The network profile is     automatically saved, you don't need to enter credentials again next time. If you cannot connect     because network settings have changed, go to "Remove Wi-Fi Profiles" and start over again.                 
+        </li>                
+        <li class="py-1">6) Check your IP: System Settings Menu &gt; Online Tools &gt; Check IP                 
+        </li>                
+        <li class="py-1">7) To automatically connect after each reboot, select "Auto Connect"                 
+        </li>            
+      </ul>        
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                
+        <a class="anchor" id="ssh"></a>How to SSH into the system</h4>            
+      <p class="pl-4">Username: pinhp
+        <br>Password: root             
+      </p>            
+      <p class="pl-4">(If you have trouble transferring data with e. g. SCP software,   connect as user: root / password: root)             
+      </p>            
+      <p class="pl-4">Example Windows 10:             
+      </p>            
+      <ul class="list-unstyled pl-4">                
+        <li class="py-1">1) From the Windows menu, type "cmd" to open the command shell.                 
+        </li>                
+        <li class="py-1">2) Type "ssh pinhp@192.168.1.243" (with the IP number found in step 6 above).                 
+        </li>                
+        <li class="py-1">3) Password is "root".                 
+        </li>                
+        <li class="py-1">4) If you see the command prompt [pinhp@pinhp ~]$ you are connected!                 
+        </li>                
+        <li class="py-1">5) Do whatever you want in the Linux system, e.g. run Midnight Commander: Type "mc".                 
+        </li>            
+      </ul>            
+      <p class="pl-4">The DOS (FAT32) partition containing games and system settings, in   use only if no USB stick is present, is mounted at /mnt/data.             
+      </p>        
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                
+        <a class="anchor" id=   "advanced_instructions"></a>Advanced instructions</h4>            
+      <p class="pl-4">The screen is not centred? How to                 
+        <a href=   "edit_modelines.html">adjust modelines</a> in advmame.rc.             
+      </p>        
+    </div>        
+    <footer id="pinhpFooter">            
+      <div class="logo-button footer-copyright p-3 text-center">                
+        <a href="https://www.facebook.com/groups/1649021265123737">                    
+          <img src="../res/logo_F.png" alt="Fcbk"></a>                
+        <br>Copyright &copy; pinHP 2018 - 2022             
+      </div>        
+    </footer>    
+  </body>
 </html>
