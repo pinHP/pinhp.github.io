@@ -1,181 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta property="og:url" content="http://pinhp-image.com/index.html">
-        <meta property="og:title" content="pinHP Arcade Image">
-        <meta property="og:description" content="Edit modelines">
-        <meta property="og:image" content="https://pinhp.github.io/res/arcade_classics_by_pinhp.png">
-        <meta property="og:locale" content="en_EN">
-        <meta property="og:type" content="website">
-        <link rel="icon" type="image/png" href="../res/favicon.png">
-        <link rel="stylesheet" href="../css/bootstrap.css">
-        <link rel="stylesheet" href="../animate.css">
-        <link rel="stylesheet" href="../css/font-awesome.css">
-        <link rel="stylesheet" href="../css/style.css">
-
-        <script src="../js/jquery.js"></script>
-        <script src="../js/popper.js"></script>
-        <script src="../js/bootstrap.js"></script>
-
-        <title>pinHP Edit Modelines
-        </title>
-    </head>
-    <body>
-        <div class="container text-right">
-            <h2 class="text-secondary"># pinHP Arcade Image</h2>
-        </div>
-        <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top py-1">
-            <a class="navbar-brand" href="http://pinhp-image.com">
-                <img src="../res/arcade_classics_by_pinhp.png" alt="Arcade Classics"     style="width:4em;"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon">
-                </span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="setup_instructions.html" data-toggle="dropdown">Setup Instructions</a>
-                        <div class="dropdown-menu">
-                            <a href="setup_instructions.html" class="dropdown-item"><i>Setup Instructions</i></a>
-                            <a href="setup_instructions.html#hardware" class="dropdown-item">Hardware installation</a>
-                            <a href="setup_instructions.html#software" class="dropdown-item">Software setup</a>
-                            <a href="setup_instructions.html#pi2jamma" class="dropdown-item">Pi2Jamma / PiSCART</a>
-                            <a href="setup_instructions.html#quickstart" class="dropdown-item">Quick start</a>
-                            <a href="setup_instructions.html#configuration" class="dropdown-item">Configuration</a>
-                            <a href="setup_instructions.html#subdirectories" class="dropdown-item">Subdirectories</a>
-                            <a href="setup_instructions.html#extended_gamemenu" class="dropdown-item">Extended game menu</a>
-                            <a href="setup_instructions.html#autostart" class="dropdown-item">Autostart a game</a>
-                            <a href="setup_instructions.html#screensaver" class="dropdown-item">Screensaver</a>
-                            <a href="setup_instructions.html#orientation" class="dropdown-item">Screen orientation</a>
-                            <a href="setup_instructions.html#game_selection" class="dropdown-item">Game selection</a>
-                            <a href="setup_instructions.html#mame_controls" class="dropdown-item">Mame controls</a>
-                            <a href="setup_instructions.html#mame_info" class="dropdown-item">Mame info</a>
-                            <a href="setup_instructions.html#mame_menu" class="dropdown-item">Mame settings menu</a>
-                            <a href="setup_instructions.html#keyboard" class="dropdown-item">Keyboard</a>
-                            <a href="setup_instructions.html#keyboard_mapping" class="dropdown-item">Keyboard mapping</a>
-                            <a href="setup_instructions.html#mame_mapping" class="dropdown-item">Change buttons</a>
-                            <a href="setup_instructions.html#wifi" class="dropdown-item">Wi-Fi</a>
-                            <a href="setup_instructions.html#ssh" class="dropdown-item">SSH</a>
-                            <a href="setup_instructions.html#servostik" class="dropdown-item">Ultimarc&reg; ServoStik support</a>
-                            <a href="setup_instructions.html#advanced_instructions" class="dropdown-item">Advanced Instructions</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="user_manual.html" data-toggle="dropdown">User Manual</a>
-                        <div class="dropdown-menu">
-                            <a href="user_manual.html" class="dropdown-item"><i>User Manual</i></a>
-                            <a href="user_manual.html#arcadegames" class="dropdown-item">Arcade Games</a>
-                            <a href="user_manual.html#optionsmenu" class="dropdown-item">Options Menu</a>
-                            <a href="user_manual.html#game_menu_settings" class="dropdown-item">Game Menu Settings</a>
-                            <a href="user_manual.html#options_menu_settings" class="dropdown-item">Options Menu Settings</a>
-                            <a href="user_manual.html#mame_settings" class="dropdown-item">Mame Settings</a>
-                            <a href="user_manual.html#control_settings" class="dropdown-item">Control Settings</a>
-                            <a href="user_manual.html#filter_settings" class="dropdown-item">Filter Settings</a>
-                            <a href="user_manual.html#screen_settings" class="dropdown-item">Screen Settings</a>
-                            <a href="user_manual.html#system_settings" class="dropdown-item">System Settings</a>
-                            <a href="user_manual.html#language_settings" class="dropdown-item">Language Settings</a>
-                            <a href="user_manual.html#backup_restore" class="dropdown-item">Backup/Restore</a>
-                            <a href="user_manual.html#online_tools" class="dropdown-item">Online Tools</a>
-                            <a href="user_manual.html#exit_into_shell" class="dropdown-item">Exit into Shell</a>
-                            <a href="user_manual.html#hide_settings_menu" class="dropdown-item">* Hide Settings Menu *</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="download.html">Download</a>
-                    </li>
-                    <li class="nav-item dropdown">                        
-                      <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Links</a>                        
-                      <div class="dropdown-menu">                            
-                        <a href="https://www.advancemame.it" class="dropdown-item">Advance Mame</a>                            
-                        <a href="https://github.com/pinHP/arcade/blob/main/games/_games.template" class="dropdown-item">0.106 game list</a>                            
-                        <a href="https://arcadeforge.net/Pi2Jamma-Pi2SCART:::51.html" class="dropdown-item">Pi2Jamma/Pi2SCART hardware</a>                            
-                        <a href="https://www.ultimarc.com/arcade-controls/joysticks" class="dropdown-item">Ultimarc&reg; ServoStik</a>                            
-                        <a href="https://www.arcadezentrum.com/forum/board/index.php?thread/28556-pi-am-jumbo-quadro" class="dropdown-item">Quadro auto rotate monitor</a>                            
-                        <a href="https://www.youtube.com/watch?v=eNxDKTbteXI" class="dropdown-item">pinHP demo video</a>                            
-                        <a href="https://www.facebook.com/groups/1649021265123737" class="dropdown-item">Facebook support group</a>                                                  
-                      </div>                    
-                    </li>                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <br>
-        <div class="container rounded-sm bg-light py-2 my-2">    <h3>Adjusting MAME games</h3>
-            <br>
-            <p>For horizontal screen shifting on a SCART TV set, you can install ArcadeForge's
-                <a href="http://arcadeforge.net/Pi2Jamma-Pi2SCART/CRT-RGB-Pic-Shifter::306.html"><i class="fa fa-external-link"></i>&nbsp;CRT RGB Picture Shifter</a> device.
-            </p>
-            <p>On Pi2SCART monitors, if there is no way to adjust the monitor itself, we can change the screen position (horizontal/vertical), within certain limits, on an individual base by altering modeline settings. Stretching or squeezing is not possible.
-            </p>
-            <p>Let's use Donkey Kong as example. Video mode according to Advance Mame's game info:
-                <br><strong>256 x 224 (V) 60 Hz</strong>
-            </p>
-            <p>In advmame.rc we look up the value for our game resolution.
-            </p>
-            <p>We find the line
-                <br>
-                <code>256x224x60/display_mode 320x224 (60.02 Hz)
-                </code>
-                <br>which tells Mame, what to do with games running a 256x224 resolution at 60 Hz refresh rate. It tells Mame to use <strong>display_mode 320x224 (60.02 Hz)</strong>.
-            </p>
-            <p>We find the line
-                <br>
-                <code>device_video_modeline 320x224 (60.02 Hz) 6.4 320 321 352 407 224 229 236 262 -hsync -vsync #   15.72 kHz
-                </code>
-                <br>which tells Mame how to set the video mode named <strong>320x224 (60.02 Hz)</strong>.
-            </p>
-            <p>The group of the first four values <strong>320 321 352 407</strong> is for horizontal (long side) screen resolution, the second group <strong>224 229 236 262</strong> for vertical (short side) screen resolution.
-            </p>
-            <p>Within each group, we change the second and third numbers by the same value. To shift the long side of the screen to the left (which is up on a vertical monitor), we increase the numbers.
-            </p>
-            <p>Let's shift the whole screen image 20 pixels to the left on the long side of the monitor - we increase the numbers by 20:
-                <br>
-                <code>device_video_modeline 320x224 (60.02 Hz) 6.4 320 341 372 407 224 229 236 262 -hsync -vsync #   15.72 kHz
-                </code>
-            </p>
-            <p>Now lets additionally shift the image down on the short side of the monitor by subtracting 5   pixels:
-                <br>
-                <code>device_video_modeline 320x224 (60.02 Hz) 6.4 320 341 372 407 224 224 231 262 -hsync -vsync #   15.72 kHz
-                </code>
-            </p>
-            <p>There are limitations: We cannot go below the first value or above the fourth value of each   group. So, in our example, we cannot move the image down the short side anymore. 224 is the limit   here.
-            </p>
-            <p>Some games make use of super resolution settings, where Mame downscales the actual image. This   is a workaround due to Raspberry Pi (up to 3B+) hardware limitations, making it possible to get   almost exact resolutions and refresh rates. Usually we are more flexible in shifting the screen   image as well.
-            </p>
-            <p>We see modelines like
-                <br>
-                <code>device_video_modeline 1920x240 (60.00 Hz) 41.50 1920 2000 2288 2640 240 240 247 262 -hsync -vsync   # 15.72 kHz
-                </code>
-            </p>
-            <p>Since Mame scales the value of 1920 down by factor 6 to 320 pixels screen width, a horizontal   shift by 1 pixel requires the value to be changed by 6.
-            </p>
-            <p>Hint:
-                <br>  When a game is using a super resolution, if we TAB into the settings, unreadable small lines will   be shown on a vertical monitor. We need to temporarily change the game's resolution before   entering the menu. While in the game, we press . (dot) or , (comma) to cycle through available   resolutions, until the menu becomes readable. Then we can TAB in.
-        </div>
-        <div class="container rounded-sm bg-light py-2 my-2">
-            </p>  <h3>Adjusting the menu screen</h3>
-            <br>
-            <p>To adjust screen positon of the pinHP menu, we need to edit the file config.txt on the SD   cards DOS boot partition.
-            </p>
-            <p>We find the line
-                <br>
-                <code>hdmi_timings=320 1 32 47 17 240 1 2 6 8 0 0 0 60 0 6400000 1 #240p #H-Rate 15.38kHz #V-Rate   60.10Hz
-                </code>
-            </p>
-            <p>Here we need to change values #3 and #5 (32 and 17 in our example) for horizontal screen   position, values #8 and #10 (2 and 8) for vertical position.
-                <br>  Be careful: If you ADD to one value, you have to SUBTRACT from the other and vice versa.
-            </p>
-        </div>
-        <footer id="pinhpFooter">
-            <div class="logo-button footer-copyright p-3 text-center">
-                <a href="https://www.facebook.com/groups/1649021265123737">
-                    <img src="../res/logo_F.png" alt="Fcbk"></a>
-                <br>Copyright &copy; pinHP 2018 - 2022
-            </div>
-        </footer>
-    </body>
+<html lang="en">    
+  <head>        
+    <meta charset="utf-8">        
+    <meta name="viewport" content="width=device-width, initial-scale=1">        
+    <meta property="og:url" content="http://pinhp-image.com/index.html">        
+    <meta property="og:title" content="pinHP Arcade Image">        
+    <meta property="og:description" content="Edit modelines">        
+    <meta property="og:image" content="https://pinhp.github.io/res/arcade_classics_by_pinhp.png">        
+    <meta property="og:locale" content="en_EN">        
+    <meta property="og:type" content="website">        
+    <link rel="icon" type="image/png" href="../res/favicon.png">        
+    <link rel="stylesheet" href="../css/bootstrap.css">        
+    <link rel="stylesheet" href="../animate.css">        
+    <link rel="stylesheet" href="../css/font-awesome.css">        
+    <link rel="stylesheet" href="../css/style.css">        
+<script src="../js/jquery.js"></script>        
+<script src="../js/popper.js"></script>        
+<script src="../js/bootstrap.js"></script>        
+    <title>pinHP Edit Modelines         
+    </title>    
+  </head>    
+  <body>        
+    <div class="container text-right">            
+      <h2 class="text-secondary"># pinHP Arcade Image</h2>        
+    </div>        
+    <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top py-1">        
+      <div class="container">            
+        <a class="navbar-brand" href="http://pinhp-image.com">                
+          <img src="../res/arcade_classics_by_pinhp.png" alt="Arcade Classics"     style="width:4em;"></a>            
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">                
+          <span class="navbar-toggler-icon">                
+          </span>            
+        </button>            
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">                
+          <ul class="navbar-nav">                    
+            <li class="nav-item dropdown">                        
+              <a class="nav-link dropdown-toggle" href="setup_instructions.html" data-toggle="dropdown">Setup Instructions</a>                        
+              <div class="dropdown-menu">                            
+                <a href="setup_instructions.html" class="dropdown-item"><i>Setup Instructions</i></a>                            
+                <a href="setup_instructions.html#hardware" class="dropdown-item">Hardware installation</a>                            
+                <a href="setup_instructions.html#software" class="dropdown-item">Software setup</a>                            
+                <a href="setup_instructions.html#pi2jamma" class="dropdown-item">Pi2Jamma / PiSCART</a>                            
+                <a href="setup_instructions.html#quickstart" class="dropdown-item">Quick start</a>                            
+                <a href="setup_instructions.html#configuration" class="dropdown-item">Configuration</a>                            
+                <a href="setup_instructions.html#subdirectories" class="dropdown-item">Subdirectories</a>                            
+                <a href="setup_instructions.html#extended_gamemenu" class="dropdown-item">Extended game menu</a>                            
+                <a href="setup_instructions.html#autostart" class="dropdown-item">Autostart a game</a>                            
+                <a href="setup_instructions.html#screensaver" class="dropdown-item">Screensaver</a>                            
+                <a href="setup_instructions.html#orientation" class="dropdown-item">Screen orientation</a>                            
+                <a href="setup_instructions.html#game_selection" class="dropdown-item">Game selection</a>                            
+                <a href="setup_instructions.html#mame_controls" class="dropdown-item">Mame controls</a>                            
+                <a href="setup_instructions.html#mame_info" class="dropdown-item">Mame info</a>                            
+                <a href="setup_instructions.html#mame_menu" class="dropdown-item">Mame settings menu</a>                            
+                <a href="setup_instructions.html#keyboard" class="dropdown-item">Keyboard</a>                            
+                <a href="setup_instructions.html#keyboard_mapping" class="dropdown-item">Keyboard mapping</a>                            
+                <a href="setup_instructions.html#mame_mapping" class="dropdown-item">Change buttons</a>                            
+                <a href="setup_instructions.html#wifi" class="dropdown-item">Wi-Fi</a>                            
+                <a href="setup_instructions.html#ssh" class="dropdown-item">SSH</a>                            
+                <a href="setup_instructions.html#servostik" class="dropdown-item">Ultimarc&reg; ServoStik support</a>                            
+                <a href="setup_instructions.html#advanced_instructions" class="dropdown-item">Advanced Instructions</a>                        
+              </div>                    
+            </li>                    
+            <li class="nav-item dropdown">                        
+              <a class="nav-link dropdown-toggle" href="user_manual.html" data-toggle="dropdown">User Manual</a>                        
+              <div class="dropdown-menu">                            
+                <a href="user_manual.html" class="dropdown-item"><i>User Manual</i></a>                            
+                <a href="user_manual.html#arcadegames" class="dropdown-item">Arcade Games</a>                            
+                <a href="user_manual.html#optionsmenu" class="dropdown-item">Options Menu</a>                            
+                <a href="user_manual.html#game_menu_settings" class="dropdown-item">Game Menu Settings</a>                            
+                <a href="user_manual.html#options_menu_settings" class="dropdown-item">Options Menu Settings</a>                            
+                <a href="user_manual.html#mame_settings" class="dropdown-item">Mame Settings</a>                            
+                <a href="user_manual.html#control_settings" class="dropdown-item">Control Settings</a>                            
+                <a href="user_manual.html#filter_settings" class="dropdown-item">Filter Settings</a>                            
+                <a href="user_manual.html#screen_settings" class="dropdown-item">Screen Settings</a>                            
+                <a href="user_manual.html#system_settings" class="dropdown-item">System Settings</a>                            
+                <a href="user_manual.html#language_settings" class="dropdown-item">Language Settings</a>                            
+                <a href="user_manual.html#backup_restore" class="dropdown-item">Backup/Restore</a>                            
+                <a href="user_manual.html#online_tools" class="dropdown-item">Online Tools</a>                            
+                <a href="user_manual.html#exit_into_shell" class="dropdown-item">Exit into Shell</a>                            
+                <a href="user_manual.html#hide_settings_menu" class="dropdown-item">* Hide Settings Menu *</a>                        
+              </div>                    
+            </li>                    
+            <li class="nav-item">                        
+              <a class="nav-link" href="download.html">Download</a>                    
+            </li>                    
+            <li class="nav-item dropdown">                                               
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Links</a>                                               
+              <div class="dropdown-menu">                                                     
+                <a href="https://www.advancemame.it" class="dropdown-item">Advance Mame</a>                                                     
+                <a href="https://github.com/pinHP/arcade/blob/main/games/_games.template" class="dropdown-item">0.106 game list</a>                                                     
+                <a href="https://arcadeforge.net/Pi2Jamma-Pi2SCART:::51.html" class="dropdown-item">Pi2Jamma/Pi2SCART hardware</a>                                                     
+                <a href="https://www.ultimarc.com/arcade-controls/joysticks" class="dropdown-item">Ultimarc&reg; ServoStik</a>                                                     
+                <a href="https://www.arcadezentrum.com/forum/board/index.php?thread/28556-pi-am-jumbo-quadro" class="dropdown-item">Quadro auto rotate monitor</a>                                                     
+                <a href="https://www.youtube.com/watch?v=eNxDKTbteXI" class="dropdown-item">pinHP demo video</a>                                                     
+                <a href="https://www.facebook.com/groups/1649021265123737" class="dropdown-item">Facebook support group</a>                                                                         
+              </div>                                         
+            </li>                                         
+            <li class="nav-item">                        
+              <a class="nav-link" href="about.html">About</a>                    
+            </li>                
+          </ul>            
+        </div>        
+      </div>        
+    </nav>        
+    <br>        
+    <div class="container rounded-sm bg-light py-2 my-2">    <h3>Adjusting MAME games</h3>            
+      <br>            
+      <p>For horizontal screen shifting on a SCART TV set, you can install ArcadeForge's                 
+        <a href="http://arcadeforge.net/Pi2Jamma-Pi2SCART/CRT-RGB-Pic-Shifter::306.html">
+          <i class="fa fa-external-link"></i>&nbsp;CRT RGB Picture Shifter</a> device.             
+      </p>            
+      <p>On Pi2SCART monitors, if there is no way to adjust the monitor itself, we can change the screen position (horizontal/vertical), within certain limits, on an individual base by altering modeline settings. Stretching or squeezing is not possible.             
+      </p>            
+      <p>Let's use Donkey Kong as example. Video mode according to Advance Mame's game info:                 
+        <br><strong>256 x 224 (V) 60 Hz</strong>            
+      </p>            
+      <p>In advmame.rc we look up the value for our game resolution.             
+      </p>            
+      <p>We find the line                 
+        <br>                
+        <code>256x224x60/display_mode 320x224 (60.02 Hz)                 
+        </code>                
+        <br>which tells Mame, what to do with games running a 256x224 resolution at 60 Hz refresh rate. It tells Mame to use <strong>display_mode 320x224 (60.02 Hz)</strong>.             
+      </p>            
+      <p>We find the line                 
+        <br>                
+        <code>device_video_modeline 320x224 (60.02 Hz) 6.4 320 321 352 407 224 229 236 262 -hsync -vsync #   15.72 kHz                 
+        </code>                
+        <br>which tells Mame how to set the video mode named <strong>320x224 (60.02 Hz)</strong>.             
+      </p>            
+      <p>The group of the first four values <strong>320 321 352 407</strong> is for horizontal (long side) screen resolution, the second group <strong>224 229 236 262</strong> for vertical (short side) screen resolution.             
+      </p>            
+      <p>Within each group, we change the second and third numbers by the same value. To shift the long side of the screen to the left (which is up on a vertical monitor), we increase the numbers.             
+      </p>            
+      <p>Let's shift the whole screen image 20 pixels to the left on the long side of the monitor - we increase the numbers by 20:                 
+        <br>                
+        <code>device_video_modeline 320x224 (60.02 Hz) 6.4 320 341 372 407 224 229 236 262 -hsync -vsync #   15.72 kHz                 
+        </code>            
+      </p>            
+      <p>Now lets additionally shift the image down on the short side of the monitor by subtracting 5   pixels:                 
+        <br>                
+        <code>device_video_modeline 320x224 (60.02 Hz) 6.4 320 341 372 407 224 224 231 262 -hsync -vsync #   15.72 kHz                 
+        </code>            
+      </p>            
+      <p>There are limitations: We cannot go below the first value or above the fourth value of each   group. So, in our example, we cannot move the image down the short side anymore. 224 is the limit   here.             
+      </p>            
+      <p>Some games make use of super resolution settings, where Mame downscales the actual image. This   is a workaround due to Raspberry Pi (up to 3B+) hardware limitations, making it possible to get   almost exact resolutions and refresh rates. Usually we are more flexible in shifting the screen   image as well.             
+      </p>            
+      <p>We see modelines like                 
+        <br>                
+        <code>device_video_modeline 1920x240 (60.00 Hz) 41.50 1920 2000 2288 2640 240 240 247 262 -hsync -vsync   # 15.72 kHz                 
+        </code>            
+      </p>            
+      <p>Since Mame scales the value of 1920 down by factor 6 to 320 pixels screen width, a horizontal   shift by 1 pixel requires the value to be changed by 6.             
+      </p>            
+      <p>Hint:                 
+        <br>  When a game is using a super resolution, if we TAB into the settings, unreadable small lines will   be shown on a vertical monitor. We need to temporarily change the game's resolution before   entering the menu. While in the game, we press . (dot) or , (comma) to cycle through available   resolutions, until the menu becomes readable. Then we can TAB in.         
+    </div>        
+    <div class="container rounded-sm bg-light py-2 my-2">            
+      </p>  <h3>Adjusting the menu screen</h3>            
+      <br>            
+      <p>To adjust screen positon of the pinHP menu, we need to edit the file config.txt on the SD   cards DOS boot partition.             
+      </p>            
+      <p>We find the line                 
+        <br>                
+        <code>hdmi_timings=320 1 32 47 17 240 1 2 6 8 0 0 0 60 0 6400000 1 #240p #H-Rate 15.38kHz #V-Rate   60.10Hz                 
+        </code>            
+      </p>            
+      <p>Here we need to change values #3 and #5 (32 and 17 in our example) for horizontal screen   position, values #8 and #10 (2 and 8) for vertical position.                 
+        <br>  Be careful: If you ADD to one value, you have to SUBTRACT from the other and vice versa.             
+      </p>        
+    </div>        
+    <footer id="pinhpFooter">            
+      <div class="logo-button footer-copyright p-3 text-center">                
+        <a href="https://www.facebook.com/groups/1649021265123737">                    
+          <img src="../res/logo_F.png" alt="Fcbk"></a>                
+        <br>Copyright &copy; pinHP 2018 - 2022             
+      </div>        
+    </footer>    
+  </body>
 </html>
