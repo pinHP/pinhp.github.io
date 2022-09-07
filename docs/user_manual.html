@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">       
+  <head>             
+    <meta charset="utf-8">             
+    <meta name="viewport" content="width=device-width, initial-scale=1">             
+    <meta property="og:url" content="http://pinhp-image.com/index.html">             
+    <meta property="og:title" content="pinHP Arcade Image">             
+    <meta property="og:description" content="User manual">             
+    <meta property="og:image" content="https://pinhp.github.io/res/arcade_classics_by_pinhp.png">             
+    <meta property="og:locale" content="en_EN">             
+    <meta property="og:type" content="website">             
+    <link rel="icon" type="image/png" href="../res/favicon.png">    
+    <link rel="stylesheet" href="../css/bootstrap.css">             
+    <link rel="stylesheet" href="../animate.css">             
+    <link rel="stylesheet" href="../css/font-awesome.css">             
+    <link rel="stylesheet" href="../css/style.css">         
+<script src="../js/jquery.js"></script>          
+<script src="../js/popper.js"></script>          
+<script src="../js/bootstrap.js"></script>              
+    <title>pinHP User Manual              
+    </title>       
+  </head>       
+  <body>             
+    <div class="container text-right">                   
+      <h2 class="text-secondary"># pinHP Arcade Image</h2>             
+    </div>             
+    <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top py-1">    
+      <div class="container">                   
+        <a class="navbar-brand" href="http://pinhp-image.com">                         
+          <img src="../res/arcade_classics_by_pinhp.png" alt="Arcade Classics"     style="width:4em;"></a>                   
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">                         
+          <span class="navbar-toggler-icon">                         
+          </span>                   
+        </button>                   
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">                         
+          <ul class="navbar-nav">                               
+            <li class="nav-item dropdown">                                     
+              <a class="nav-link dropdown-toggle" href="setup_instructions.html" data-toggle="dropdown">Setup Instructions</a>                                     
+              <div class="dropdown-menu">                                           
+                <a href="setup_instructions.html" class="dropdown-item"><i>Setup Instructions</i></a>                                           
+                <a href="setup_instructions.html#hardware" class="dropdown-item">Hardware installation</a>                                           
+                <a href="setup_instructions.html#software" class="dropdown-item">Software setup</a>                                           
+                <a href="setup_instructions.html#pi2jamma" class="dropdown-item">Pi2Jamma / PiSCART</a>                                           
+                <a href="setup_instructions.html#quickstart" class="dropdown-item">Quick start</a>                                           
+                <a href="setup_instructions.html#configuration" class="dropdown-item">Configuration</a>                                           
+                <a href="setup_instructions.html#subdirectories" class="dropdown-item">Subdirectories</a>                                           
+                <a href="setup_instructions.html#extended_gamemenu" class="dropdown-item">Extended game menu</a>                                           
+                <a href="setup_instructions.html#autostart" class="dropdown-item">Autostart a game</a>                                           
+                <a href="setup_instructions.html#screensaver" class="dropdown-item">Screensaver</a>                                           
+                <a href="setup_instructions.html#orientation" class="dropdown-item">Screen orientation</a>                                           
+                <a href="setup_instructions.html#game_selection" class="dropdown-item">Game selection</a>                                           
+                <a href="setup_instructions.html#mame_controls" class="dropdown-item">Mame controls</a>                                           
+                <a href="setup_instructions.html#mame_info" class="dropdown-item">Mame info</a>                                           
+                <a href="setup_instructions.html#mame_menu" class="dropdown-item">Mame settings menu</a>                                           
+                <a href="setup_instructions.html#keyboard" class="dropdown-item">Keyboard</a>                                           
+                <a href="setup_instructions.html#keyboard_mapping" class="dropdown-item">Keyboard mapping</a>                                           
+                <a href="setup_instructions.html#mame_mapping" class="dropdown-item">Change buttons</a>                                           
+                <a href="setup_instructions.html#wifi" class="dropdown-item">Wi-Fi</a>                                           
+                <a href="setup_instructions.html#ssh" class="dropdown-item">SSH</a>                                           
+                <a href="setup_instructions.html#servostik" class="dropdown-item">Ultimarc&reg; ServoStik support</a>                                           
+                <a href="setup_instructions.html#advanced_instructions" class="dropdown-item">Advanced Instructions</a>                                     
+              </div>                               
+            </li>                               
+            <li class="nav-item dropdown">                                     
+              <a class="nav-link dropdown-toggle active" href="user_manual.html" data-toggle="dropdown">User Manual</a>                                     
+              <div class="dropdown-menu">                                           
+                <a href="user_manual.html" class="dropdown-item"><i>User Manual</i></a>                                           
+                <a href="#arcadegames" class="dropdown-item">Arcade Games</a>                                           
+                <a href="#optionsmenu" class="dropdown-item">Options Menu</a>                                           
+                <a href="#game_menu_settings" class="dropdown-item">Game Menu Settings</a>                                           
+                <a href="#options_menu_settings" class="dropdown-item">Options Menu Settings</a>                                           
+                <a href="#mame_settings" class="dropdown-item">Mame Settings</a>                                           
+                <a href="#control_settings" class="dropdown-item">Control Settings</a>                                           
+                <a href="#filter_settings" class="dropdown-item">Filter Settings</a>                                           
+                <a href="#screen_settings" class="dropdown-item">Screen Settings</a>                                           
+                <a href="#system_settings" class="dropdown-item">System Settings</a>                                           
+                <a href="#language_settings" class="dropdown-item">Language Settings</a>                                           
+                <a href="#backup_restore" class="dropdown-item">Backup/Restore</a>                                           
+                <a href="#online_tools" class="dropdown-item">Online Tools</a>                                           
+                <a href="#exit_into_shell" class="dropdown-item">Exit into Shell</a>                                           
+                <a href="#hide_settings_menu" class="dropdown-item">* Hide Settings Menu *</a>                                     
+              </div>                               
+            </li>                               
+            <li class="nav-item">                                     
+              <a class="nav-link" href="download.html">Download</a>                               
+            </li>                               
+            <li class="nav-item dropdown">                                     
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Links</a>                                     
+              <div class="dropdown-menu">                                           
+                <a href="https://www.advancemame.it" class="dropdown-item">Advance Mame</a>                                           
+                <a href="https://github.com/pinHP/arcade/blob/main/games/_games.template" class="dropdown-item">0.106 game list</a>                                           
+                <a href="https://arcadeforge.net/Pi2Jamma-Pi2SCART:::51.html" class="dropdown-item">Pi2Jamma/Pi2SCART hardware</a>                                           
+                <a href="https://www.ultimarc.com/arcade-controls/joysticks" class="dropdown-item">Ultimarc&reg; ServoStik</a>                                           
+                <a href="https://www.arcadezentrum.com/forum/board/index.php?thread/28556-pi-am-jumbo-quadro" class="dropdown-item">Quadro auto rotate monitor</a>                                           
+                <a href="https://www.youtube.com/watch?v=eNxDKTbteXI" class="dropdown-item">pinHP demo video</a>                                           
+                <a href="https://www.facebook.com/groups/1649021265123737" class="dropdown-item">Facebook support group</a>                                                               
+              </div>                               
+            </li>                               
+            <li class="nav-item">                                     
+              <a class="nav-link" href="about.html">About</a>                         
+          </ul>                   
+        </div>             
+      </div>    
+    </nav>             
+    <br>             
+    <div class="container px-5">                   
+      <h3 class="rounded-sm bg-info text-center text-white">User Manual</h3>                   
+      <br>             
+    </div>             
+    <div class="container rounded-sm bg-light py-2 my-2">    <h3>                         
+        <a class="anchor" id="arcadegames"></a>                    Arcade Games                     </h3>                   
+      <ul>                         
+        <li>Navigate with joystick, arrow keys or                          
+        <a href="#usb_gamepad">gamepad</a>.                          
+        <br>                Left/Right: Scroll pagewise.                          
+        <br>                Left/Right & Player1-Start: Jump alphabetically.                          
+        </li>                         
+        <li>Select game or menu item: Player1-Button1 ("Left-CTRL").                          
+        </li>                         
+        <li>Insert coin: Player1-Start & Joystick up ("1" & "Up-Arrow").                          
+        </li>                         
+        <li>Exit game: Player1-Start & Player1-Button1 ("1" & "Left-CTRL")                          
+        </li>                         
+        <li>Go back in menu: Player1-Button2 ("Left-ALT").                          
+        </li>                         
+        <li>                         
+        <a href="setup_instructions.html#mame_mapping">Edit</a> Mame                          
+        <a href=                 "setup_instructions.html#quickstart">controls</a>.                          
+        </li>                   
+      </ul>             
+    </div>             
+    <div class="container rounded-sm bg-light py-2 my-2">             <h3>                         
+        <a class="anchor" id="optionsmenu"></a>Options Menu                         </h3>                   
+      <ul>                         
+        <li>                         
+        <a id="screensaver" name="screensaver"></a>                <strong>Screensaver</strong>                         
+        <br>                         
+        <p>Activate a                                
+          <a href=               "#screensaver_type">screensaver</a>.                          
+        </p>                         
+        </li>                         
+        <li>                         
+        <a class="anchor" id="filtergames" name="filtergames"></a>                <strong>Filter Games</strong>                         
+        <br>                         
+        <p>Filter games by various criteria.                          
+        </p>                         
+        </li>                         
+        <li>                         
+        <a id="groupgames" name="groupgames"></a>                <strong>Group Games</strong>                         
+        <br>                         
+        <p>Group games by various criteria.                          
+        </p>                         
+        </li>                         
+        <li>                         
+        <a id="reboot" name="reboot"></a> <strong>                        Reboot                         </strong>                         
+        <p>Reboot the system. This option also forces a               regeneration of the game menu.                          
+        </p>                         
+        </li>                         
+        <li>                         
+        <a id="shutdown" name=             "shutdown"></a><strong>Shutdown</strong>                         
+        <p>Gracefully shut down the Raspberry system. Wait a               couple of seconds, then you can safely power off the Arcade cabinet as well.                          
+        </p>                         
+        </li>                         
+        <li>                         
+        <a id="about" name=             "about"></a><strong>About</strong>                         
+        <p>The obvious ...                          
+        </p>                         
+        </li>                         
+        <li>                         
+        <a id="uptime" name="uptime"></a> <strong>                    Uptime                     </strong>                         
+        <p>The time the system has been running.                          
+        </p>                         
+        </li>                   
+      </ul>             
+    </div>             
+    <div class="container rounded-sm bg-light py-2 my-2">                <h3>                         
+        <a class="anchor" id="game_menu_settings"></a>Game Menu Settings                 </h3>                   
+      <ul>                         
+        <li><strong>Show Deleted Games</strong>                         
+        <p>Show games previously "deleted", i. e. moved to the "roms_unused" directory, by pressing the            
+          <a href= "#p2start_button">Player2-Start</a> button.                          
+        </p>                         
+        </li>                         
+        <li><strong>Hide Mature Games</strong>                         
+        <p>          Hide mature games                          
+        </p>                         
+        </li>                         
+        <li><strong>1 Line Game Menu</strong>                         
+        <p>          Display all games found in "rpi2jamma/roms_advmame".                          
+        </p>                         
+        </li>                         
+        <li><strong>2 Line Game Menu</strong>                         
+        <p>          Display favourite games and all games.                          
+        </p>                         
+        </li>                         
+        <li><strong>3 Line Game Menu</strong>                         
+        <p>          Display favourite games, 2nd menu games and all games.                          
+        </p>                         
+        </li>                         
+        <li><strong>Fav. Games Menu Only</strong>                         
+        <p>          Display favourite games.                          
+        </p>                         
+        </li>                         
+        <li><strong>Fav. & 2nd Menu Only</strong>                         
+        <p>          Display favourite and 2nd menu games.                          
+        </p>                         
+        </li>                         
+        <li><strong>Custom Folders</strong>                         
+        <p>          Enable subfolders inside "rpi2jamma/roms_advmame". The menu list will be sorted           alphabetically, according to the folders' names. Avoid special characters in folder           names, as they may crash the system, use the ".title" file instead. Each subfolder           contains a ".title" file to define an optional display name different from the folder           name. Titles preceded by a hash (#) make the menu invisible but accessible. Titles           preceded by a dot (.) are completely hidden from the menu.                          
+        </p>                         
+        </li>                         
+        <li><strong>Select Fav. Games</strong>                         
+        <p>          The screen turns green. Select games you want to add to the favourites menu ("Fav.           Games"). Changes are applied from inside the game menu by clicking "APPLY CHANGES" or           when the green menu mode is left.                          
+        </p>                         
+        </li>                         
+        <li><strong>Deselect Fav. Games</strong>                         
+        <p>          The screen turns red. Select games you want to remove from the favourites menu. Nothing           is deleted - the games are still there, they are just not displayed in the favourites           menu any more. Changes are applied from inside the game menu by clicking "APPLY CHANGES"           or when the red menu mode is left.                          
+        </p>                         
+        </li>                         
+        <li><strong>Select 2nd Menu Games</strong>                         
+        <p>          The screen turns green. Select games you want to add to the second favourites menu ("More           Games"). Changes are applied from inside the game menu by clicking "APPLY CHANGES" or           when the green menu mode is left.                          
+        </p>                         
+        </li>                         
+        <li><strong>Deselect 2nd Menu Games</strong>                         
+        <p>          The screen turns red. Select games you want to remove from the second favourites menu.           Nothing is deleted - the games are still there, they are just not displayed in the second           favourites menu any more. Changes are applied from inside the game menu by clicking           "APPLY CHANGES" or when the red menu mode is left.                          
+        </p>                         
+        </li>                         
+        <li><strong>Game Preview Images</strong>                         
+        <p>          Display game preview images in the menu, if found in "rpi2jamma/snaps" (*.png file           format).                          
+        </p>                         
+        </li>                         
+        <li><strong>Game Preview Videos</strong>                         
+        <p>          Display game preview videos images in the menu, if found in "rpi2jamma/videos" (*.mp4           file format).                          
+        </p>                         
+        </li>                         
+        <li><strong>Video Volume</strong>                         
+        <p>          Select the volume of game preview videos (LOW | MID | MAX | OFF).                          
+        </p>                         
+        </li>                         
+        <li><strong>Game Preview Marquees</strong>                         
+        <p>          Display marquees, if found in "rpi2jamma/marquees".                          
+        </p>                         
+        </li>                         
+        <li><strong>Game Preview Logos</strong>                         
+        <p>          Display logos, if found in "rpi2jamma/logos".                          
+        </p>                         
+        </li>                         
+        <li><strong>Game Count</strong>                         
+        <p>          Display the number of games inside each game menu.                          
+        </p>                         
+        </li>                         
+        <li><strong>Display Friendly Names</strong>                         
+        <p>          Filter out descriptive text like "(US set 1)" or "(rev 2)" from the game menu.                          
+        </p>                         
+        </li>                         
+        <li><strong>Orientation Filter</strong>                         
+        <p>          Display only games matching the current screen setting.                          
+        </p>                         
+        </li>                   
+      </ul>             
+    </div>             
+    <div class="container rounded-sm bg-light py-2 my-2">                <h3>                         
+        <a class="anchor" id="options_menu_settings"></a>Options Menu Settings                 </h3>                   
+      <ul>                         
+        <li>Display or hide the selected items in the "Options" menu.                          
+        </li>                   
+      </ul>             
+    </div>             
+    <div class="container rounded-sm bg-light py-2 my-2">                <h3>                         
+        <a class="anchor" id="mame_settings"></a>Mame Settings                 </h3>                   
+      <ul>                         
+        <li><strong>Active Mame Config</strong>                         
+        <p>          Support for up to three independent Mame configurations ("advmame.rc" configuration           files). Game resolutions, button assignments or whatever is set from the pinHP "Mame           Settings" menu is saved in the current Mame configuration only, making it possible to e.           g. have a set for Jamma controls and another set for gamepad controls. Hiscores are           independent as they are not part of configuration files.                          
+        </p>                         
+        </li>                         
+        <li><strong>Display Button Layout</strong>                         
+        <p>          Display a button layout image before starting a game, if found in "rpi2jamma/buttons".           *.png file format. Technically, this is actually no Mame setting, though it is listed           here.                          
+        </p>                         
+        </li>                         
+        <li>            <strong>Artwork Backdrop</strong>                         
+        <p>            Display                                
+          <a href="http://www.advancemame.it/doc-advmame#8.7.1">
+            <i class="fa fa-external-link"></i>&nbsp;artwork</a> files, if             found in "rpi2jamma/artwork_advmame".                          
+        </p>                         
+        </li>                         
+        <li>            <strong>Artwork Overlay</strong>                         
+        <p>            Display                                
+          <a href="http://www.advancemame.it/doc-advmame#8.7.1">
+            <i class="fa fa-external-link"></i>&nbsp;artwork</a> files, if             found in "rpi2jamma/artwork_advmame".                          
+        </p>                         
+        </li>                         
+        <li>            <strong>Brightness</strong>                         
+        <p>            Set the                                
+          <a href="http://www.advancemame.it/doc-advmame#8.6.5">
+            <i class="fa fa-external-link"></i>&nbsp;brightness</a> level (             0.5 | 1.0 | 1.5 ).                          
+        </p>                         
+        </li>                         
+        <li>            <strong>Gamma</strong>                         
+        <p>            Set the                                
+          <a href="http://www.advancemame.it/doc-advmame#8.6.6">
+            <i class="fa fa-external-link"></i>&nbsp;gamma</a> level ( 0.5 |             1.0 | 1.5 ).                          
+        </p>                         
+        </li>                         
+        <li>            <strong>Vector antialias</strong>                         
+        <p>                               
+          <a href="http://www.advancemame.it/doc-advmame#8.8.1">
+            <i class="fa fa-external-link"></i>&nbsp;Anti-alias</a> vector games.                          
+        </p>                         
+        </li>                         
+        <li>            <strong>Vsync</strong>                         
+        <p>            Enable/disable                                
+          <a href="http://www.advancemame.it/doc-advmame#8.4.10">
+            <i class="fa fa-external-link"></i>&nbsp;vsync</a>.                          
+        </p>                         
+        </li>                         
+        <li>            <strong>Enable Cheats</strong>                         
+        <p>            Enable/disable Mame                                
+          <a href="http://www.advancemame.it/doc-advmame#8.16.1">
+            <i class="fa fa-external-link"></i>&nbsp;cheats</a>,             if available.                          
+        </p>                         
+        </li>                         
+        <li>            <strong>Free Play</strong>                         
+        <p>            Enable/disable Mame                                
+          <a href="http://www.advancemame.it/doc-advmame#8.15.5">
+            <i class="fa fa-external-link"></i>&nbsp;free play</a>, if available.                          
+        </p>                         
+        </li>                         
+        <li><strong>Idle Exit</strong>                         
+        <p>          Exit Mame game back to pinHP menu after a certain idle time. Since there is no           screensaver available in Mame, once back in pinHP menu, the screensaver (if selected) can           be activated.                          
+        </p>                         
+        </li>                         
+        <li><strong>Custom Idle Exit Time</strong>                         
+        <p>          Set any custom time (seconds).                          
+        </p>                         
+        </li>                         
+        <li>            <strong>Pause Dim Screen</strong>                         
+        <p>            Dim the screen 50 % if a game is paused. Pause action: Player1-Start & Joystick down             ("1" & "Down-Arrow"). Edit the default key combination from the                                
+          <a href=             "setup_instructions.html#mame_mapping">Mame configuration menu</a>.                          
+        </p>                         
+        </li>                         
+        <li>            <strong>Sound Normalize</strong>                         
+        <p>            Enable/disable                                
+          <a href="http://www.advancemame.it/doc-advmame#8.9.6">
+            <i class="fa fa-external-link"></i>&nbsp;sound normalize</a>.                          
+        </p>                         
+        </li>                         
+        <li><strong>Mono/Stereo</strong>                         
+        <p>          mono | stereo | surround | auto                          
+        </p>                         
+        </li>                         
+        <li><strong>H-Games rotate L</strong>                         
+        <p>                               
+          <em>For vertical cabinets.                                
+          </em> Mame expects a horizontal monitor. Select this option to           display horizontal games on a vertically mounted monitor. This will always be a           compromise regarding game resolution.                          
+        </p>                         
+        </li>                         
+        <li><strong>                               
+          <a class="anchor" id="vgames_rotate_l" name="vgames_rotate_l"></a>V-Games rotate           L</strong>                         
+        <p>                               
+          <em>For vertical cabinets.                                
+          </em> Select this option to properly display vertical games on           a vertically mounted monitor.                          
+        </p>                         
+        </li>                   
+      </ul>             
+    </div>             
+    <div class="container rounded-sm bg-light py-2 my-2">                <h3>                         
+        <a class="anchor" id="control_settings"></a>Control Settings                </h3>                   
+      <ul>                         
+        <li><strong>Hardware Mode</strong>                         
+        <p>                               
+          <em>Important!                                
+          </em> Pi2Jamma or Pi2SCART. The hardware mode should be auto detected at           boot. However, if it is not set properly, controls of a Jamma cabinet will not work or,           on Pi2SCART, weird characters will flash on the screen.                          
+        </p>                         
+        </li>                         
+        <li>            <strong>                               
+          <a class="anchor" id="usb_gamepad"></a>USB Gamepad</strong>                         
+        <p>            Select your gamepad for pinHP menu control. This is independent from Mame, which uses             its own setup:                                
+          <a href=             "setup_instructions.html#mame_mapping">TAB into Mame             settings.</a>                         
+        </p>                         
+        </li>                         
+        <li>            <strong>Enable ServoStik</strong>                         
+        <p>            If you have a 4-8-way switchable Ultimarc&reg; ServoStik mounted, this option enables                                
+          <a href=             "setup_instructions.html#servostik">control</a> via             the menu or automatically with each game.                          
+        </p>                         
+        </li>                         
+        <li>            <strong>          
+          <a class="anchor" id="p2start_button"></a>P2-Start Button</strong>                         
+        <p>            The Player2-Start button, while in pinHP menu (not during a game) can trigger a defined             action: Add game to favourites, "delete" game by moving it to the "roms_unused" direcory, (both actions not available if the system was made                                
+          <a href=             "#hide_settings_menu">child proof</a>), change screen orientation, activate screensaver             or toggle                                
+          <a href=             "setup_instructions.html#servostik">ServoStik</a>            (if available).                          
+        </p>                         
+        </li>                   
+      </ul>             
+    </div>             
+    <div class="container rounded-sm bg-light py-2 my-2">                <h3>                         
+        <a class="anchor" id="filter_settings"></a>Filter Settings                 </h3>                   
+      <ul>                         
+        <li class="list-unstyled" >                         
+          <p>The following settings do not apply, remove or affect any filters. Here you set which items will be available to select from in the actual 
+            <a href="#filtergames">filter</a> dialogs.         
+          </p>                         
+        </li>                         
+        <li><strong>List</strong>                         
+        <p>          Add selected items to filter selection lists                          
+        </p>                         
+        </li>                         
+        <li><strong>Unlist</strong>                         
+        <p>          Remove selected items from filter selection lists                          
+        </p>                         
+        </li>                         
+        <li><strong>Reset All</strong>                         
+        <p>          Reset all item selections to their default values                          
+        </p>                         
+        </li>                   
+      </ul>             
+    </div>             
+    <div class="container rounded-sm bg-light py-2 my-2">                <h3>                         
+        <a class="anchor" id="screen_settings"></a>Screen Settings                 </h3>                   
+      <ul>                         
+        <li>            <strong>Orientation</strong>                         
+        <p>            Set the orientation of the pinHP menu. This is independent from Mame games. Mame             orientation is set                                
+          <a href="#vgames_rotate_l">here</a>.                          
+        </p>                         
+        </li>                         
+        <li><strong>Menu Size</strong>                         
+        <p>          pinHP menu size.                          
+        </p>                         
+        </li>                         
+        <li><strong>Color</strong>                         
+        <p>          Select your preferred pinHP menu style.                          
+        </p>                         
+        </li>                         
+        <li><strong>Text Size</strong>                         
+        <p>          pinHP menu text size: Small | Normal                          
+        </p>                         
+        </li>                         
+        <li><strong>Text Align</strong>                         
+        <p>          pinHP menu text alignment: Left | Center | Right                          
+        </p>                         
+        </li>                         
+        <li><strong>Text Color</strong>                         
+        <p>          pinHP menu text color: Enter hex value.                          
+        </p>                         
+        </li>                         
+        <li><strong>Highlight Color</strong>                         
+        <p>          pinHP "cursor" text color: Enter hex value.                          
+        </p>                         
+        </li>                         
+        <li><strong>Screen Upside Down</strong>                         
+        <p>          For monitors not mounted the standard way.                          
+        </p>                         
+        </li>                         
+        <li><strong>Monitor Test Card</strong>                         
+        <p>          Flip through seven different test images for monitor hardware adjustment.                          
+        </p>                         
+        </li>                   
+      </ul>             
+    </div>             
+    <div class="container rounded-sm bg-light py-2 my-2">                <h3>                         
+        <a class="anchor" id="system_settings"></a>System Settings                 </h3>                   
+      <ul>                         
+        <li><strong>Select Autostart Game</strong>                         
+        <p>          The screen turns blue. Select a game to run automatically after system boot.                          
+        </p>                         
+        </li>                         
+        <li><strong>Autostart Last Game</strong>                         
+        <p>          Automatically run the last played game after system boot.                          
+        </p>                         
+        </li>                         
+        <li><strong>No Autostart</strong>                         
+        <p>          Disable any autostart (game or screenaver)                          
+        </p>                         
+        </li>                         
+        <li><strong>Boot into Screensaver</strong>                         
+        <p>          The system will boot right into a screensaver.                          
+        </p>                         
+        </li>                         
+        <li><strong>Screensaver</strong>                         
+        <p>          Idle time until activation.                          
+        </p>                         
+        </li>                         
+        <li><strong>Custom Screensaver Time</strong>                         
+        <p>          Custom idle time.                          
+        </p>                         
+        </li>                         
+        <li><strong>                               
+          <a class="anchor" id="screensaver_type" name="screensaver_type"></a>Screensaver           Type</strong>                         
+        <p>          Select from 10 different screensavers.                          
+        </p>                         
+        </li>                         
+        <li><strong>Status Messages</strong>                         
+        <p>          Flash a brief status message when selecting a menu item (e. g. the name of the Mame ROM           before starting a game).                          
+        </p>                         
+        </li>                         
+        <li><strong>Game Volume</strong>                         
+        <p>          Set the game volume.                          
+        </p>                         
+        </li>                         
+        <li><strong>System Boot Date</strong>                         
+        <p>          Select the date to be set when the system boots. There is no hardware clock in a           Raspberry Pi, so the system date will always be wrong unless there is an Internet           connection. Select between image date, last shutdown date or a custom date.                          
+        </p>                         
+        </li>                         
+        <li><strong>Set Time Zone</strong>                         
+        <p>          Select your time zone.                          
+        </p>                         
+        </li>                         
+        <li><strong>Max. Data Partition</strong>                         
+        <p>          Maximise the DATA partition of the SD card, making available unused space outside the           default 16 GB image size.                          
+        </p>                         
+        </li>                         
+        <li><strong>Copy Games from SD to USB</strong>                         
+        <p>          Copy all games from the system SD card to the USB stick.                          
+        </p>                         
+        </li>                         
+        <li><strong>Copy Games from USB to SD</strong>                         
+        <p>          Copy all games from the USB stick to the system SD card.                          
+        </p>                         
+        </li>                         
+        <li><strong>Run External File</strong>                         
+        <p>          Run a custom external file, to be placed in the "rpi2jamma" directory.                                
+          <br>                               
+          <em>Attn. developers:                                
+          </em> Since a child process does not have access to its parent"s           variables, the current pinHP variables are dumped into /tmp/pinhp_variables right before           running the external file, making it possible to grep the values. The other way round, if           you need to change pinHP variables, you can declare them in /tmp/external_vars. The main           script sources this file right after executing the custom script/program.                          
+        </p>                         
+        </li>                         
+        <li><strong>AdvanceMENU Frontend</strong>                         
+        <p>          Run alternative user interface, developed by the creator of AdvanceMAME, the MAME port           used in pinHP. Press ESC to exit or "P1-Start & P1-Button1".                          
+        </p>                         
+        </li>                         
+        <li><strong>Boot into AdvanceMENU</strong>                         
+        <p>          Run AdvanceMenu user interface automatically.                          
+        </p>                         
+        </li>                   
+      </ul>             
+    </div>             
+    <div class="container rounded-sm bg-light py-2 my-2">                <h3>                         
+        <a class="anchor" id="language_settings"></a>Language Settings                 </h3>                   
+      <ul>                         
+        <li><strong>Keyboard</strong>                         
+        <p>          Select keyboard layout ( de|us|fr ).                          
+        </p>                         
+        </li>                         
+        <li>            <strong>*menu_* entries</strong>                         
+        <p>            Edit display titles as you like.                                
+          <br>N.b.: Display text of all pinHP menu items can be edited in             "rpi2jamma/language.ini".                          
+        </p>                         
+        </li>                   
+      </ul>             
+    </div>             
+    <div class="container rounded-sm bg-light py-2 my-2">                <h3>                         
+        <a class="anchor" id="backup_restore"></a>Backup/Restore                 </h3>                   
+      <ul>                         
+        <li><strong>Backup Settings</strong>                         
+        <p>          Backup hiscores and MAME settings into to the "backup" folder on the USB stick (or the SD           card's DATA partition).                          
+        </p>                         
+        </li>                         
+        <li><strong>Restore Settings</strong>                         
+        <p>          Restore settings from the "backup" folder. Asks for confirmation before actually           restoring and overwriting settings. Does NOT restore files on the USB stick or DATA           partition (favourites definitions, config.ini and language.ini).                          
+        </p>                         
+        </li>                         
+        <li><strong>Backup Fav. Settings</strong>                         
+        <p>          Backup favourites definitions into the "backup" folder on the USB stick (or the SD card"s           DATA partition).                          
+        </p>                         
+        </li>                         
+        <li><strong>Restore Fav. Settings</strong>                         
+        <p>          Restore favourites definitions from the "backup" folder.                          
+        </p>                         
+        </li>                   
+      </ul>             
+    </div>             
+    <div class="container rounded-sm bg-light py-2 my-2">                <h3>                         
+        <a class="anchor" id="online_tools"></a>Online Tools                 </h3>                   
+      <ul>                         
+        <li><strong>Wi-Fi Setup</strong>                         
+        <p>          Select and connect to a Wi-Fi network. A keyboard is required for the first time, to           enter encryption keys.                          
+        </p>                         
+        </li>                         
+        <li><strong>Connect now</strong>                         
+        <p>          Connect to the selected network.                          
+        </p>                         
+        </li>                         
+        <li><strong>Auto Connect</strong>                         
+        <p>          Automatically connect to the network during boot.                          
+        </p>                         
+        </li>                         
+        <li>            <strong>Show IP Address</strong>                         
+        <p>            The IP address assigned to the system by your network Required for                                
+          <a href=             "setup_instructions.html#ssh">SSH</a> connection.                          
+        </p>                         
+        </li>                         
+        <li><strong>Disconnect Wi-Fi</strong>                         
+        <p>          Disconnect current Wi-Fi.                          
+        </p>                         
+        </li>                         
+        <li><strong>Remove Wi-Fi Profiles</strong>                         
+        <p>          Remove all saved Wi-Fi profiles from the system. Required if a network key has changed.           Asks for confirmation.                          
+        </p>                         
+        </li>                         
+        <li><strong>Uptime Alarm by Mail</strong>                         
+        <p>          Did you ever leave your game room for "just a minute" and forgot to come back before the           next weekend? Receive an email that the system is still up and running after a specified           amount of time. To be configured inside "rpi2jamma/.mail" on the USB stick or the DATA           partition.                          
+        </p>                         
+        </li>                         
+        <li><strong>Check for Update</strong>                         
+        <p>          Check if system updates are available.                          
+        </p>                         
+        </li>                   
+      </ul>             
+    </div>             
+    <div class="container rounded-sm bg-light py-2 my-2">                <h3>                         
+        <a class="anchor" id="exit_into_shell"></a>Exit into Shell                 </h3>                   
+      <ul>                         
+        <li>Exit Arcade. You are logged in to the Linux system as root user. Type 'poweroff' to           gracefully shut down the system.                          
+        </li>                   
+      </ul>             
+    </div>             
+    <div class="container rounded-sm bg-light py-2 my-2">                <h3>                         
+        <a class="anchor" id="hide_settings_menu"></a>* Hide Settings Menu *                 </h3>                   
+      <ul>                         
+        <li>Make your system child proof. Removes all menu items that should be accessible to           the system administrator only. The menu can be activated again by clicking any of the           blank lines between 'Back' and 'About' three times (slowly) within 10 seconds.                          
+        </li>                   
+      </ul>             
+    </div>             
+    <footer id="pinhpFooter">                   
+      <div class="logo-button footer-copyright p-3 text-center">                         
+        <a href="https://www.facebook.com/groups/1649021265123737">                               
+          <img src="../res/logo_F.png" alt="Fcbk"></a>                         
+        <br>Copyright &copy; pinHP 2018 - 2022                    
+      </div>             
+    </footer>       
+  </body>
+</html>
