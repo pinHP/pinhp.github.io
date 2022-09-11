@@ -115,12 +115,12 @@
         <a class="anchor" id= "software"></a>Initial software setup</h4>   
       <p class="pl-4">Use a disk imaging program like "Win32DiskImager" to write the image file to a Micro-SD card (at least 16 GB size).   
       </p>   
-      <p class="pl-4">A USB stick containing ROMs and configuration settings is recommended, but optional. Boot with an empty, formatted USB stick. The system will detect it and create the folder structure automatically.   
+      <p class="pl-4">A USB flash drive containing ROMs and configuration settings is recommended, but optional. Game ROMs, individual settings and backups are stored there. You do not need Linux access to copy or manipulate files, and your configuration will be still available in case the system SD card might get corrupted. Boot with an empty, formatted USB flash drive. The system will detect it and create the folder structure automatically.
       </p>   
     </div>   
     <div class="container rounded-sm bg-light py-2 my-2"><h4>   
         <a class="anchor" id= "pi2jamma"></a>Pi2Jamma / Pi2SCART setup</h4>   
-      <p class="pl-4">All files required are stored inside the "rpi2jamma" directory on either the USB stick or the SD card's "RPI_DATA" partition. The most important subdirectory is "roms_advmame" - place your game ROMs there and you are good to go.   
+      <p class="pl-4">All files required are stored inside the "rpi2jamma" directory on either the USB flash drive or the SD card's "RPI_DATA" partition. The most important subdirectory is "roms_advmame" - place your game ROMs there and you are good to go.
       </p>   
       <p class="pl-4">You can as well sort ROM files into subfolders, which will also show up in the game menu. Individual display names can be set with the ".title" file inside each directory. Write the name into the file and nothing else. Names preceded by a "." (dot) will hide the directory completely, making it inaccessible from the menu. Names preceded by a "#" (hash sign) will show a blank line in the menu, but leave it accessible.   
       </p>   
@@ -170,8 +170,8 @@
       </p>   
       <p class="pl-4">If advanced settings are not visible, click into any of the empty lines between <b>Back</b> and <b>About</b> three times (slowly) within 10 seconds to activate the menu. Hide the settings menu again to keep your system childproof.
       </p>   
-      <p class="pl-4">Settings are stored in "config.ini" on the USB stick.  
-        <br>Individual text can be edited in "language.ini" on the USB stick.   
+      <p class="pl-4">Settings are stored in "config.ini" on the USB flash drive.
+        <br>Individual text can be edited in "language.ini" on the USB flash drive.
       </p>   
     </div>   
     <div class="container rounded-sm bg-light py-2 my-2"><h4>   
@@ -299,9 +299,9 @@
         </li>   
         <li class="py-1">Romset version 0.106   
         </li>   
-        <li class="py-1">Put ROMs inside "roms_advmame" folder on USB stick.   
+        <li class="py-1">Put ROMs inside "roms_advmame" folder on USB flash drive.
         </li>   
-        <li class="py-1">Put BIOS files (e. g. neogeo.zip) inside "bios_advmame" on USB stick.   
+        <li class="py-1">Put BIOS files (e. g. neogeo.zip) inside "bios_advmame" on USB flash drive.
       </ul>   
     </div>   
     <div class="container rounded-sm bg-light py-2 my-2"><h4>   
@@ -443,7 +443,7 @@
         <li class="py-1">5) Do whatever you want in the Linux system, e.g. run Midnight Commander: Type "mc"   
         </li>   
       </ul>   
-      <p class="pl-4">The DOS (FAT32) partition containing games and system settings, in use only if no USB stick is present, is mounted at /mnt/data   
+      <p class="pl-4">The DOS (FAT32) partition containing games and system settings, in use only if no USB flash drive is present, is mounted at /mnt/data
       </p>   
     </div>   
     <div class="container rounded-sm bg-light py-2 my-2"><h4>   
