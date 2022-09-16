@@ -119,11 +119,11 @@
         </code>   
         <br>which tells Mame, what to do with games running a 256x224 resolution at 60 Hz refresh rate. It tells Mame to use <strong>display_mode 320x224 (60.02 Hz)</strong>.   
       </p>   
-      <p>We find the line   
+      <p>We look up this display mode and find the line   
         <br>   
         <code>device_video_modeline "320x224 (60.02 Hz)"&nbsp;&nbsp;6.4&nbsp;&nbsp;320 321 352 407&nbsp;&nbsp;224 229 236 262 -hsync -vsync # 15.72 kHz   
         </code>   
-        <br>which tells Mame how to set the video mode named <strong>320x224 (60.02 Hz)</strong>.   
+        <br>which tells Mame how to set the display mode named <strong>320x224 (60.02 Hz)</strong>.   
       </p>   
       <p>Following the 6.4 MHz pixel clock frequency, the group of the first four values <strong>320 321 352 407</strong> is for horizontal (long side) screen resolution, the second group <strong>224 229 236 262</strong> for vertical (short side) screen resolution.   
       </p>   
