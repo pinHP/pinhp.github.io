@@ -121,7 +121,7 @@
       </p>   
       <p>We find the line   
         <br>   
-        <code>device_video_modeline 320x224 (60.02 Hz) 6.4 320 321 352 407 224 229 236 262 -hsync -vsync # 15.72 kHz   
+        <code>device_video_modeline "320x224 (60.02 Hz)" 6.4 320 321 352 407 224 229 236 262 -hsync -vsync # 15.72 kHz   
         </code>   
         <br>which tells Mame how to set the video mode named <strong>320x224 (60.02 Hz)</strong>.   
       </p>   
@@ -131,12 +131,12 @@
       </p>   
       <p>Let's shift the whole screen image 20 pixels to the left on the long side of the monitor - we increase the numbers by 20:   
         <br>   
-        <code>device_video_modeline 320x224 (60.02 Hz) 6.4 320 341 372 407 224 229 236 262 -hsync -vsync # 15.72 kHz   
+        <code>device_video_modeline "320x224 (60.02 Hz)" 6.4 320 341 372 407 224 229 236 262 -hsync -vsync # 15.72 kHz   
         </code>   
       </p>   
       <p>Now lets additionally shift the image down on the short side of the monitor by subtracting 5 pixels:   
         <br>   
-        <code>device_video_modeline 320x224 (60.02 Hz) 6.4 320 341 372 407 224 224 231 262 -hsync -vsync # 15.72 kHz   
+        <code>device_video_modeline "320x224 (60.02 Hz)" 6.4 320 341 372 407 224 224 231 262 -hsync -vsync # 15.72 kHz   
         </code>   
       </p>   
       <p>There are limitations: We cannot go below the first value or above the fourth value of each group. So, in our example, we cannot move the image down the short side anymore. 224 is the limit here.   
@@ -145,7 +145,7 @@
       </p>   
       <p>We see modelines like   
         <br>   
-        <code>device_video_modeline 1920x240 (60.00 Hz) 41.50 1920 2000 2288 2640 240 240 247 262 -hsync -vsync # 15.72 kHz   
+        <code>device_video_modeline "1920x240 (60.00 Hz)" 41.50 1920 2000 2288 2640 240 240 247 262 -hsync -vsync # 15.72 kHz   
         </code>   
       </p>   
       <p>Since Mame scales the value of 1920 down by factor 6 to 320 pixels screen width, a horizontal shift by 1 pixel requires the value to be changed by 6.   
