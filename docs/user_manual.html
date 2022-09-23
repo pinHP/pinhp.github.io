@@ -370,6 +370,8 @@
           <em>Important!   
           </em> Pi2Jamma or Pi2SCART. The hardware mode should be auto detected at boot. However, if it is not set properly, controls of a Jamma cabinet will not work or, on Pi2SCART, weird characters will flash on the screen.   
         </p>   
+        <p>If for some reason your system got confused and you are not able to set or save the hardware mode via the menu properly, you need to edit the <b>config.ini</b> configuration file, located inside the <b>rpi2jamma</b> directory on either the USB flash drive or the SD card's RPI_DATA partition. Find the entry "pi2scart_mode=" near the top of the file and set it to "Y" for Pi2SCART or "N" for Pi2Jamma operation.
+        </p>
         </li>   
         <li> <strong>   
           <a class="anchor" id="usb_gamepad"></a>USB Gamepad</strong>   
