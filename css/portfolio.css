@@ -54,4 +54,12 @@
         transform: translateY(-10px) scale(1.02);
         box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15) !important;
     }
+    
+    .pinhp-trans {
+      transition: transform 300ms;
+    }
+    .pinhp-trans:hover {
+      transform:  translateY(-3px) scale(1.03);
+    }
+    
 }
