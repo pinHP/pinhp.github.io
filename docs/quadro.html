@@ -117,7 +117,7 @@
         <a href="http://wiki.arcadeinfo.de/index.php/Quadro">
           <i class="fa fa-external-link"></i>&nbsp;Quadro Jumbo</a> to Pi2Jamma for auto monitor rotation with pinHP image.
       </p>
-      <p class="pl-4"><u>Requirements</u>: A 5 V single channel relay.
+      <p class="pl-4"><u>Requirements</u>: A 5 V DC single channel relay.
       </p>
       <p class="pl-4"><u>How it works</u>: Quadro's monitor rotation is set by a simple hardware ON/OFF switch on the control board. As long as the switch is OFF, the monitor is kept in horizontal position or turned there, and vice versa. The switching is now taken over by a relay, controlled from pinHP image via GPIO-26.
       </p>
@@ -134,7 +134,7 @@
               <a class="lightbox" href="../res/Quadro_Relay.jpg">
                 <img src="../res/Quadro_Relay.jpg" alt="Quadro_Relay" class="card-img-top">                    </a>
               <div class="card-body d-flex justify-content-center flex-column">
-                <p class="text-muted card-text">5 V single channel relay
+                <p class="text-muted card-text">5 V single channel relay.
                 </p>
               </div>
             </div>
@@ -164,7 +164,7 @@
               <a class="lightbox" href="../res/Quadro_03.jpg">
                 <img src="../res/Quadro_03.jpg" alt="Quadro_03" class="card-img-top">                    </a>
               <div class="card-body d-flex justify-content-center flex-column">
-                <p class="text-muted card-text">Two wires are soldered to the back of the control board's monitor orientation switch.
+                <p class="text-muted card-text">Two wires are soldered to the back of the control board's monitor orientation switch, where two conductor tracks are connected. The third contact can be ignored - this is the original switches OFF position, leading to nowhere.
                 </p>
               </div>
             </div>
@@ -174,7 +174,7 @@
               <a class="lightbox" href="../res/Quadro_04.jpg">
                 <img src="../res/Quadro_04.jpg" alt="Quadro_04" class="card-img-top">                    </a>
               <div class="card-body d-flex justify-content-center flex-column">
-                <p class="text-muted card-text">Wires from the control board connect to COM (white) and NO (red).
+                <p class="text-muted card-text">Wires from the control board connect to COM (white) and NO (red). Connecting to COM and NC instead would default the monitor to vertical position and the High/Low level trigger required to be set to "L".
                   <br>
                   <br>Wires from Pi2Jamma connect to 5V/DC+ (red), GND/DC- (black), IN/SIG (purple).
                 </p>
@@ -186,7 +186,7 @@
               <a class="lightbox" href="../res/Quadro_05.jpg">
                 <img src="../res/Quadro_05.jpg" alt="Quadro_05" class="card-img-top">                    </a>
               <div class="card-body d-flex justify-content-center flex-column">
-                <p class="text-muted card-text">Pi2Jamma PCB: Wires from the relay connect to 5V (red), GND (black), GPIO26 (purple).
+                <p class="text-muted card-text">Pi2Jamma PCB: Wires from the relay, crimped to a Dupont plug, connect to 5V (red), GND (black), GPIO26 (purple).
                 </p>
               </div>
             </div>
