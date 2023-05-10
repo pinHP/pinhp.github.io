@@ -120,7 +120,7 @@
       </p>
       <p class="pl-4"><u>Requirements</u>: A 5 V DC single channel relay.
       </p>
-      <p class="pl-4"><u>How it works</u>: Quadro's monitor rotation is set by a simple hardware ON/OFF switch on the control board. As long as the switch is OFF, the monitor is kept in horizontal position or turned there, and vice versa. The switching is now taken over by a relay, controlled from pinHP image via GPIO-26.
+      <p class="pl-4"><u>How it works</u>: Quadro's monitor rotation is set by a simple hardware ON/OFF switch on the control board. As long as the switch is OFF, the monitor is kept in horizontal position or turned there, and vice versa. The switching is now taken over by a relay, controlled from pinHP image via e.g. GPIO-26, by setting <i>auto_rotate=26</i> in config.ini. Available free GPIO pins are 0 | 1 | 25 | 26 | 27 for Pi2Jamma. Setting <i>auto_rotate=-1</i> disables auto rotation. 
       </p>
       <p class="pl-4">Auto rotation demonstration
         <a href="https://youtu.be/OzYSj8-xy_c">
