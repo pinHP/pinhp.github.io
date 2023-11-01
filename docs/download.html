@@ -117,7 +117,7 @@
       <h5 class="alert alert-dark alert-dismissible w-50 text-center mx-auto">        
         <button type="button" class="close" data-dismiss="alert">              
           <i class="fa fa-window-close"></i>            
-        </button>Current online update version: 16OCT23</h5>        
+        </button>Current version / update version: 16OCT23<br><br><a href="#changelog" data-toggle="modal"><small>Changelog</small></a></h5>        
     </div>      
     <p class="container rounded-sm bg-light py-1">Full image:         
       <br>            
@@ -188,5 +188,8 @@
           <br>Copyright &copy; pinHP 2018 - 2023          
         </div>        
       </footer>      
-  </body>
+<script>
+ $('#changelog').load("changelog.html");
+</script>       <div id="changelog" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">   
+      </div>  </body>
 </html>
