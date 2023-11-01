@@ -420,7 +420,7 @@
         <a class="anchor" id="servostik"></a>Ultimarc&reg; ServoStik</h4>                 
       <p class="pl-4">An                     
         <a href="https://www.ultimarc.com/arcade-controls/joysticks">                       
-          <i class="fa fa-external-link"></i>&nbsp;Ultimarc&reg;</a> ServoStik can be triggered to switch between 4- and 8-way joystick restriction. Check <b>System Settings Menu            
+          <i class="fa fa-external-link"></i>&nbsp;Ultimarc&reg;</a> ServoStik can be triggered to automatically switch between 4- and 8-way joystick restriction. Check <b>System Settings Menu            
           <i class="fa fa-long-arrow-right"></i>&nbsp;System Settings            
           <i class="fa fa-long-arrow-right"></i>&nbsp;Enable ServoStik</b>. An additional menu item <b>Toggle ServoStik</b> will be available from the <b>Options</b> menu, to manually switch the ServoStik. You can as well define Player2-Start button to toggle the ServoStik position: <b>System Settings Menu            
           <i class="fa fa-long-arrow-right"></i>&nbsp;System Settings            
@@ -428,8 +428,8 @@
       </p>                 
       <p class="pl-4"> <u>N.B.</u>: <b>Toggle ServoStik</b> will override any automatic switching for the very next game started.              
       </p>                 
-      <p class="pl-4">To automatically switch the ServoStik at game start, select <b>Options            
-          <i class="fa fa-long-arrow-right"></i>&nbsp;Set Games 4-8-Way</b> to define the setting for each game. You can as well manually add an appropriate joystick parameter to the game definition entry in "_games.template" inside the "roms_advmame" directory. By default, only 4-way games are explicitly marked. If no "joy" parameter ist set, the system switches to 8-way.              
+      <p class="pl-4">To configure ServoStik settings for individual games, select <b>Options            
+          <i class="fa fa-long-arrow-right"></i>&nbsp;Set Games 4-8-Way</b>. Settings for most games are predifined. You can as well manually add an appropriate joystick parameter to the game definition entry in "_games.template" inside the "roms_advmame" directory. By default, only 4-way games are explicitly marked. If no "joy" parameter ist set, the system switches to 8-way.              
       </p>                 
       <p class="pl-4"> <u>Example</u>:                     
         <br>game {rom ="1942" title ="1942 (set 1)" params ="-0ONE-0TWO-0TRE-1ALL-0FAV" orientation ="v" joy ="8" }                     
