@@ -116,10 +116,30 @@
     </div>             
     <div class="container rounded-sm bg-light py-2 my-2"><h4>                     
         <a class="anchor" id= "software"></a>Initial software setup</h4>                 
-      <p class="pl-4">Use a disk imaging program like "Win32DiskImager" to write the image file to a Micro-SD card (at least 16 GB size).                 
+      <p class="pl-4">Use a disk imaging program like "Win32DiskImager" (included in the distribution) to write the image file to a Micro-SD card (at least 16 GB size).                 
       </p>                 
-      <p class="pl-4">A USB flash drive containing ROMs and configuration settings is recommended, but optional. Game ROMs, individual settings and backups are stored there. You do not need Linux access to copy or manipulate files, and your configuration will be still available in case the system SD card might get corrupted. Boot with an empty, formatted USB flash drive. The system will detect it and create the folder structure automatically.              
+      <p class="pl-4">A USB flash drive containing ROMs and configuration settings is recommended, but optional. Boot with an empty, formatted USB flash drive. The system will detect it and create the folder structure automatically.              
       </p>             
+
+      <p class="pl-4">ADVANTAGES OF USING A USB FLASH DRIVE                    
+        <ul class="ml-3">                         
+          <li>Safety: In case the SD card fails, there will always be a backup of your Hiscores and MAME settings on the USB flash drive. Backups are automatically performed after each game and during system shutdown.                       
+          </li>                         
+          <li>Handling: Simple install of ROMs on the USB flash drive.
+          </li>                     
+        </ul>                 
+      </p>                 
+
+      <p class="pl-4">IF FOR WHATEVER REASON YOU WANT TO RELY ON THE SYSTEM SD CARD ONLY                     
+        <ul class="ml-3">                         
+          <li> Initially, there are only some 6 GB available for game ROMS on the DOS formatted DATA partition. Go to <b>Options              
+            <i class="fa fa-long-arrow-right"></i>&nbsp;System Settings              
+            <i class="fa fa-long-arrow-right"></i>&nbsp;Max. Data Partition</b> to make unused space outside the default 16 GB image size available.
+          <li>Attention: The operation might fail with a memory error if you have already copied and used up too much disk space with your own ROMs.
+          </li>                     
+        </ul>                 
+      </p> 
+
     </div>             
     <div class="container rounded-sm bg-light py-2 my-2"><h4>                     
         <a class="anchor" id= "pi2jamma"></a>Pi2Jamma / Pi2SCART setup</h4>                 
