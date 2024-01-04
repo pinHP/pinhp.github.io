@@ -146,12 +146,16 @@
       <p class="pl-4">All files required are stored inside the <b>rpi2jamma</b> directory on either the USB flash drive or the SD card's RPI_DATA partition. The most important subdirectory is <b>roms_advmame</b> - place your game ROMs there and you are good to go.              
       </p>                 
       <p class="pl-4">
-      Since version 20OCT21, there are lots of options to organize games on the fly. Go to <b>Options > Filter Games</b> and <b>Options > Group Games</b> for actual filtering or grouping, <b>Options > Filter Settings</b> to select even more filter values: Select your favourites out of a list of 390 manufacturers, 29 genres and 10 game systems.
+      Since version 20OCT21, there are lots of options to organize games on the fly. Go to <b>Options
+      <i class="fa fa-long-arrow-right"></i>&nbsp;Filter Games</b> and <b>Options
+      <i class="fa fa-long-arrow-right"></i>&nbsp;Group Games</b> for actual filtering or grouping, <b>Options
+      <i class="fa fa-long-arrow-right"></i>&nbsp;Filter Settings</b> to select even more filter values: Select your favourites out of a list of 390 manufacturers, 29 genres and 10 game systems.
       </p>
       <p class="pl-4"><i>Outdated, but still possible:</i><br>
-      You can manually sort ROM files into subfolders, which will also show up in the game menu. Individual display names can be set with the ".title" file inside each directory. Write the name into the file and nothing else. Names preceded by a "." (dot) will hide the directory completely, making it inaccessible from the menu. Names preceded by a "#" (hash sign) will show a blank line in the menu, but leave it accessible.
+      You can manually sort ROM files into subfolders, that will also show up in the game menu. Individual display names can be set with the ".title" file inside each directory. Write the name into the file and nothing else. Names preceded by a "." (dot) will hide the directory completely, making it inaccessible from the menu. Names preceded by a "#" (hash sign) will show a blank line in the menu, but leave it accessible.
       </p>
-      <p class="pl-4">The hardware mode (Pi2Jamma or Pi2SCART) should be auto detected at boot. However, if it is not set properly, controls of a Jamma cabinet will not work or, on Pi2SCART, weird characters will flash on the screen. If for some reason your system got confused and you are not able to set or save the hardware mode via the
+      <p class="pl-4"><i>Important:</i><br>
+      The hardware mode (Pi2Jamma or Pi2SCART) should be auto detected at boot. However, if it is not set properly, controls of a Jamma cabinet will not work or, on Pi2SCART, weird characters will flash on the screen. If for some reason your system got confused and you are not able to set or save the hardware mode via the
         <a href="user_manual#control_settings">control menu</a> properly, you need to edit the <b>config.ini</b> configuration file, located inside the <b>rpi2jamma</b> directory on either the USB flash drive or the SD card's DATA partition. Find the entry "pi2scart_mode=" near the top of the file and set it to "Y" for Pi2SCART or "N" for Pi2Jamma operation.              
       </p>         
     </div>             
