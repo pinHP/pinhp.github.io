@@ -110,7 +110,7 @@
       <h3 class="rounded-sm bg-info text-center text-white">Alarm Mail</h3>         
     </div>         
     <div class="container rounded-sm bg-light py-2 my-2">    <h3>About</h3>             
-      <p class="container rounded-sm bg-light py-1">      Did you ever leave your game room for "just a minute" and forgot to come back before the next weekend? Receive an email that the system is still up and running after a specified amount of time. Alarm Mail is a pinHP Arcade Image          
+      <p class="container rounded-sm bg-light py-1">      Did you ever leave your game room for "just a minute" and forgot to come back before the next weekend? Receive an email that the system is still up and running after a specified amount of time. A custom script can be run when an alarm is triggered, to e.g. switch of a Shelly plug (an example script is provided). Alarm Mail is a pinHP Arcade Image          
         <a href="user_manual.html#online_tools">built-in</a> feature.                  
         <br>                 
         <br>This is the stand-alone Raspberry Pi solution, to be connected to your LAN or Wi-Fi and to be switched on and off together with your gameroom toys. The file system is read-only, it is safe to simply power off the Raspberry Pi.                  
@@ -121,8 +121,8 @@
     <div class="container rounded-sm bg-light py-2 my-2">        <h3>Download</h3>             
       <p class="container rounded-sm bg-light py-1">      Download pinHP alarm mail image for Pi3 / Pi4:                  
         <br>                 
-        <a href="https://mega.nz/file/rmxVWLaK#Y_ClT7kKh3M75uCW22aN98UAsSYVQ0dx1N5NpGtvb2M">                     
-          <i class="fa fa-download"></i>&nbsp; pinhp_alarm_mail_pi3_pi4_27NOV21.zip</a>                 
+        <a href="https://mega.nz/file/quoBELbT#sbixUD-fObs-62xILu3Dtt2Y1QAighslq9LTwgsWwrE">                     
+          <i class="fa fa-download"></i>&nbsp; pinhp_alarm_mail_pi3_pi4_28FEB24.zip</a>                 
         <br>(File size 773 MB)              
       </p>         
     </div>         
@@ -150,6 +150,9 @@
         <br><b>OPTIONAL:</b>                 
         <br><span class="text-success">mail_start.txt</span>, if you want to be able to receive start notification emails.                  
         <br><span class="text-success">config.ini</span>, which is preconfigured, see the comments inside.                  
+        <br>
+        <br>If a script file 'customscript-alarm.sh' is found in the .mail directory, it will be run when an alarm is triggered.
+        <br>A script file 'customscript-shutdown.sh' will be run when a system shutdown is initiated (<span class="text-success">available in pinHP Arcade Image only</span>).
         <br>                 
         <br><b>FILE SYSTEM:</b>                 
         <br>The Linux file system is read only, it may be simply powered off.                  
