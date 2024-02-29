@@ -289,6 +289,56 @@
         </samp>            
       </p>         
     </div>         
+    <div class="container rounded-sm bg-light py-2 my-2">        <h3>'customscript-alarm.sh' example script file</h3>      
+      <p class="container rounded-sm bg-light py-1">        
+        <samp>        
+          <br>#!/bin/bash
+          <br>
+          <br># This file is run when an alarm is triggered, if found with its exact file name 'customscript-alarm.sh'
+          <br># Remove underscore from this example file to activate the script. 
+          <br>
+          <br>### Power off Shelly with a delay of $SHELLY_DELAY seconds, after $COUNT alarms ###
+          <br>### 28 FEB 2024 ###
+          <br>
+          <br># Example command line for Shelly Gen1 password protected devices
+          <br># Custom username
+          <br># curl -u YourUsername:YourPassword "http://$SHELLY_IP/relay/0?turn=on&timer=$SHELLY_DELAY"
+          <br>
+          <br># Example command line for Shelly Gen2 password protected devices
+          <br># Username is always "admin"
+          <br># curl --digest -u admin:YourPassword "http://$SHELLY_IP/rpc/Switch.set?id=0&on=true&toggle_after=$SHELLY_DELAY"
+          <br>
+          <br># Example command line, no password protected device
+          <br># curl "$SHELLY_IP/relay/0?turn=on&timer=$SHELLY_DELAY"
+          <br>
+          <br>SHELLY_IP="192.168.1.123"
+          <br>SHELLY_DELAY=10
+          <br>COUNT=2
+          <br>
+          <br>#####
+          <br>
+          <br>PERMLOG=$( cat /tmp/pinhp_variables | grep "PERMLOG=" | awk -F'"' '{print $2}' )
+          <br>COUNTERFILE="/tmp/counterfile"
+          <br>
+          <br>if ! [ -e "$COUNTERFILE" ]; then
+          <br>&nbsp;&nbsp;counter=1
+          <br>&nbsp;&nbsp;echo $counter > $COUNTERFILE
+          <br>else
+          <br>&nbsp;&nbsp;counter=`cat $COUNTERFILE`
+          <br>&nbsp;&nbsp;((counter++))
+          <br>&nbsp;&nbsp;echo $counter > $COUNTERFILE
+          <br>fi
+          <br>
+          <br>if [ "$counter" -ge "$COUNT" ]; then
+          <br>&nbsp;&nbsp;curl "$SHELLY_IP/relay/0?turn=on&timer=$SHELLY_DELAY"
+          <br>&nbsp;&nbsp;currentdate=$(date)
+          <br>&nbsp;&nbsp;echo "$currentdate - Shelly poweroff in $SHELLY_DELAY seconds ..."  >> $PERMLOG
+          <br>&nbsp;&nbsp;sync
+          <br>fi    
+          <br>        
+        </samp>            
+      </p>         
+    </div>         
     <div class="container rounded-sm bg-light py-2 my-2">             
       <p class="container rounded-sm bg-light py-1">        <b>Additional information:</b>                 
         <br>                 
