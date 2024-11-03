@@ -529,8 +529,23 @@
         <a class="anchor" id= "advanced_instructions"></a>Advanced instructions</h4>                 
       <p class="pl-4">The screen is not centred? How to                     
         <a href= "edit_modelines.html">adjust modelines</a> in advmame.rc.                 
-      </p>             
-    </div>             
+      </p>
+     </div>            
+
+    <div class="container rounded-sm bg-light py-2 my-2"><h4>                     
+        <a class="anchor" id= "special_variables"></a>Special variables in config.ini</h4>
+      <p class="pl-4">(Made available for whatever purpose, since version 31OCT24. <b>Not required under regular circumstances</b>)
+      </p>
+      <ul class="list-unstyled pl-4">                     
+        <li class="py-1"><b>switchtest_boot=N</b><br># Disable automatic test for stuck Jamma switches during boot
+        </li>                     
+        <li class="py-1"><b>disable_pikeyd165=Y</b><br># Disable Jamma input driver
+        </li>                     
+        <li class="py-1"><b>force_hardwaremode=Y</b><br># Disable system check whether Jamma/SCART mode is set properly. For historic reasons, Jamma or SCART hardware mode (pi2scart_mode) can be manually set in config.ini.
+        </li>                     
+      </ul>                 
+    </div>
+             
     <div class="container rounded-sm bg-light py-2 my-2"><h4>                     
         <a class="anchor" id="customization"></a>Customization</h4>                 
       <p class="pl-4">The system checks for the presence of custom scripts during boot up, before and after each MAME game and during system shutdown. Working examples, e.&nbsp;g. how to switch GPIO pins, to control relays for illumination of individual buttons depending on each game, are provided.              
