@@ -50,9 +50,9 @@
                 <a href="setup_instructions.html#screensaver" class="dropdown-item">Screensaver</a>   
                 <a href="setup_instructions.html#orientation" class="dropdown-item">Screen orientation</a>   
                 <a href="setup_instructions.html#game_selection" class="dropdown-item">Game selection</a>   
-                <a href="setup_instructions.html#mame_controls" class="dropdown-item">Mame controls</a>   
-                <a href="setup_instructions.html#mame_info" class="dropdown-item">Mame info</a>   
-                <a href="setup_instructions.html#mame_menu" class="dropdown-item">Mame settings menu</a>   
+                <a href="setup_instructions.html#mame_controls" class="dropdown-item">MAME controls</a>   
+                <a href="setup_instructions.html#mame_info" class="dropdown-item">MAME info</a>   
+                <a href="setup_instructions.html#mame_menu" class="dropdown-item">MAME settings menu</a>   
                 <a href="setup_instructions.html#keyboard" class="dropdown-item">Keyboard</a>   
                 <a href="setup_instructions.html#keyboard_mapping" class="dropdown-item">Keyboard mapping</a>   
                 <a href="setup_instructions.html#mame_mapping" class="dropdown-item">Change buttons</a>   
@@ -71,7 +71,7 @@
                 <a href="user_manual.html#optionsmenu" class="dropdown-item">Options Menu</a>   
                 <a href="user_manual.html#game_menu_settings" class="dropdown-item">Game Menu Settings</a>   
                 <a href="user_manual.html#options_menu_settings" class="dropdown-item">Options Menu Settings</a>   
-                <a href="user_manual.html#mame_settings" class="dropdown-item">Mame Settings</a>   
+                <a href="user_manual.html#mame_settings" class="dropdown-item">MAME Settings</a>   
                 <a href="user_manual.html#control_settings" class="dropdown-item">Control Settings</a>   
                 <a href="user_manual.html#filter_settings" class="dropdown-item">Filter Settings</a>   
                 <a href="user_manual.html#screen_settings" class="dropdown-item">Screen Settings</a>   
@@ -120,13 +120,13 @@
         <br>   
         <code>256x224x60/display_mode 320x224 (60.02 Hz)   
         </code>   
-        <br>which tells Mame, what to do with games running a 256x224 resolution at 60 Hz refresh rate. It tells Mame to use <strong>display_mode 320x224 (60.02 Hz)</strong>.   
+        <br>which tells MAME, what to do with games running a 256x224 resolution at 60 Hz refresh rate. It tells MAME to use <strong>display_mode 320x224 (60.02 Hz)</strong>.   
       </p>   
       <p>We look up this display mode and find the line   
         <br>   
         <code>device_video_modeline "320x224 (60.02 Hz)"&nbsp;&nbsp;6.4&nbsp;&nbsp;320 321 352 407&nbsp;&nbsp;224 229 236 262 -hsync -vsync # 15.72 kHz   
         </code>   
-        <br>which tells Mame how to handle the display mode named <strong>320x224 (60.02 Hz)</strong>, how to actually output the analogue video signal to the monitor.   
+        <br>which tells MAME how to handle the display mode named <strong>320x224 (60.02 Hz)</strong>, how to actually output the analogue video signal to the monitor.   
       </p>   
       <p>Following the 6.4 MHz pixel clock frequency, the group of the first four values <strong>320 321 352 407</strong> is for horizontal (long side) screen resolution, the second group <strong>224 229 236 262</strong> for vertical (short side) screen resolution.   
       </p>   
@@ -144,14 +144,14 @@
       </p>   
       <p>There are limitations: We cannot go below the first value or above the fourth value of each group. So, in our example, we cannot move the image down the short side anymore. 224 is the limit here.   
       </p>   
-      <p>Some games make use of super resolution settings, where Mame downscales the actual image. This is a workaround due to Raspberry Pi (up to 3B+) hardware limitations, making it possible to get almost exact resolutions and refresh rates. Usually we are more flexible in shifting the screen image as well.   
+      <p>Some games make use of super resolution settings, where MAME downscales the actual image. This is a workaround due to Raspberry Pi (up to 3B+) hardware limitations, making it possible to get almost exact resolutions and refresh rates. Usually we are more flexible in shifting the screen image as well.   
       </p>   
       <p>We see modelines like   
         <br>   
         <code>device_video_modeline "1920x240 (60.00 Hz)"&nbsp;&nbsp;41.50&nbsp;&nbsp;1920 2000 2288 2640&nbsp;&nbsp;240 240 247 262 -hsync -vsync # 15.72 kHz   
         </code>   
       </p>   
-      <p>Since Mame scales the value of 1920 down by factor 6 to 320 pixels screen width, a horizontal shift by 1 pixel requires the value to be changed by 6.   
+      <p>Since MAME scales the value of 1920 down by factor 6 to 320 pixels screen width, a horizontal shift by 1 pixel requires the value to be changed by 6.   
       </p>   
       <p>Hint:   
         <br> When a game is using a super resolution, if we TAB into the settings, unreadable small lines will be shown on a vertical monitor. We need to temporarily change the game's resolution before entering the menu. While in the game, we press . (dot) or , (comma) to cycle through available resolutions, until the menu becomes readable. Then we can TAB in.   
