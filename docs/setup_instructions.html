@@ -155,11 +155,7 @@
       </p>
       <p class="pl-4"><i>Outdated, but still possible:</i><br>
       You can manually sort ROM files into subfolders, that will also show up in the game menu. Individual display names can be set with the ".title" file inside each directory. Write the name into the file and nothing else. Names preceded by a "." (dot) will hide the directory completely, making it inaccessible from the menu. Names preceded by a "#" (hash sign) will show a blank line in the menu, but leave it accessible.
-      </p>
-      <p class="pl-4"><i>Important:</i><br>
-      The hardware mode (Pi2Jamma or Pi2SCART) is auto detected during boot. However, if it is not set properly, controls of a Jamma cabinet will not work or, on Pi2SCART, weird characters will flash on the screen. If for some reason your system got confused and you are not able to set or save the hardware mode via the
-        <a href="user_manual#control_settings">control menu</a> properly, you need to edit the <b>config.ini</b> configuration file, located inside the <b>rpi2jamma</b> directory on either the USB flash drive or the SD card's DATA partition. Find the entry "pi2scart_mode=" near the top of the file and set it to "Y" for Pi2SCART or "N" for Pi2Jamma operation.              
-      </p>         
+      </p>       
     </div>             
     <div class="container rounded-sm bg-light py-2 my-2"><h4>                     
         <a class="anchor" id="quickstart"></a>Quick start</h4>                 
@@ -301,11 +297,11 @@
       <p class="pl-4 mb-0">Orientation of MAME games has to be set here:             
       </p>      
       <ul class="list-group pl-4 mx-4"><b>Options 
-          <i class="fa fa-long-arrow-right"></i>&nbsp;Mame Settings</b>        
+          <i class="fa fa-long-arrow-right"></i>&nbsp;MAME Settings</b>        
         <li class="list-group-item py-1 my-2"><strong>H-Games rotate L</strong>                              
           <p class="my-0">                                    
             <em>For vertical cabinets.                                    
-            </em> Mame expects a horizontal monitor. Select this option to display horizontal games on a vertically mounted monitor. This will always be a compromise regarding game resolution.                              
+            </em> MAME expects a horizontal monitor. Select this option to display horizontal games on a vertically mounted monitor. This will always be a compromise regarding game resolution.                              
           </p>                              
         </li>                              
         <li class="list-group-item py-1"><strong>V-Games rotate L</strong>                              
@@ -363,7 +359,7 @@
       <p class="pl-4">                 
       </p>                 
       <ul>                     
-        <li class="py-1">AdvanceMAME 3.10                     
+        <li class="py-1">AdvanceMAME 4.0                  
         </li>                     
         <li class="py-1">Romset version 0.106                     
         </li>                     
@@ -376,7 +372,7 @@
         <a class="anchor" id="mame_menu"></a>MAME settings menu</h4>                 
       <p class="pl-4">Press TAB while inside a game to enter the MAME settings menu.                 
       </p>                 
-      <p class="pl-4">When a game is internally using a "super resolution" (making it possible to run at exact refresh rates, yet Mame can still output pixel perfect resolutions), if you TAB into the settings, unreadable small lines will be shown on a vertical monitor. You need to temporarily change the game's resolution before entering the menu. While in the game, press "." (dot) or "," (comma) to cycle through available resolutions, until the menu becomes readable. Then you can TAB in.                 
+      <p class="pl-4">When a game is internally using a "super resolution" (making it possible to run at exact refresh rates, yet MAME can still output pixel perfect resolutions), if you TAB into the settings, unreadable small lines will be shown on a vertical monitor. You need to temporarily change the game's resolution before entering the menu. While in the game, press "." (dot) or "," (comma) to cycle through available resolutions, until the menu becomes readable. Then you can TAB in.                 
       </p>                 
       <p class="pl-4">You can as well backup MAME settings from the <b>Options <i class="fa fa-long-arrow-right"></i>&nbsp;Backup/Restore</b> menu, edit the <b>advmame.rc</b> configuration file and restore it via the menu.
       </p>             
@@ -447,7 +443,7 @@
         <li class="py-1">11) Navigate away and all the way down to go back to the game through the various settings screens                     
         </li>                     
         <li class="py-1">                         
-          <u>N.B.</u>: When a game is internally using a "super resolution" (making it possible to run at exact refresh rates, yet Mame can still output pixel perfect resolutions), if you TAB into the settings,
+          <u>N.B.</u>: When a game is internally using a "super resolution" (making it possible to run at exact refresh rates, yet MAME can still output pixel perfect resolutions), if you TAB into the settings,
           <span style= "text-decoration: underline;">unreadable small lines                         
           </span> will be shown on a vertical monitor. You need to temporarily change the game's resolution before entering the menu. While in the game, press "." (dot) or "," (comma) to cycle through available resolutions, until the menu becomes readable. Then you can TAB in.                     
         </li>                 
